@@ -6,7 +6,9 @@
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
 2：
+
 3：
+
 …………
 
 
