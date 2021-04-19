@@ -5,7 +5,8 @@
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
 #### 二：更新内核脚本
-（目前甲骨文Ubuntu20.04系列内核为5.4版本，需更新5.6版本以上自带Wireguard的内核，WARP内核集成方式理论上网络效率最高，以下两个内核升级脚本选其一即可）
+（目前甲骨文Ubuntu20.04系列内核为5.4版本，需更新5.6版本以上自带Wireguard的内核，WARP内核集成方式理论上网络效率最高）
+（以下两个内核升级脚本，选其一即可，都已集成卸载iptables代码，解决甲骨文Ubuntu系统证书申请报错问题）
 
 1、通用内核5.11版本（稳定版）
 ```
