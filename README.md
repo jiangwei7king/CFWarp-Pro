@@ -1,6 +1,6 @@
 ### Oracle甲骨文云相关脚本及说明更新中。。关注Youtube甬哥探世界,,,稍后发布甲骨文最强形态视频教程
 
-#### 一：设置Root密码一键脚本（使SSH文件编辑操作、登录方式简化）
+#### 一：设置Root密码一键脚本（抛弃秘钥文件，使SSH文件编辑操作、登录方式更加方便）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
