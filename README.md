@@ -1,4 +1,12 @@
-# Oracle甲骨文云相关脚本及说明更新中。。。。。
+### Oracle甲骨文云相关脚本及说明更新中。。。。。
+
+1：先放出
+设置Root密码一键脚本
+bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
+2：
+3：
+…………
+
 
 ##### IPV4 VPS专用分流配置文件(以下默认全局IPV4优先)
 ```
