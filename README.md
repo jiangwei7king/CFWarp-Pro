@@ -1,8 +1,10 @@
 ### Oracle甲骨文云相关脚本及说明更新中。。。。。
 
-1：先放出
+1：
 设置Root密码一键脚本
+```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
+```
 2：
 3：
 …………
