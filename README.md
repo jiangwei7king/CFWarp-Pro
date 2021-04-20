@@ -2,29 +2,29 @@
 
 ### Oracle甲骨文云添加WARP双栈IPV6+IPV4，针对KVM架构的IPV4 only VPS，默认IPV4优先!
 
-### 视频教程....稍后更新.......
+### Youtube视频教程....稍后更新.......
 --------------------------------------------------------------------------------------------------------
-#### 一：设置Root密码一键脚本（抛弃秘钥文件，直接ROOT权限，方便登录与编辑文件）
+#### 一：设置Root密码一键脚本（抛弃秘钥文件，默认ROOT权限，方便登录与编辑文件）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
 -----------------------------------------------------------------------------------------------------
 #### 二：更新甲骨文Ubuntu系统内核一键脚本
 
-###### 目前甲骨文Ubuntu20.04系统内核为5.4版本，需更新5.6版本以上自带Wireguard的内核，这是三种WARP安装方式中网络效率最高的！
+###### 目前甲骨文Ubuntu20.04系统内核为5.4版本，而5.6版本以上内核才自带Wireguard，更新内核方案在理论上网络效率最高的！
 
-###### 以下两个内核升级脚本，选其一即可，都已集成删除iptables代码```rm -rf /etc/iptables && reboot```，解决甲骨文Ubuntu系统证书申请报错问题！
+###### 任选以下两个内核脚本中的一个进行升级，选其一即可！！都集成删除iptables代码```rm -rf /etc/iptables && reboot```，解决甲骨文Ubuntu系统Nginx等证书申请报错问题！
 
-##### 1、通用内核5.11版本（稳定版）
+##### 1、通用内核5.11版本（推荐：通用稳定版，后续会更新）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/generic-kernel.sh)
 ```
-##### 2、第三方xanmod内核（目前5.11.15版本，安装时自动安装最新版本）
+##### 2、第三方xanmod内核（安装时自动安装最新版本）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/xanmod-kernel.sh)
 ```
 -------------------------------------------------------------------------------------------------------------
-#### 三：开启BBR加速（秋水逸冰大老-稳定版）
+#### 三：开启BBR加速（秋水逸冰大老-传统版）
 ```
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 ```
