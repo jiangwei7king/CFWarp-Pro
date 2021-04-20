@@ -1,6 +1,8 @@
-### Oracle甲骨文云相关脚本及说明更新中。。关注Youtube甬哥探世界,,,稍后发布甲骨文最强形态视频教程
+###
 
-#### 一：设置Root密码一键脚本（抛弃秘钥文件，使SSH文件编辑操作、登录方式更加方便）
+### Oracle甲骨文云添加WARP双栈IPV6+IPV4，针对KVM架构的IPV4 only VPS，默认IPV4优先!
+
+#### 一：设置Root密码一键脚本（抛弃秘钥文件，直接ROOT权限，方便登录与编辑文件）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
@@ -9,11 +11,11 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.
 
 （以下两个内核升级脚本，选其一即可，都已集成卸载iptables代码，解决甲骨文Ubuntu系统证书申请报错问题）
 
-1、通用内核5.11版本（稳定版）
+##### 1、通用内核5.11版本（稳定版）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/generic-kernel.sh)
 ```
-2、第三方xanmod内核（目前5.11.15版本，安装时自动安装最新版本）
+##### 2、第三方xanmod内核（目前5.11.15版本，安装时自动安装最新版本）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/xanmod-kernel.sh)
 ```
@@ -27,12 +29,31 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 lsmod | grep bbr
 ```
 
-#### 三：warp双栈ipv4+ipv6甲骨文最强模式脚本!！无视注册区域自动解锁奈飞！！…………更新中…
+#### 四：重装系统能解决99%的问题，warp单双栈ipv4+ipv6脚本
 
+##### 推荐Ubuntu 20.04系统，根据自己需求选择脚本1或者脚本2（有无成功可查看脚本末尾提示）
 
+###### 脚本1：Warp仅接管IPV6网络
+```
+bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6.sh)
+```
+###### 脚本2：双栈Warp接管IPV4与IPV6网络
+```
+bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp64.sh)
+```
 
+----------------------------------------------------------------------------------------------------
 
-##### IPV4 VPS专用分流配置文件(以下默认全局IPV4优先)
+##### 查看WARP当前统计状态
+```
+wg
+```
+
+##### 提示：配置文件wgcf.conf和注册文件wgcf-account.toml都已备份在/etc/wireguard下！
+
+-------------------------------------------------------------------------------------------------------------
+
+##### IPV4 VPS专用分流配置文件(以下默认全局IPV4优先，IP、域名自定义教程，参考https://youtu.be/fY9HDLJ7mnM)
 ```
 { 
 "outbounds": [
@@ -65,3 +86,37 @@ lsmod | grep bbr
   }
 }
 ``` 
+-----------------------------------------------------------------------------------------------
+#### 相关WARP进程命令
+
+手动临时关闭WARP网络接口
+```
+wg-quick down wgcf
+```
+手动开启WARP网络接口 
+```
+wg-quick up wgcf
+```
+
+启动systemctl enable wg-quick@wgcf
+
+开始systemctl start wg-quick@wgcf
+
+重启systemctl restart wg-quick@wgcf
+
+停止systemctl stop wg-quick@wgcf
+
+关闭systemctl disable wg-quick@wgcf
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+感谢P3terx大及原创者们，参考来源：
+ 
+https://p3terx.com/archives/debian-linux-vps-server-wireguard-installation-tutorial.html
+
+https://p3terx.com/archives/use-cloudflare-warp-to-add-extra-ipv4-or-ipv6-network-support-to-vps-servers-for-free.html
+
+https://luotianyi.vc/5252.html
+
+https://hiram.wang/cloudflare-wrap-vps/
