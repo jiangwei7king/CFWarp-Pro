@@ -27,7 +27,7 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 lsmod | grep bbr
 ```
 
-#### 三：warp双栈ipv4+ipv6甲骨文最强模式脚本!BBr加速！无视注册区域自动解锁奈飞！！…………更新中…
+#### 三：warp双栈ipv4+ipv6甲骨文最强模式脚本!！无视注册区域自动解锁奈飞！！…………更新中…
 
 
 
