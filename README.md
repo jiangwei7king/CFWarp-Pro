@@ -10,7 +10,7 @@
 
 2：基本能隐藏VPS的真实IP！
 
-3：WARP双栈IPV6+IPV4的IP段都支持奈非Netflix等流媒体，无视原IP限制！
+3：WARP双栈IPV6+IPV4的IP段都支持奈非Netflix流媒体，无视原IP限制！
 
 4：加速VPS到CloudFlare CDN节点访问速度！
 
