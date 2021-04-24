@@ -1,4 +1,4 @@
-### Oracle Cloud 甲骨文云脚本集合，打造最强甲骨文云ubuntu系统（时时更新）
+### Oracle甲骨文云脚本集合，针对KVM架构的IPV4 ONLY VPS，打造最强甲骨文云ubuntu系统
 
 ### Youtube视频教程....稍后更新.......
 
