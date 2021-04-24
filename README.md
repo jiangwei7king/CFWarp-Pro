@@ -49,11 +49,11 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 
 ##### 推荐Ubuntu 20.04系统，根据自己需求选择脚本1或者脚本2（有无成功可查看脚本末尾提示）
 
-###### 脚本1：Warp仅接管IPV6网络
+###### 脚本1：IPV6是WARP分配的IP，IPV4是VPS本地IP
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6.sh)
 ```
-###### 脚本2：双栈Warp接管IPV4与IPV6网络
+###### 脚本2：IPV4与IPV6都是WARP分配的IP
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp64.sh)
 ```
