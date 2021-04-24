@@ -1,6 +1,4 @@
-### Oracle Cloud 甲骨文云脚本集合，打造最强甲骨文云（时时更新）
-
-### Oracle甲骨文云添加WARP双栈IPV6+IPV4，针对KVM架构的IPV4 only VPS，默认IPV4优先!
+### Oracle Cloud 甲骨文云脚本集合，打造最强甲骨文云ubuntu系统（时时更新）
 
 ### Youtube视频教程....稍后更新.......
 
