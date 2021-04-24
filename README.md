@@ -24,7 +24,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.
 -----------------------------------------------------------------------------------------------------
 ### 二：更新甲骨文Ubuntu系统内核一键脚本
 
-#### 目前甲骨文Ubuntu20.04系统内核为5.4版本（查看内核版本```uname -r```），而5.6版本以上内核才集成Wireguard，内核集成方案在理论上网络效率最高的！（网络性能：内核集成>内核模块>Wireguard-Go）
+#### 目前甲骨文Ubuntu20.04系统内核为5.4版本（查看内核版本```uname -r```），而5.6版本以上内核才集成Wireguard，内核集成方案在理论上网络效率最高！（网络性能：内核集成>内核模块>Wireguard-Go）
 
 #### 任选以下两个内核脚本中的一个进行升级，都集成删除iptables的代码```rm -rf /etc/iptables && reboot```，解决甲骨文Ubuntu系统类似Nginx等证书申请报错问题！
 
