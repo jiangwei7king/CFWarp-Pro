@@ -6,7 +6,7 @@
 
 ### 给ipv4 only VPS添加WARP的好处：
 
-1：使只有IPV4的VPS获取访问IPV6的能力，套上WARP的ip,变成双栈VPS！
+1：使只有IPV4的VPS获取访问IPV6的能力，套上WARP的ip，变成双栈VPS！
 
 2：基本能隐藏VPS的真实IP！
 
