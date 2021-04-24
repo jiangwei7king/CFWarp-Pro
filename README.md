@@ -17,7 +17,7 @@
 6：替代HE tunnelbroker隧道方案，做IPV6 VPS跳板机更加稳定、高效！
 
 --------------------------------------------------------------------------------------------------------
-### 一：设置Root密码一键脚本（抛弃秘钥文件，默认ROOT权限，方便登录与编辑文件）
+### 一：设置Root密码一键脚本（抛弃秘钥文件，与sudo -i说再见。默认ROOT权限，方便登录与编辑文件）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
