@@ -45,9 +45,9 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 -------------------------------------------------------------------------------------------------------------
 ### 四：重装系统能解决99%的问题，WARP三种情况最全脚本集合
 
-#### 推荐Ubuntu 20.04系统，根据自己需求选择脚本1、脚本2或者脚本3（有无成功可查看脚本末尾提示）
+#### 仅支持Ubuntu 20.04系统，根据自己需求选择脚本1、脚本2或者脚本3（有无成功可查看脚本末尾提示）
 
-#### (双栈IPV4+IPV6)脚本1：IPV6是WARP分配的IP，IPV4是VPS本地IP
+#### (双栈IPV4+IPV6)脚本1：IPV4是VPS本地IP，IPV6是WARP分配的IP
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6.sh)
 ```
