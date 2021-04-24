@@ -55,7 +55,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp64.sh)
 ```
-#### (单IPV4)脚本3：IPV4是WARP分配的IP，无IPV6
+#### (单IPV4)脚本3：IPV4是WARP分配的IP，无IPV6（不支持IPV6 VPS跳板机）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4.sh)
 ```
