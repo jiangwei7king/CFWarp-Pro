@@ -10,7 +10,7 @@
 
 2：基本能隐藏VPS的真实IP！
 
-3：WARP双栈IPV6+IPV4的IP段都支持奈非Netflix流媒体，无视原IP限制！
+3：WARP分配的IPV4或者IPV6的IP段，都支持奈非Netflix流媒体，无视VPS原IP限制！
 
 4：加速VPS到CloudFlare CDN节点访问速度！
 
@@ -26,15 +26,15 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.
 -----------------------------------------------------------------------------------------------------
 ### 二：更新甲骨文Ubuntu系统内核一键脚本
 
-###### 目前甲骨文Ubuntu20.04系统内核为5.4版本，而5.6版本以上内核才自带Wireguard，更新内核方案在理论上网络效率最高的！
+#### 目前甲骨文Ubuntu20.04系统内核为5.4版本，而5.6版本以上内核才自带Wireguard，更新内核方案在理论上网络效率最高的！
 
-###### 任选以下两个内核脚本中的一个进行升级，选其一即可！！都集成删除iptables代码```rm -rf /etc/iptables && reboot```，解决甲骨文Ubuntu系统Nginx等证书申请报错问题！
+#### 任选以下两个内核脚本中的一个进行升级，选其一即可！！都集成删除iptables代码```rm -rf /etc/iptables && reboot```，解决甲骨文Ubuntu系统Nginx等证书申请报错问题！
 
-##### 1、通用内核5.11版本（推荐：通用稳定版，后续会更新）
+### 1、通用内核5.11版本（推荐：通用稳定版，后续会更新）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/generic-kernel.sh)
 ```
-##### 2、第三方xanmod内核（安装时自动安装最新版本）
+### 2、第三方xanmod内核（安装时自动安装最新版本）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/xanmod-kernel.sh)
 ```
@@ -43,27 +43,31 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/xanmo
 ```
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 ```
-##### 检测BBR是否生效(显示有BBR，说明成功)：```lsmod | grep bbr```
+#### 检测BBR是否生效(显示有BBR，说明成功)：```lsmod | grep bbr```
 -------------------------------------------------------------------------------------------------------------
 ### 四：重装系统能解决99%的问题，warp单双栈ipv4+ipv6脚本
 
-##### 推荐Ubuntu 20.04系统，根据自己需求选择脚本1或者脚本2（有无成功可查看脚本末尾提示）
+#### 推荐Ubuntu 20.04系统，根据自己需求选择脚本1或者脚本2（有无成功可查看脚本末尾提示）
 
-###### 脚本1：IPV6是WARP分配的IP，IPV4是VPS本地IP
+#### (双栈IPV4+IPV6)脚本1：IPV6是WARP分配的IP，IPV4是VPS本地IP
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6.sh)
 ```
-###### 脚本2：IPV4与IPV6都是WARP分配的IP
+#### (双栈IPV4+IPV6)脚本2：IPV4与IPV6都是WARP分配的IP
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp64.sh)
 ```
-----------------------------------------------------------------------------------------------------
-##### 查看WARP当前统计状态
+#### (单IPV4)脚本3：IPV4是WARP分配的IP，无IPV6
 ```
-wg
+bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4.sh)
 ```
 
-##### 提示：配置文件wgcf.conf和注册文件wgcf-account.toml都已备份在/etc/wireguard目录下！
+#### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
+
+#### 提示：配置文件wgcf.conf和注册文件wgcf-account.toml都已备份在/etc/wireguard目录下！
+
+----------------------------------------------------------------------------------------------------
+##### 查看WARP当前统计状态```wg```
 
 -------------------------------------------------------------------------------------------------------------
 
