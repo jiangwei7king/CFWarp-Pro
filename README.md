@@ -26,7 +26,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.
 
 #### 目前甲骨文Ubuntu20.04系统内核为5.4版本，而5.6版本以上内核才自带Wireguard，更新内核方案在理论上网络效率最高的！
 
-#### 任选以下两个内核脚本中的一个进行升级，选其一即可！！都集成删除iptables代码```rm -rf /etc/iptables && reboot```，解决甲骨文Ubuntu系统Nginx等证书申请报错问题！
+#### 任选以下两个内核脚本中的一个进行升级，都集成删除iptables的代码```rm -rf /etc/iptables && reboot```，解决甲骨文Ubuntu系统类似Nginx等证书申请报错问题！
 
 ### 1、通用内核5.11版本（推荐：通用稳定版，后续会更新）
 ```
