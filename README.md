@@ -1,6 +1,6 @@
 ### Oracle甲骨文脚本集合，针对KVM架构IPV4 ONLY VPS，打造甲骨文云ubuntu系统环境
 
-### Youtube视频教程....稍后更新.......
+### Youtube视频教程：https://youtu.be/o7e_ikV-m-g
 
 ### 给ipv4 only VPS添加WARP的好处：
 
