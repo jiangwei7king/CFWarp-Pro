@@ -61,6 +61,8 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4.sh)
 ```
+### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
+
 -------------------------------------------------------------------------------------------
 ### 其他VPS查看专用ip方式
 脚本1不用输入专用IP。脚本2与3需要输入专用IP（防止VPS本地IP套WARP后失联），根据不同的VPS，专用IP可能是IP，也可能是IP段。
@@ -75,8 +77,6 @@ SSH查看方式：```ip -4 route```
 
 -------------------------------------------------------------------------------------------------------------
 #### Netflix检测项目：https://github.com/YG-tsj/Netflix-Check
-
-#### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
 #### 提示：配置文件wgcf.conf和注册文件wgcf-account.toml都已备份在/etc/wireguard目录下！
 
