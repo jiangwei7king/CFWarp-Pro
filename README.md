@@ -1,8 +1,8 @@
-### Oracle甲骨文脚本集合，针对KVM架构IPV4 ONLY VPS，打造甲骨文云ubuntu系统环境
+### Oracle甲骨文脚本集合，针对KVM架构IPV4 ONLY VPS，
 
 ### 本项目Youtube视频教程：https://youtu.be/o7e_ikV-m-g
 
-### EUserv ipv6的WARP项目:https://github.com/YG-tsj/EUserv-warp
+### EUserv ipv6的(OpenVZ、LXC架构VPS)WARP项目:https://github.com/YG-tsj/EUserv-warp
 
 ### 给ipv4 only VPS添加WARP的好处：
 
@@ -61,6 +61,13 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4.sh)
 ```
+-------------------------------------------------------------------------------------------
+### 其他VPS查看专用ip方式
+脚本1不用输入专用IP。脚本2与3需要输入专用IP（防止VPS本地IP套WARP后失联），根据不同的VPS，专用IP可能是IP，也可能是IP段。
+SSH查看方式：```ip -4 route```
+有“metric”字样的IP或者IP段，IP段有/数字表示，例：有的VPS公网IP为123.456.2.3，而专用IP段可能就是123.456.0.1/16，此时，专用IP就是123.456.0.1/16，别忘记输入后面的/16哦！！
+具体大家可以自己尝试，也就那几个IP或者IP段。
+
 -------------------------------------------------------------------------------------------------------------
 #### Netflix检测项目：https://github.com/YG-tsj/Netflix-Check
 
