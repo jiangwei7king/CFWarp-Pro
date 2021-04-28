@@ -41,7 +41,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/gener
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/xanmod-kernel.sh)
 ```
 -------------------------------------------------------------------------------------------------------------
-### 三：开启BBR加速（秋水逸冰大老-传统版）
+### 三：开启BBR加速（秋水逸冰大老-传统版，各类KVM的VPS通用）
 ```
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 ```
