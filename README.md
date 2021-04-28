@@ -26,7 +26,7 @@
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
 -----------------------------------------------------------------------------------------------------
-### 二：更新甲骨文Ubuntu系统内核一键脚本（KVM的VPS也通用）
+### 二：更新甲骨文Ubuntu系统内核一键脚本（KVM的VPS通用）
 
 #### 目前甲骨文Ubuntu20.04系统内核为5.4版本（查看内核版本```uname -r```），而5.6版本以上内核才集成Wireguard，内核集成方案在理论上网络效率最高！（网络性能：内核集成>内核模块>Wireguard-Go）
 
@@ -41,7 +41,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/gener
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/xanmod-kernel.sh)
 ```
 -------------------------------------------------------------------------------------------------------------
-### 三：开启BBR加速（秋水逸冰大老-传统版，各类KVM的VPS通用）
+### 三：开启BBR加速（秋水逸冰大老-传统版，KVM的VPS通用）
 ```
 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 ```
@@ -66,7 +66,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4
 ### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
 -------------------------------------------------------------------------------------------
-### 其他VPS查看专用ip方式
+### 其他KVM架构VPS查看专用ip方式
 脚本1不用输入专用IP。脚本2与3需要输入专用IP（防止VPS本地IP套WARP后失联），根据不同的VPS，专用IP可能是IP，也可能是IP段。
 
 SSH查看方式：```ip -4 route```
