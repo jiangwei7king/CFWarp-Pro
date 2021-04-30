@@ -65,6 +65,8 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4
 ```
 ### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
+### 推荐使用Xray脚本项目（mack-a）：https://github.com/mack-a/v2ray-agent
+
 -------------------------------------------------------------------------------------------
 ### 其他KVM架构VPS查看专用ip方式（待更新）
 脚本1不用输入专用IP。脚本2与3需要输入专用IP（防止VPS本地IP套WARP后失联），根据不同的VPS，专用IP可能是IP，也可能是IP段。
