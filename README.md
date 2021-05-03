@@ -71,7 +71,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4
 ### 其他KVM架构VPS查看专用ip方式（待更新）
 脚本1不用输入专用IP。脚本2与3需要输入专用IP（防止VPS本地IP套WARP后失联），根据不同的VPS，专用IP可能是IP，也可能是IP段。
 
-进入SSH查看专用IP命令：```ip -4 route```
+进入SSH查看专用IP命令：```ip -4 route```或者```ip addr```
 
 结果会显示IP或者IP段，IP段用 /数字 表示！
 
