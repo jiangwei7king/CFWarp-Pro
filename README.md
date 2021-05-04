@@ -19,9 +19,9 @@
 6：WARP的IPV6替代HE tunnelbroker IPV6的隧道代理方案，做IPV6 VPS跳板机代理更加稳定、高效！
 
 --------------------------------------------------------------------------------------------------------
-### 一：设置Root密码一键脚本（抛弃秘钥文件，与sudo -i说再见。默认ROOT权限，方便登录与编辑文件）！！
+### 一：设置Root密码一键脚本（抛弃秘钥文件，彻底与sudo -i说再见。默认ROOT权限，方便登录与编辑文件）（KVM架构VPS通用）！！
 
-### 所有密钥登录的VPS通用，比如谷歌云！！！
+#### 建议在输入```sudo -i```后的ROOT模式下运行
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
