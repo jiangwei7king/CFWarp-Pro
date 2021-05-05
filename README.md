@@ -48,9 +48,9 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 -------------------------------------------------------------------------------------------------------------
 ### 四：重装系统能解决99%的问题，WARP三种情况最全脚本集合
 
-#### 仅支持Ubuntu 20.04系统，系统内核5.6以上！根据自己需求选择脚本1、脚本2或者脚本3（有无成功可查看脚本末尾提示）
+#### 仅支持Ubuntu 20.04系统，系统内核必须5.6以上！根据自己需求选择脚本1、脚本2或者脚本3（有无成功可查看脚本末尾提示）
 
-#### (双栈IPV4+IPV6)脚本1：IPV4是VPS本地IP，IPV6是WARP分配的IP (其他KVM架构IPV4 VPS推荐使用，无须输入专用IP)
+#### (双栈IPV4+IPV6)脚本1：IPV4是VPS本地IP，IPV6是WARP分配的IP (推荐其他KVM架构IPV4 VPS使用，无须输入专用IP)
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6.sh)
 ```
@@ -64,7 +64,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4
 ```
 ### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
-### 推荐使用Xray脚本项目（mack-a）：https://github.com/mack-a/v2ray-agent
+### 推荐使用Xray脚本项目（mack-a）：https://github.com/mack-a/v2ray-agent （注意CDN的WS、gRPC协议须改自选IP,如：icook.tw）
 
 -------------------------------------------------------------------------------------------
 ### 其他KVM架构VPS查看专用ip方式（待更新）
