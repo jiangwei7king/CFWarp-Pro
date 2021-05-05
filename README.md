@@ -50,7 +50,7 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 
 #### 仅支持Ubuntu 20.04系统，系统内核5.6以上！根据自己需求选择脚本1、脚本2或者脚本3（有无成功可查看脚本末尾提示）
 
-#### (双栈IPV4+IPV6)脚本1：IPV4是VPS本地IP，IPV6是WARP分配的IP
+#### (双栈IPV4+IPV6)脚本1：IPV4是VPS本地IP，IPV6是WARP分配的IP (其他KVM架构IPV4 VPS推荐使用，无须输入专用IP)
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6.sh)
 ```
