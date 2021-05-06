@@ -64,7 +64,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4
 ```
 ### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
-### 推荐使用Xray脚本项目（mack-a）：https://github.com/mack-a/v2ray-agent （注意CDN的WS、gRPC协议须改自选IP，如：icook.tw）
+### 推荐使用的Xray脚本项目：https://github.com/mack-a/v2ray-agent （注意CDN的WS、gRPC协议须改自选IP，如：icook.tw）
 
 -------------------------------------------------------------------------------------------
 ### 其他KVM架构VPS查看专用ip方式（待更新）
