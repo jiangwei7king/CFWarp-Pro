@@ -50,25 +50,25 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 
 #### 仅支持Ubuntu 20.04系统，系统内核必须5.6以上！根据自己需求选择脚本1、脚本2或者脚本3
 
-#### (双栈IPV4+IPV6)脚本1：IPV4是VPS本地IP，IPV6是WARP分配的IP (推荐其他KVM架构VPS直接使用，无须输入专用IP)
+#### 脚本1(双栈IPV4+IPV6)：IPV4是VPS本地IP，IPV6是WARP分配的IP (推荐其他KVM架构VPS直接使用，无须输入专用IP)
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6.sh)
 ```
-#### (双栈IPV4+IPV6)脚本2：IPV4与IPV6都是WARP分配的IP
+#### 脚本2(双栈IPV4+IPV6)：IPV4与IPV6都是WARP分配的IP（须输入专用IP）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp64.sh)
 ```
-#### (单IPV4)脚本3：IPV4是WARP分配的IP，无IPV6（不支持IPV6 VPS跳板机）
+#### 脚本3(单IPV4)：       IPV4是WARP分配的IP，无IPV6（须输入专用IP）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4.sh)
 ```
 ### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
-### 推荐使用的Xray脚本项目：https://github.com/mack-a/v2ray-agent （注意CDN的WS、gRPC协议须改自选IP，如：icook.tw）
+### 推荐使用的Xray脚本项目：https://github.com/mack-a/v2ray-agent （注意CDN的WS、gRPC协议改自选IP，如：icook.tw等）
 
 -------------------------------------------------------------------------------------------
 ### 其他KVM架构VPS查看专用ip方式（待更新）
-脚本1(推荐)不用输入专用IP。脚本2与3需要输入专用IP（防止VPS本地IP套WARP后失联），根据不同的VPS，专用IP可能是IP，也可能是IP段。
+脚本1不用输入专用IP。脚本2与3需要输入专用IP（防止VPS本地IP套WARP后失联），根据不同的VPS，专用IP可能是IP，也可能是IP段。
 
 进入SSH查看专用IP命令：```ip -4 route```或者```ip addr```
 
@@ -76,7 +76,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4
 
 例：有的VPS公网IP为123.456.2.3，而专用IP段可能就是123.456.0.1/16，此时，要输入的专用IP就是123.456.0.1/16，别忘记输入后面的/16哦！
 
-具体大家可以自己尝试，输错了可能导致VPS失联，也就那几个IP或者IP段，。
+由于各VPS厂商对专用IP的规定不一，具体大家可以自己尝试，输错了可能导致VPS失联，也就那几个IP或者IP段，。
 
 -------------------------------------------------------------------------------------------------------------
 #### Netflix检测项目：https://github.com/YG-tsj/Netflix-Check
