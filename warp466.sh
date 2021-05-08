@@ -8,7 +8,7 @@ echo | wgcf register
 wgcf generate
 sed -i '5 s/^/PostUp = ip -6 rule add from eu6 table main\n/' wgcf-profile.conf
 sed -i '6 s/^/PostDown = ip -6 rule delete from eu6 table main\n/' wgcf-profile.conf
-read -p "粘贴（专用IP地址）:" eu6
+read -p "粘贴（ipv6本地IP地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
 sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
