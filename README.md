@@ -46,22 +46,42 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 ```
 #### 检测BBR是否生效(显示有BBR，说明成功)：```lsmod | grep bbr```
 -------------------------------------------------------------------------------------------------------------
-### 四：重装系统能解决99%的问题，WARP三种情况最全脚本集合
+### 四:情况一（IPV4）：重装系统能解决99%的问题，WARP三种情况最全脚本集合
 
 #### 仅支持Ubuntu 20.04系统，系统内核必须5.6以上！根据自己需求选择脚本1、脚本2或者脚本3
 
-#### 脚本1(双栈IPV4+IPV6)：IPV4是VPS本地IP，IPV6是WARP分配的IP (推荐其他KVM架构VPS直接使用，无须输入专用IP)
+#### 脚本1(真IPV4+虚IPV6)：IPV6是WARP分配的IP (推荐其他KVM架构IPV4 VPS直接使用，无须输入相关IP)
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6.sh)
 ```
-#### 脚本2(双栈IPV4+IPV6)：IPV4与IPV6都是WARP分配的IP（须输入专用IP）
+#### 脚本2(真虚IPV4+虚IPV6)：IPV4与IPV6都是WARP分配的IP（须输入专用IP）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp64.sh)
 ```
-#### 脚本3(单IPV4)：       IPV4是WARP分配的IP，无IPV6（须输入专用IP）
+#### 脚本3(真虚IPV4)：       IPV4是WARP分配的IP，无IPV6（须输入专用IP）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4.sh)
 ```
+
+---------------------------------------------------------------------------------------------------------------
+### 四:情况二（IPV4+IPV6）：重装系统能解决99%的问题，WARP三种情况最全脚本集合
+
+#### 仅支持Ubuntu 20.04系统，系统内核必须5.6以上！根据自己需求选择脚本1、脚本2或者脚本3
+
+#### 脚本1(IPV4实+IPV6实虚)：IPV6是WARP分配的IP (须输入IPV6本地IP)
+```
+bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp466.sh)
+```
+#### 脚本2(IPV4实虚+IPV6实虚)：IPV4与IPV6都是WARP分配的IP（须输入专用IP与IPV6本地IP）
+```
+bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4646.sh)
+```
+#### 脚本3(IPV4实虚+IPV6实)：IPV4是WARP分配的IP（须输入专用IP）
+```
+bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp464.sh)
+```
+
+---------------------------------------------------------------------------------------------------------------
 ### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
 ### 推荐使用的Xray脚本项目：https://github.com/mack-a/v2ray-agent （注意CDN的WS、gRPC协议改自选IP，如：icook.tw等）
