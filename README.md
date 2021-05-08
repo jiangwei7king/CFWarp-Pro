@@ -1,6 +1,8 @@
-### Oracle甲骨文脚本集合，针对KVM架构IPV4 ONLY VPS，
+### Oracle甲骨文脚本集合，针对KVM架构IPV4 only VPS与IPV4+IPV6双栈VPS。
 
-### 本项目Youtube视频教程：https://youtu.be/o7e_ikV-m-g
+### 本项目IPV4 only VPS的Youtube视频教程：https://youtu.be/o7e_ikV-m-g
+
+### IPV4+IPV6双栈VPS视频教程：下期更新。。。。。。。。
 
 ### EUserv ipv6的(OpenVZ、LXC架构VPS)WARP项目:https://github.com/YG-tsj/EUserv-warp
 
@@ -64,9 +66,9 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4
 ```
 
 ---------------------------------------------------------------------------------------------------------------
-### 四:情况二（仅支持IPV4+IPV6的真双栈VPS，甲骨文支持开启IPV6）
+### 四:情况二（仅支持IPV4+IPV6的真双栈VPS，甲骨文支持开启IPV6，支持IPV6跳板机，支持IPV4与IPV6双线SSH同时登录！！）：YouTube视频教程下期更新。
 
-#### 仅支持Ubuntu 20.04系统，系统内核必须5.6以上！根据自己需求选择脚本1、脚本2或者脚本3
+#### 根据自己需求选择脚本1、脚本2或者脚本3，仅支持Ubuntu 20.04系统，系统内核必须5.6以上！
 
 #### 脚本1(真IPV4+真虚IPV6)：IPV6是WARP分配的IP (须输入IPV6本地IP)
 ```
