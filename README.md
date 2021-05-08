@@ -2,7 +2,7 @@
 
 ### 本项目IPV4 only VPS的Youtube视频教程：https://youtu.be/o7e_ikV-m-g
 
-### IPV4+IPV6双栈VPS视频教程：下期更新。。。。。。。。
+### IPV4+IPV6真双栈VPS视频教程：下期更新。。。。。。。。
 
 ### EUserv ipv6的(OpenVZ、LXC架构VPS)WARP项目:https://github.com/YG-tsj/EUserv-warp
 
