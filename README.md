@@ -1,4 +1,4 @@
-### Oracle甲骨文脚本集合，针对KVM架构IPV4 only VPS与IPV4+IPV6双栈VPS。
+### Oracle甲骨文脚本集合，针对KVM架构IPV4 only VPS与IPV4+IPV6真双栈VPS。
 
 ### 本项目IPV4 only VPS的Youtube视频教程：https://youtu.be/o7e_ikV-m-g
 
