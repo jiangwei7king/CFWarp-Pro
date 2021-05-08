@@ -46,9 +46,9 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 ```
 #### 检测BBR是否生效(显示有BBR，说明成功)：```lsmod | grep bbr```
 -------------------------------------------------------------------------------------------------------------
-### 四:情况一（IPV4）：重装系统能解决99%的问题，WARP三种情况最全脚本集合
+### 四:情况一（仅支持IPV4 VPS）
 
-#### 仅支持Ubuntu 20.04系统，系统内核必须5.6以上！根据自己需求选择脚本1、脚本2或者脚本3
+#### 根据自己需求选择脚本1、脚本2或者脚本3，仅支持Ubuntu 20.04系统，系统内核必须5.6以上！脚本1与脚本2支持IPV6跳板机
 
 #### 脚本1(真IPV4+虚IPV6)：IPV6是WARP分配的IP (推荐其他KVM架构IPV4 VPS直接使用，无须输入相关IP)
 ```
@@ -64,19 +64,19 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4
 ```
 
 ---------------------------------------------------------------------------------------------------------------
-### 四:情况二（IPV4+IPV6）：重装系统能解决99%的问题，WARP三种情况最全脚本集合
+### 四:情况二（仅支持IPV4+IPV6的真双栈VPS，甲骨文支持开启IPV6）
 
 #### 仅支持Ubuntu 20.04系统，系统内核必须5.6以上！根据自己需求选择脚本1、脚本2或者脚本3
 
-#### 脚本1(IPV4实+IPV6实虚)：IPV6是WARP分配的IP (须输入IPV6本地IP)
+#### 脚本1(真IPV4+真虚IPV6)：IPV6是WARP分配的IP (须输入IPV6本地IP)
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp466.sh)
 ```
-#### 脚本2(IPV4实虚+IPV6实虚)：IPV4与IPV6都是WARP分配的IP（须输入专用IP与IPV6本地IP）
+#### 脚本2(真虚IPV4+真虚IPV6)：IPV4与IPV6都是WARP分配的IP（须输入专用IP与IPV6本地IP）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4646.sh)
 ```
-#### 脚本3(IPV4实虚+IPV6实)：IPV4是WARP分配的IP（须输入专用IP）
+#### 脚本3(真虚IPV4+真IPV6)：IPV4是WARP分配的IP（须输入专用IP）
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp464.sh)
 ```
