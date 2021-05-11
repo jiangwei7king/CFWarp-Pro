@@ -1,7 +1,7 @@
 echo -e "\033[1;36m 请 注 意！脚 本 仅 支 持 Ubuntu20 系 统，且 内 核 5.6 版 本 以 上！\n 针对KVM架构的(IPV4+IPV6)双栈VPS！！！双栈Warp接管IPV4与IPV6网络！！！ \033[0m"
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
+wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
