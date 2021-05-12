@@ -1,6 +1,8 @@
-### 近期脚本将整合成六合一！！欢迎体验：bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/ceshi/main/705.sh)
+## 近期脚本将整合warp及其他多功能，方便大家使用！！
 
-更新中。。。。。。。。。。。。。。。。。。
+## 欢迎体验(功能继续添加中……)：```bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/ceshi/main/705.sh)```
+---------------------------------------------------------------------------------------------------------------
+## 以下内容将重装调整
 
 ### Oracle甲骨文脚本集合，针对KVM架构IPV4 only VPS与IPV4+IPV6真双栈VPS。
 
@@ -35,21 +37,9 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.
 
 #### 目前甲骨文Ubuntu20.04系统内核为5.4版本（查看内核版本```uname -r```），而5.6版本以上内核才集成Wireguard，内核集成方案在理论上网络效率最高！（网络性能：内核集成>内核模块>Wireguard-Go）
 
-#### 任选以下两个内核脚本中的一个进行升级，都集成删除iptables的代码```rm -rf /etc/iptables && reboot```，解决甲骨文Ubuntu系统类似Nginx等证书申请报错问题！
-
-### 1、通用内核5.11版本（推荐：通用稳定版，后续会更新）
-```
-bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/generic-kernel.sh)
-```
-### 2、第三方xanmod内核（安装时自动安装最新版本）
-```
-bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/xanmod-kernel.sh)
-```
 -------------------------------------------------------------------------------------------------------------
 ### 三：开启BBR加速（秋水逸冰大老-传统版，KVM架构VPS通用）
-```
-wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
-```
+
 #### 检测BBR是否生效(显示有BBR，说明成功)：```lsmod | grep bbr```
 -------------------------------------------------------------------------------------------------------------
 ### 四:情况一（仅支持IPV4 VPS）
@@ -57,17 +47,10 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 #### 根据自己需求选择脚本1、脚本2或者脚本3，仅支持Ubuntu 20.04系统，系统内核必须5.6以上！脚本1与脚本2支持IPV6跳板机
 
 #### 脚本1(真IPV4+虚IPV6)：IPV6是WARP分配的IP (推荐其他KVM架构IPV4 VPS直接使用，无须输入相关IP)
-```
-bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp6.sh)
-```
+
 #### 脚本2(真虚IPV4+虚IPV6)：IPV4与IPV6都是WARP分配的IP（须输入专用IP）
-```
-bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp64.sh)
-```
+
 #### 脚本3(真虚IPV4)：       IPV4是WARP分配的IP，无IPV6（须输入专用IP）
-```
-bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4.sh)
-```
 
 ---------------------------------------------------------------------------------------------------------------
 ### 四:情况二（仅支持IPV4+IPV6的真双栈VPS，甲骨文支持开启IPV6，支持IPV6跳板机，支持IPV4与IPV6双线SSH同时登录！！）：YouTube视频教程下期更新。
@@ -75,17 +58,11 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4
 #### 根据自己需求选择脚本1、脚本2或者脚本3，仅支持Ubuntu 20.04系统，系统内核必须5.6以上！
 
 #### 脚本1(真IPV4+真虚IPV6)：IPV6是WARP分配的IP (须输入IPV6本地IP)
-```
-bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp466.sh)
-```
+
 #### 脚本2(真虚IPV4+真虚IPV6)：IPV4与IPV6都是WARP分配的IP（须输入专用IP与IPV6本地IP）
-```
-bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp4646.sh)
-```
+
 #### 脚本3(真虚IPV4+真IPV6)：IPV4是WARP分配的IP（须输入专用IP）
-```
-bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/warp464.sh)
-```
+
 
 ---------------------------------------------------------------------------------------------------------------
 ### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
