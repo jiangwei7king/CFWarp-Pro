@@ -1,9 +1,10 @@
 ## 近期脚本将整合warp及其他多功能，方便大家使用！！
 
 ## 欢迎体验多功能一键脚本(功能继续添加中……)：
-```bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/ceshi/main/705.sh)```
+
+#### ```bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/ceshi/main/705.sh)```
 ---------------------------------------------------------------------------------------------------------------
-## 以下内容将重装调整
+## 以下说明内容将重新调整
 
 ### Oracle甲骨文脚本集合，针对KVM架构IPV4 only VPS与IPV4+IPV6真双栈VPS。
 
