@@ -1,6 +1,7 @@
 ## 近期脚本将整合warp及其他多功能，方便大家使用！！
 
-## 欢迎体验(功能继续添加中……)：```bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/ceshi/main/705.sh)```
+## 欢迎体验多功能一键脚本(功能继续添加中……)：
+```bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/ceshi/main/705.sh)```
 ---------------------------------------------------------------------------------------------------------------
 ## 以下内容将重装调整
 
