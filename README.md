@@ -1,4 +1,6 @@
-### 近期脚本将整合成六合一！！更新中！
+### 近期脚本将整合成六合一！！欢迎体验：bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/ceshi/main/705.sh)
+
+更新中。。。。。。。。。。。。。。。。。。
 
 ### Oracle甲骨文脚本集合，针对KVM架构IPV4 only VPS与IPV4+IPV6真双栈VPS。
 
