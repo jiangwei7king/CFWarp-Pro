@@ -195,6 +195,11 @@ function ip(){
 当前正使用的IPV4地址：$(wget -qO- ipv4.ip.sb) 当前正使用的IPV6地址：$(wget -qO- ipv6.ip.sb)
 }
 
+function Netflix(){
+snap install jq && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Netflix-Check/main/V4V6.sh)
+}
+
+
 #主菜单
 function start_menu(){
     clear
@@ -204,19 +209,20 @@ function start_menu(){
     blue " 1. 开启甲骨文VPS的ubuntu系统所有端口，自动断连后，请重新连接SSH（仅适用于甲骨文云） "
     blue " 2. 更新linux系统通用版内核至5.11版，自动断连后，请重新连接SSH "
     blue " 3. 启用teddysun版通用BBR加速 按任意键即可安装成功 "
+    blue " 4. 检测奈非Netflix是否解锁 "
     blue " =================================================="
-    green " 4. 仅适用于纯IPV4。       添加WARP分配的IPV6       (无须输入IP地址！其他vps推荐）" 
-    green " 5. 仅适用于纯IPV4。       添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址）"
-    green " 6. 仅适用于纯IPV4。       添加WARP分配的IPV4       (须输入VPS专用IP地址）"
-    green " 7. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV6       (须输入VPS本地IPV6地址)" 
-    green " 8. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址+VPS本地IPV6地址)"
-    green " 9. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV4       (须输入VPS专用IP地址)"
-    green " 10. 关闭WARP功能 "
-    green " 11. 开启WARP功能 "
-    green " 12. 查看VPS当前正在使用的IPV4/IPV6地址 "
+    green " 5. 仅适用于纯IPV4。       添加WARP分配的IPV6       (无须输入IP地址！其他vps推荐）" 
+    green " 6. 仅适用于纯IPV4。       添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址）"
+    green " 7. 仅适用于纯IPV4。       添加WARP分配的IPV4       (须输入VPS专用IP地址）"
+    green " 8. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV6       (须输入VPS本地IPV6地址)" 
+    green " 9. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址+VPS本地IPV6地址)"
+    green " 10. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV4       (须输入VPS专用IP地址)"
+    green " 11. 关闭WARP功能 "
+    green " 12. 开启WARP功能 "
+    green " 13. 查看VPS当前正在使用的IPV4/IPV6地址 "
     green " =================================================="
-    yellow " 13.使用mack-a脚本（Xray,V2ray,Trojan-go） "
-    yellow " 14.使用phlinhng脚本（Xray,Trojan-go,SS+v2ray-plugin） "
+    yellow " 14.使用mack-a脚本（Xray,V2ray,Trojan-go） "
+    yellow " 15.使用phlinhng脚本（Xray,Trojan-go,SS+v2ray-plugin） "
     yellow " =================================================="
     red " 0. 退出脚本"
     echo
@@ -230,38 +236,41 @@ function start_menu(){
 	;;
         3 )
            BBR
+	;;
+	4 )
+           Netflix
 	;;    
-        4 )
+        5 )
            warp6
 	;;
-        5 )
+        6 )
            warp64
 	;;
-        6 )
+        7 )
            warp4
 	;;
-        7 )
+        8 )
            warp466
 	;;
-        8 )
+        9 )
            warp4646
 	;;
-	9 )
+	10 )
            warp464
 	;;
-	10 )
+	11 )
            cwarp
 	;;
-	11 )
+	12 )
            owarp
 	;;
-	12 )
+	13 )
            ip
 	;;
-	13 )
+	14 )
            macka
 	;;
-	14 )
+	15 )
            phlinhng
 	;;
         0 )
