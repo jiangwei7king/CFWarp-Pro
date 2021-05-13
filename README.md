@@ -2,7 +2,7 @@
 
 ## 欢迎体验多功能一键脚本(功能继续添加中……)：
 
-#### ```bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/ceshi/main/705.sh)```
+#### ```bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multi.sh)```
 ---------------------------------------------------------------------------------------------------------------
 ## 以下说明内容将配合多功能脚本做出说明，将重新调整。。目前还没更新。。。。。。更新中。。。。
 
