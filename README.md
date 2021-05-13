@@ -2,9 +2,11 @@
 
 ## 欢迎体验多功能一键脚本(功能继续添加中……)：
 
- ```wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multi.sh && chmod +x multi.sh && ./multi.sh```
+ ```
+ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multi.sh && chmod +x multi.sh && ./multi.sh
+ ```
 
-#### 快捷方式```bash ~/multi.sh```
+#### 进入脚本快捷方式```bash ~/multi.sh```
 ---------------------------------------------------------------------------------------------------------------
 ## 以下内容将配合多功能脚本做出说明，将重新调整。。。。。更新中。。
 
