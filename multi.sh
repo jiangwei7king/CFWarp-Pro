@@ -44,7 +44,7 @@ echo | wgcf register
 wgcf generate
 sed -i '5 s/^/PostUp = ip -4 rule add from eu6 table main\n/' wgcf-profile.conf
 sed -i '6 s/^/PostDown = ip -4 rule delete from eu6 table main\n/' wgcf-profile.conf
-read -p "粘贴（专用IP地址）:" eu6
+read -p "粘贴（VPS专用IP地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
 sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844/g' wgcf-profile.conf
@@ -67,7 +67,7 @@ echo | wgcf register
 wgcf generate
 sed -i '5 s/^/PostUp = ip -4 rule add from eu6 table main\n/' wgcf-profile.conf
 sed -i '6 s/^/PostDown = ip -4 rule delete from eu6 table main\n/' wgcf-profile.conf
-read -p "粘贴（专用IP地址）:" eu6
+read -p "粘贴（VPS专用IP地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
@@ -91,7 +91,7 @@ echo | wgcf register
 wgcf generate
 sed -i '5 s/^/PostUp = ip -6 rule add from eu6 table main\n/' wgcf-profile.conf
 sed -i '6 s/^/PostDown = ip -6 rule delete from eu6 table main\n/' wgcf-profile.conf
-read -p "粘贴（ipv6本地IP地址）:" eu6
+read -p "粘贴（VPS本地IPV6地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
 sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
 sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844/g' wgcf-profile.conf
@@ -114,11 +114,11 @@ echo | wgcf register
 wgcf generate
 sed -i '5 s/^/PostUp = ip -4 rule add from eu4 table main\n/' wgcf-profile.conf
 sed -i '6 s/^/PostDown = ip -4 rule delete from eu4 table main\n/' wgcf-profile.conf
-read -p "粘贴（专用IP地址）:" eu4
+read -p "粘贴（VPS专用IP地址）:" eu4
 sed -i "s#eu4#$eu4#g" wgcf-profile.conf
 sed -i '7 s/^/PostUp = ip -6 rule add from eu6 table main\n/' wgcf-profile.conf
 sed -i '8 s/^/PostDown = ip -6 rule delete from eu6 table main\n/' wgcf-profile.conf
-read -p "粘贴（ipv6本地IP地址）:" eu6
+read -p "粘贴（VPS本地IPV6地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
 sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
@@ -140,7 +140,7 @@ echo | wgcf register
 wgcf generate
 sed -i '5 s/^/PostUp = ip -4 rule add from eu6 table main\n/' wgcf-profile.conf
 sed -i '6 s/^/PostDown = ip -4 rule delete from eu6 table main\n/' wgcf-profile.conf
-read -p "粘贴（专用IP地址）:" eu6
+read -p "粘贴（VPS专用IP地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
 sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844/g' wgcf-profile.conf
