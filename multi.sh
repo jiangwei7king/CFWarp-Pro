@@ -204,7 +204,7 @@ snap install jq && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Net
 #主菜单
 function start_menu(){
     clear
-    red " 详细说明请看Github项目地址 https://github.com/YG-tsj/Oracle-warp  YouTube频道：甬哥探世界 " 
+    red " 详细说明 https://github.com/YG-tsj/Oracle-warp  YouTube频道：甬哥探世界 " 
     
     red " 围绕WARP功能的脚本，目前仅支持Ubuntu 20.04系统，Linux系统内核必须5.6以上，还在优化更新中…… "  
     
