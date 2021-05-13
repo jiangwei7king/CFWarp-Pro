@@ -192,7 +192,8 @@ curl -fsSL https://raw.staticdn.net/phlinhng/v2ray-tcp-tls-web/main/src/xwall.sh
 }
 
 function ip(){
-green " 当前正使用的IPV4地址：$(wget -qO- ipv4.ip.sb) 当前正使用的IPV6地址：$(wget -qO- ipv6.ip.sb) "
+wget -qO- ipv4.ip.sb
+wget -qO- ipv6.ip.sb
 }
 
 function Netflix(){
