@@ -204,26 +204,47 @@ snap install jq && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Net
 function start_menu(){
     clear
     red " 详细说明请看Github项目地址 https://github.com/YG-tsj/Oracle-warp  YouTube频道：甬哥探世界 " 
-    red " 围绕WARP功能的脚本，目前仅支持Ubuntu 20.04系统，Linux系统内核必须5.6以上，还在优化更新中…… "     
+    
+    red " 围绕WARP功能的脚本，目前仅支持Ubuntu 20.04系统，Linux系统内核必须5.6以上，还在优化更新中…… "  
+    
     red " ====================================================" 
+    
     blue " 1. 开启甲骨文VPS的ubuntu系统所有端口，自动断连后，请重新连接SSH（仅适用于甲骨文云） "
+    
     blue " 2. 更新linux系统通用版内核至5.11版，自动断连后，请重新连接SSH "
+    
     blue " 3. 启用teddysun版通用BBR加速 按任意键即可安装成功 "
+    
     blue " 4. 检测奈非Netflix是否解锁 "
+    
     blue " =================================================="
+    
     green " 5. 仅适用于纯IPV4。       添加WARP分配的IPV6       (无须输入IP地址！其他vps推荐）" 
+    
     green " 6. 仅适用于纯IPV4。       添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址）"
+    
     green " 7. 仅适用于纯IPV4。       添加WARP分配的IPV4       (须输入VPS专用IP地址）"
+    
     green " 8. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV6       (须输入VPS本地IPV6地址)" 
+    
     green " 9. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址+VPS本地IPV6地址)"
+    
     green " 10. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV4       (须输入VPS专用IP地址)"
+    
     green " 11. 关闭WARP功能 "
+    
     green " 12. 开启WARP功能 "
+    
     green " 13. 查看VPS当前正在使用的IPV4/IPV6地址 "
+    
     green " =================================================="
+    
     yellow " 14.使用mack-a脚本（Xray,V2ray,Trojan-go） "
+    
     yellow " 15.使用phlinhng脚本（Xray,Trojan-go,SS+v2ray-plugin） "
+    
     yellow " =================================================="
+    
     red " 0. 退出脚本"
     echo
     read -p "请输入数字:" menuNumberInput
