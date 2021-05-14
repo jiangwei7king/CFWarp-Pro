@@ -246,7 +246,7 @@ green " 检测是否成功关闭Warp！请对照下方显示的IP地址是否与
 function owarp(){
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
-green " 检测是否成功启动Warp！如下方显示为IPV4地址：8.…………，IPV6地址：2a09:…………，则说明成功启动！\n 当前IPV4地址：$(wget -qO- ipv4.ip.sb) 当前IPV6地址：$(wget -qO- ipv6.ip.sb) "
+green " 检测是否成功启动Warp！如下方显示为IPV4地址：8.…………，或者，IPV6地址：2a09:…………，则说明成功启动！\n 当前IPV4地址：$(wget -qO- ipv4.ip.sb) 当前IPV6地址：$(wget -qO- ipv6.ip.sb) "
 }
 
 function macka(){
