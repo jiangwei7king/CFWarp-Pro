@@ -236,7 +236,7 @@ function start_menu(){
     
     blue " 1. 开启甲骨文VPS的ubuntu系统所有端口，自动断连后，请重新连接SSH（甲骨文云用户必须选择！！） "
     
-    blue " 2. 更新linux系统通用版内核至5.11版，自动断连后，请重新连接SSH（安装WARP必须选择！！） "
+    blue " 2. 更新linux系统通用版内核至5.11版（如5.6以上不用安装），自动断连后，请重新连接SSH（采用内核集成的WARP模式，安装WARP必须选择！！） "
     
     blue " 3. 启用teddysun通用版BBR加速 按任意键即可安装成功 "
     
