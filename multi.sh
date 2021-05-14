@@ -17,14 +17,12 @@ blue(){
 function warp6(){
 yellow " 检测当前内核版本 "
 uname -r
-yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 5s
 
 main=`uname  -r | awk -F . '{print $1 }'`
 minor=`uname -r | awk -F . '{print $2}'`
 
 if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
-	yellow " 检测到内核版本太低，升级内核5.6版本以上才能实现网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
+	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
 
@@ -50,8 +48,15 @@ green " 如上方显示IPV6地址：2a09:…………，则说明成功啦！\n 
 function warp64(){
 yellow " 检测当前内核版本 "
 uname -r
-yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 5s
+
+main=`uname  -r | awk -F . '{print $1 }'`
+minor=`uname -r | awk -F . '{print $2}'`
+
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
+	exit 1
+fi
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -77,8 +82,15 @@ green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:………
 function warp4(){
 yellow " 检测当前内核版本 "
 uname -r
-yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 5s
+
+main=`uname  -r | awk -F . '{print $1 }'`
+minor=`uname -r | awk -F . '{print $2}'`
+
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
+	exit 1
+fi
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -105,8 +117,15 @@ green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如
 function warp466(){
 yellow " 检测当前内核版本 "
 uname -r
-yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 5s
+
+main=`uname  -r | awk -F . '{print $1 }'`
+minor=`uname -r | awk -F . '{print $2}'`
+
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
+	exit 1
+fi
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -132,8 +151,15 @@ green " 如上方显示IPV6地址：2a09:…………，则说明成功啦！\n 
 function warp4646(){
 yellow " 检测当前内核版本 "
 uname -r
-yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 5s
+
+main=`uname  -r | awk -F . '{print $1 }'`
+minor=`uname -r | awk -F . '{print $2}'`
+
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
+	exit 1
+fi
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -162,8 +188,15 @@ green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:………
 function warp464(){
 yellow " 检测当前内核版本 "
 uname -r
-yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 5s
+
+main=`uname  -r | awk -F . '{print $1 }'`
+minor=`uname -r | awk -F . '{print $2}'`
+
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
+	exit 1
+fi
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -239,13 +272,13 @@ function start_menu(){
     clear
     red " 详细说明 https://github.com/YG-tsj/Oracle-warp  YouTube频道：甬哥探世界 " 
     
-    red " 围绕WARP功能的脚本，目前仅支持Ubuntu 20.04系统，Linux系统内核必须5.6以上，还在优化更新中…… "  
+    red " 围绕WARP功能的脚本，目前仅支持Ubuntu 20.04系统，还在优化添加新功能中…… "  
     
     red " ====================================================" 
     
     blue " 1. 开启甲骨文VPS的ubuntu系统所有端口，自动断连后，请重新连接SSH（甲骨文云用户必须选择！！） "
     
-    blue " 2. 更新linux系统通用版内核至5.11版（如5.6以上不用安装），自动断连后，请重新连接SSH（采用内核集成的WARP模式，安装WARP必须选择！！） "
+    blue " 2. 更新linux系统通用版内核至5.11版，自动断连后，请重新连接SSH "
     
     blue " 3. 启用teddysun通用版BBR加速 按任意键即可安装成功 "
     
