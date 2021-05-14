@@ -17,7 +17,8 @@ blue(){
 function warp6(){
 yellow " 检测当前内核版本 "
 uname -r
-sleep 5s
+yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
+sleep 8s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -38,6 +39,10 @@ green " 如上方显示IPV6地址：2a09:…………，则说明成功啦！\n 
 }
 
 function warp64(){
+yellow " 检测当前内核版本 "
+uname -r
+yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
+sleep 8s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -61,6 +66,10 @@ green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:………
 }
 
 function warp4(){
+yellow " 检测当前内核版本 "
+uname -r
+yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
+sleep 8s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -85,6 +94,10 @@ green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如
 }
 
 function warp466(){
+yellow " 检测当前内核版本 "
+uname -r
+yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
+sleep 8s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -108,6 +121,10 @@ green " 如上方显示IPV6地址：2a09:…………，则说明成功啦！\n 
 }
 
 function warp4646(){
+yellow " 检测当前内核版本 "
+uname -r
+yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
+sleep 8s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -134,6 +151,10 @@ green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:………
 }
 
 function warp464(){
+yellow " 检测当前内核版本 "
+uname -r
+yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
+sleep 8s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
