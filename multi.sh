@@ -210,17 +210,17 @@ function start_menu(){
     
     red " ====================================================" 
     
-    blue " 1. 开启甲骨文VPS的ubuntu系统所有端口，自动断连后，请重新连接SSH（仅适用于甲骨文云） "
+    blue " 1. 开启甲骨文VPS的ubuntu系统所有端口，自动断连后，请重新连接SSH（甲骨文云用户必须选择！！） "
     
-    blue " 2. 更新linux系统通用版内核至5.11版，自动断连后，请重新连接SSH "
+    blue " 2. 更新linux系统通用版内核至5.11版，自动断连后，请重新连接SSH（安装WARP必须选择！！） "
     
-    blue " 3. 启用teddysun版通用BBR加速 按任意键即可安装成功 "
+    blue " 3. 启用teddysun通用版BBR加速 按任意键即可安装成功 "
     
     blue " 4. 检测奈非Netflix是否解锁 "
     
     blue " =================================================="
     
-    green " 5. 仅适用于单IPV4的VPS。         添加WARP分配的IPV6       (无须输入IP地址！其他vps推荐）" 
+    green " 5. 仅适用于单IPV4的VPS。         添加WARP分配的IPV6       (无须输入IP地址！其他vps无脑推荐）" 
     
     green " 6. 仅适用于单IPV4的VPS。         添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址）"
     
@@ -232,17 +232,17 @@ function start_menu(){
     
     green " 10. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV4      (须输入VPS专用IP地址)"
     
-    green " 11. 关闭WARP功能 "
+    green " 11. 永久关闭WARP功能 "
     
-    green " 12. 开启WARP功能 "
+    green " 12. 自动开启WARP功能 "
     
     green " 13. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
     green " =================================================="
     
-    yellow " 14.使用mack-a脚本（Xray,V2ray,Trojan-go） "
+    yellow " 14.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    yellow " 15.使用phlinhng脚本（Xray,Trojan-go,SS+v2ray-plugin） "
+    yellow " 15.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
     yellow " =================================================="
     
