@@ -197,7 +197,7 @@ wget -qO- ipv6.ip.sb
 }
 
 function Netflix(){
-snap install jq && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Netflix-Check/main/V4V6.sh)
+apt update && snap install jq && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Netflix-Check/main/V4V6.sh)
 }
 
 
