@@ -15,6 +15,9 @@ blue(){
 }
 
 function warp6(){
+yellow " 检测当前内核版本 "
+uname -r
+sleep 5s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
