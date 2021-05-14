@@ -19,6 +19,15 @@ yellow " 检测当前内核版本 "
 uname -r
 yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
 sleep 5s
+
+main=`uname  -r | awk -F . '{print $1 }'`
+minor=`uname -r | awk -F . '{print $2}'`
+
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	yellow " 检测到内核版本太低，升级内核5.6版本以上才能实现网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
+	exit 1
+fi
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
