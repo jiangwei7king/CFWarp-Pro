@@ -220,17 +220,17 @@ function start_menu(){
     
     blue " =================================================="
     
-    green " 5. 仅适用于纯IPV4。       添加WARP分配的IPV6       (无须输入IP地址！其他vps推荐）" 
+    green " 5. 仅适用于单IPV4的VPS。         添加WARP分配的IPV6       (无须输入IP地址！其他vps推荐）" 
     
-    green " 6. 仅适用于纯IPV4。       添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址）"
+    green " 6. 仅适用于单IPV4的VPS。         添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址）"
     
-    green " 7. 仅适用于纯IPV4。       添加WARP分配的IPV4       (须输入VPS专用IP地址）"
+    green " 7. 仅适用于单IPV4的VPS。         添加WARP分配的IPV4       (须输入VPS专用IP地址）"
     
-    green " 8. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV6       (须输入VPS本地IPV6地址)" 
+    green " 8. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV6       (须输入VPS本地IPV6地址)" 
     
-    green " 9. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址+VPS本地IPV6地址)"
+    green " 9. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址+VPS本地IPV6地址)"
     
-    green " 10. 仅适用于双栈IPV4+IPV6。添加WARP分配的IPV4       (须输入VPS专用IP地址)"
+    green " 10. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV4      (须输入VPS专用IP地址)"
     
     green " 11. 关闭WARP功能 "
     
