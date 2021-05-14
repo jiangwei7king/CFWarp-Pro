@@ -18,7 +18,7 @@ function warp6(){
 yellow " 检测当前内核版本 "
 uname -r
 yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 8s
+sleep 5s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -42,7 +42,7 @@ function warp64(){
 yellow " 检测当前内核版本 "
 uname -r
 yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 8s
+sleep 5s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -69,7 +69,7 @@ function warp4(){
 yellow " 检测当前内核版本 "
 uname -r
 yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 8s
+sleep 5s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -97,7 +97,7 @@ function warp466(){
 yellow " 检测当前内核版本 "
 uname -r
 yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 8s
+sleep 5s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -124,7 +124,7 @@ function warp4646(){
 yellow " 检测当前内核版本 "
 uname -r
 yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 8s
+sleep 5s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -154,7 +154,7 @@ function warp464(){
 yellow " 检测当前内核版本 "
 uname -r
 yellow " 如显示5.6以下版本，请按ctrl+z，终止脚本运行 "
-sleep 8s
+sleep 5s
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
