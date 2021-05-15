@@ -245,7 +245,6 @@ systemctl disable wg-quick@wgcf
 function owarp(){
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
-green " 检测是否成功启动Warp！如下方显示为IPV4地址：8.…………，或者，IPV6地址：2a09:…………，则说明成功启动！\n 当前IPV4地址：$(wget -qO- ipv4.ip.sb) 当前IPV6地址：$(wget -qO- ipv6.ip.sb) "
 }
 
 function macka(){
@@ -297,7 +296,7 @@ function start_menu(){
     
     green " 10. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV4      (须输入VPS专用IP地址)"
     
-    green " 11. 永久关闭WARP功能 "
+    green " 11. 永久关闭WARP功能（执行此操作后，5~10选项的WARP脚本才可相互替换成功，） "
     
     green " 12. 自动开启WARP功能 "
     
