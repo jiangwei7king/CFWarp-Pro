@@ -264,7 +264,7 @@ curl -6 ip.p3terx.com
 }
 
 function Netflix(){
-apt update && snap install jq && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Netflix-Check/main/V4V6.sh)
+wget -O nf https://cdn.jsdelivr.net/gh/sjlleo/netflix-verify/CDNRelease/nf_2.60_linux_amd64 && chmod +x nf && clear && ./nf
 }
 
 
