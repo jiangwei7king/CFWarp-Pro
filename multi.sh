@@ -301,7 +301,7 @@ function start_menu(){
     
     green " 10. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV4      (须输入VPS专用IP地址)"
     
-    green " 11. 永久关闭WARP功能（替换WARP脚本，请先执行关闭，再执行5-10） "
+    green " 11. 永久关闭WARP功能（先关闭才可替换WARP脚本，再执行5-7或8-10） "
     
     green " 12. 自动开启WARP功能 "
     
