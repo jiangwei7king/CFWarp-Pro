@@ -69,6 +69,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.
 
 #### 脚本3(真虚IPV4+真IPV6)：IPV4是WARP分配的IP（须输入专用IP）
 
+![24b5c5ed3ccac1bc1a01de1336ffb75](https://user-images.githubusercontent.com/80431714/118347901-0dac5480-b579-11eb-8fa7-9880b8fbb0aa.png)
 
 ---------------------------------------------------------------------------------------------------------------
 ### 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
