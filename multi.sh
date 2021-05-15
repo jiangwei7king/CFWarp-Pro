@@ -255,9 +255,12 @@ function phlinhng(){
 curl -fsSL https://raw.staticdn.net/phlinhng/v2ray-tcp-tls-web/main/src/xwall.sh -o ~/xwall.sh && bash ~/xwall.sh
 }
 
-function ip(){
-wget -qO- ipv4.ip.sb
-wget -qO- ipv6.ip.sb
+function ipv4(){
+curl -4 ip.p3terx.com
+}
+
+function ipv6(){
+curl -6 ip.p3terx.com
 }
 
 function Netflix(){
@@ -274,7 +277,9 @@ function start_menu(){
     
     red " ====================================================" 
     
-    blue " 1. 开启甲骨文VPS的ubuntu系统所有端口，自动断连后，请重新连接SSH（甲骨文云用户必须选择！！） "
+    yellow " 请选择（共1~16选项）"
+    
+    blue " 1. 开启甲骨文VPS的ubuntu系统所有端口，自动断连后，请重新连接SSH（甲骨文云用户建议选择！！） "
     
     blue " 2. 更新linux系统通用版内核至5.11版，自动断连后，请重新连接SSH "
     
@@ -300,13 +305,15 @@ function start_menu(){
     
     green " 12. 自动开启WARP功能 "
     
-    green " 13. 查看VPS当前正在使用的IPV4/IPV6地址 "
+    green " 13. 查看VPS当前正在使用的IPV4地址 "
+    
+    green " 14. 查看VPS当前正在使用的IPV6地址 "
     
     green " =================================================="
     
-    yellow " 14.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    yellow " 15.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    yellow " 15.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
+    yellow " 16.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
     yellow " =================================================="
     
@@ -351,12 +358,15 @@ function start_menu(){
            owarp
 	;;
 	13 )
-           ip
+           ipv4
 	;;
 	14 )
-           macka
+           ipv6
 	;;
 	15 )
+           macka
+	;;
+	16 )
            phlinhng
 	;;
         0 )
