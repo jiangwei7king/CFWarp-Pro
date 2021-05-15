@@ -6,18 +6,8 @@
 
 ### EUserv ipv6的(OpenVZ、LXC架构VPS)WARP项目:https://github.com/YG-tsj/EUserv-warp
 
-### 近期脚本将整合WARP及其他多功能，方便大家使用！！欢迎体验多功能一键脚本(功能继续添加中……)：
 
- ```
- wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multi.sh && chmod +x multi.sh && ./multi.sh
- ```
-
-#### 进入脚本快捷方式```bash ~/multi.sh```
 ---------------------------------------------------------------------------------------------------------------
-### 以下内容将配合多功能脚本做出说明。。。更新中。。
-![24b5c5ed3ccac1bc1a01de1336ffb75](https://user-images.githubusercontent.com/80431714/118347915-2caae680-b579-11eb-97a6-72074b289b73.png)
-
-----------------------------------------------------------------------------------------------------------------
 ### 给ipv4 only VPS添加WARP的好处：
 
 1：使只有IPV4的VPS获取访问IPV6的能力，套上WARP的ip，变成双栈VPS！
@@ -44,12 +34,27 @@
 4：避开原VPS的IP需要谷歌验证码问题！
 
 
-### 一：设置Root密码一键脚本（用户名：root，密码自定义。方便登录与编辑文件）（KVM架构VPS通用）！！
-
+### 可选：设置Root密码一键脚本（用户名：root，密码自定义。方便登录与编辑文件）（KVM架构VPS通用）！！
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
 -----------------------------------------------------------------------------------------------------
+### 整合WARP及其他多功能！多功能一键脚本(功能继续添加中……)：
+
+ ```
+ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multi.sh && chmod +x multi.sh && ./multi.sh
+ ```
+
+#### 进入脚本快捷方式
+```
+bash ~/multi.sh
+```
+--------------------------------------------------------------------------------------------------
+### 以下内容将配合多功能脚本做出说明。。。更新中。。
+![24b5c5ed3ccac1bc1a01de1336ffb75](https://user-images.githubusercontent.com/80431714/118347915-2caae680-b579-11eb-97a6-72074b289b73.png)
+-------------------------------------------------------------------------------------------------
+
+
 ### 二：更新甲骨文Ubuntu系统内核一键脚本（KVM架构VPS通用，5.6以上不用安装）
 
 #### 目前甲骨文Ubuntu20.04系统内核为5.4版本（查看内核版本```uname -r```），而5.6版本以上内核才集成Wireguard，内核集成方案在理论上网络效率最高！（网络性能：内核集成>内核模块>Wireguard-Go）
