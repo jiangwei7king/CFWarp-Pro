@@ -279,7 +279,7 @@ function start_menu(){
     
     yellow " 请选择（共1~16选项）"
     
-    blue " ==================一、VPS状态调整选择（更新中）=================================" 
+    blue " ==========================一、VPS状态调整选择（更新中）==========================================" 
     
     blue " 1. 开启甲骨文VPS的ubuntu系统所有端口，自动断连后，请重新连接SSH（甲骨文云用户建议选择！！） "
     
@@ -289,29 +289,33 @@ function start_menu(){
     
     blue " 4. 检测奈非Netflix是否解锁 "
     
-    green " =================二、WARP功能选择（更新中）================================="
+    green " =========================二、WARP功能选择（更新中）============================================="
     
-    green " 5. 仅适用于单IPV4的VPS。         添加WARP分配的IPV6       (无须输入IP地址！其他vps无脑推荐）" 
+    green " ====VPS原生IP数===================WARP将作用于在哪个IP===========是否需要填入相关IP=============="
     
-    green " 6. 仅适用于单IPV4的VPS。         添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址）"
+    green " 5. 仅适用于单IPV4的VPS。          添加WARP分配的IPV6         (无须输入IP地址！其他vps无脑推荐）" 
     
-    green " 7. 仅适用于单IPV4的VPS。         添加WARP分配的IPV4       (须输入VPS专用IP地址）"
+    green " 6. 仅适用于单IPV4的VPS。          添加WARP分配的IPV6与IPV4   (须输入VPS专用IP地址）"
     
-    green " 8. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV6       (须输入VPS本地IPV6地址)" 
+    green " 7. 仅适用于单IPV4的VPS。          添加WARP分配的IPV4         (须输入VPS专用IP地址）"
     
-    green " 9. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV6与IPV4 (须输入VPS专用IP地址+VPS本地IPV6地址)"
+    green " 8. 仅适用于双栈IPV4+IPV6的VPS。   添加WARP分配的IPV6         (须输入VPS本地IPV6地址)" 
     
-    green " 10. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV4      (须输入VPS专用IP地址)"
+    green " 9. 仅适用于双栈IPV4+IPV6的VPS。   添加WARP分配的IPV6与IPV4   (须输入VPS专用IP地址+VPS本地IPV6地址)"
     
-    green " 11. 永久关闭WARP功能（先关闭才可替换WARP脚本，再执行5~7或8~10） "
+    green " 10. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV4        (须输入VPS专用IP地址)"
     
-    green " 12. 自动开启WARP功能 "
+    green " ============================================================================================="
+    
+    green " 11. 永久关闭WARP功能 "
+    
+    green " 12. 自动开启WARP功能（脚本已默认开启） "
     
     green " 13. 查看VPS当前正在使用的IPV4地址 "
     
     green " 14. 查看VPS当前正在使用的IPV6地址 "
     
-    yellow " ===============三、代理协议脚本选择（更新中）==================================="
+    yellow " ======================三、代理协议脚本选择（更新中）==========================================="
     
     yellow " 15.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
