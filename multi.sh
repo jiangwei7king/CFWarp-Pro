@@ -291,23 +291,23 @@ function start_menu(){
     
     green " =========================二、WARP功能选择（更新中）=============================================="
     
-    green " ====VPS原生IP数===================WARP将作用于在哪个IP===========是否需要填入相关IP=============="
+    green " ====VPS原生IP数===================WARP将作用于在哪个IP===========是否需要输入相关IP=============="
     
-    green " 5. 仅适用于单IPV4的VPS。          添加WARP分配的IPV6         (无须输入IP地址！其他vps无脑推荐）" 
+    green " 5. 仅适用于单IPV4的VPS。          仅添加WARP分配的IPV6         (无须输入IP地址！其他vps无脑推荐）" 
     
-    green " 6. 仅适用于单IPV4的VPS。          添加WARP分配的IPV6与IPV4   (须输入VPS专用IP地址）"
+    green " 6. 仅适用于单IPV4的VPS。          添加WARP分配的IPV4与IPV6     (须输入VPS专用IP地址）"
     
-    green " 7. 仅适用于单IPV4的VPS。          添加WARP分配的IPV4         (须输入VPS专用IP地址）"
+    green " 7. 仅适用于单IPV4的VPS。          仅添加WARP分配的IPV4         (须输入VPS专用IP地址）"
     
-    green " 8. 仅适用于双栈IPV4+IPV6的VPS。   添加WARP分配的IPV6         (须输入VPS本地IPV6地址)" 
+    green " 8. 仅适用于双栈IPV4+IPV6的VPS。   仅添加WARP分配的IPV6         (须输入VPS本地IPV6地址)" 
     
-    green " 9. 仅适用于双栈IPV4+IPV6的VPS。   添加WARP分配的IPV6与IPV4   (须输入VPS专用IP地址+VPS本地IPV6地址)"
+    green " 9. 仅适用于双栈IPV4+IPV6的VPS。   添加WARP分配的IPV4与IPV6     (须输入VPS专用IP地址+VPS本地IPV6地址)"
     
-    green " 10. 仅适用于双栈IPV4+IPV6的VPS。  添加WARP分配的IPV4         (须输入VPS专用IP地址)"
+    green " 10. 仅适用于双栈IPV4+IPV6的VPS。  仅添加WARP分配的IPV4         (须输入VPS专用IP地址)"
     
     green " ================================================================================================"
     
-    green " 11. 永久关闭WARP功能 "
+    green " 11. 永久关闭WARP功能（还原VPS本地IP） "
     
     green " 12. 自动开启WARP功能（脚本已默认开启） "
     
@@ -321,7 +321,7 @@ function start_menu(){
     
     yellow " 16.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
-    yellow " =============================================================================================="
+    yellow " ================================================================================================"
     
     red " 0. 退出脚本"
     echo
