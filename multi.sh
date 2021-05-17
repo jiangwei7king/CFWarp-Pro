@@ -267,6 +267,9 @@ function Netflix(){
 wget -O nf https://cdn.jsdelivr.net/gh/sjlleo/netflix-verify/CDNRelease/nf_2.60_linux_amd64 && chmod +x nf && clear && ./nf -method full
 }
 
+function reboot(){
+reboot
+}
 
 #主菜单
 function start_menu(){
@@ -323,6 +326,8 @@ function start_menu(){
     
     yellow " ================================================================================================"
     
+    red " 17. 重启VPS实例，请重新连接SSH（提示：重启解决99%问题，甲骨文云也可进入实例后台执行“重新引导”功能）"
+    
     red " 0. 退出脚本"
     echo
     read -p "请输入数字:" menuNumberInput
@@ -374,6 +379,9 @@ function start_menu(){
 	;;
 	16 )
            phlinhng
+	;;
+	17 )
+           reboot
 	;;
         0 )
             exit 1
