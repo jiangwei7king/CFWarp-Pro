@@ -291,19 +291,19 @@ function start_menu(){
     
     green " =========================二、WARP功能选择（更新中）=============================================="
     
-    green " ----VPS原生IP数-------------------WARP将作用于在哪个IP-----------是否需要输入相关IP--------------"
+    green " ----VPS原生IP数--------------添加WARP虚拟IP的位置-----------是否需要输入相关IP--------------"
     
-    green " 5. 仅适用于单IPV4的VPS。          仅添加WARP分配的IPV6         (无须输入IP地址！其他vps无脑推荐）" 
+    green " 5. 单IPV4的VPS。             添加WARP虚拟IPV6              (无须输入IP地址！其他vps无脑推荐）" 
     
-    green " 6. 仅适用于单IPV4的VPS。          添加WARP分配的IPV4与IPV6     (须输入VPS专用IP地址）"
+    green " 6. 单IPV4的VPS。             添加WARP虚拟IPV4+虚拟IPV6      (须输入VPS专用IP地址）"
     
-    green " 7. 仅适用于单IPV4的VPS。          仅添加WARP分配的IPV4         (须输入VPS专用IP地址）"
+    green " 7. 单IPV4的VPS。             添加WARP虚拟IPV4              (须输入VPS专用IP地址）"
     
-    green " 8. 仅适用于双栈IPV4+IPV6的VPS。   仅添加WARP分配的IPV6         (须输入VPS本地IPV6地址)" 
+    green " 8. 双栈IPV4+IPV6的VPS。      添加WARP虚拟IPV6              (须输入VPS本地IPV6地址)" 
     
-    green " 9. 仅适用于双栈IPV4+IPV6的VPS。   添加WARP分配的IPV4与IPV6     (须输入VPS专用IP地址+VPS本地IPV6地址)"
+    green " 9. 双栈IPV4+IPV6的VPS。      添加WARP虚拟IPV4+虚拟IPV6      (须输入VPS专用IP地址+VPS本地IPV6地址)"
     
-    green " 10. 仅适用于双栈IPV4+IPV6的VPS。  仅添加WARP分配的IPV4         (须输入VPS专用IP地址)"
+    green " 10. 双栈IPV4+IPV6的VPS。     添加WARP虚拟IPV4              (须输入VPS专用IP地址)"
     
     green " ------------------------------------------------------------------------------------------------"
     
