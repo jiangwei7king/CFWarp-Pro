@@ -296,23 +296,23 @@ function start_menu(){
     
     green " ----VPS原生IP数--------------添加WARP虚拟IP的位置-----------是否需要输入相关IP--------------"
     
-    green " 5. 单IPV4的VPS。             添加WARP虚拟IPV6              (无须输入IP地址！其他vps无脑推荐）" 
+    green " 5. 单IPV4的VPS。             添加WARP虚拟IPV6               (无须输入IP地址！其他vps无脑推荐）" 
     
     green " 6. 单IPV4的VPS。             添加WARP虚拟IPV4+虚拟IPV6      (须输入VPS专用IP地址）"
     
-    green " 7. 单IPV4的VPS。             添加WARP虚拟IPV4              (须输入VPS专用IP地址）"
+    green " 7. 单IPV4的VPS。             添加WARP虚拟IPV4               (须输入VPS专用IP地址）"
     
-    green " 8. 双栈IPV4+IPV6的VPS。      添加WARP虚拟IPV6              (须输入VPS本地IPV6地址)" 
+    green " 8. 双栈IPV4+IPV6的VPS。      添加WARP虚拟IPV6               (须输入VPS本地IPV6地址)" 
     
     green " 9. 双栈IPV4+IPV6的VPS。      添加WARP虚拟IPV4+虚拟IPV6      (须输入VPS专用IP地址+VPS本地IPV6地址)"
     
-    green " 10. 双栈IPV4+IPV6的VPS。     添加WARP虚拟IPV4              (须输入VPS专用IP地址)"
+    green " 10. 双栈IPV4+IPV6的VPS。     添加WARP虚拟IPV4               (须输入VPS专用IP地址)"
     
     green " ------------------------------------------------------------------------------------------------"
     
     green " 11. 永久关闭WARP功能（1:还原VPS本地IP;2:更换WARP脚本须先执行） "
     
-    green " 12. 自动开启WARP功能（脚本已默认开启） "
+    green " 12. 自动开启WARP功能（5-10脚本已默认开启） "
     
     green " 13. 查看VPS当前正在使用的IPV4地址 "
     
