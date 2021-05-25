@@ -25,7 +25,11 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-
+echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
+systemctl restart systemd-resolved
+systemctl enable systemd-resolved
+mv /etc/resolv.conf  /etc/resolv.conf.bak
+ln -s /run/systemd/resolve/resolv.conf /etc/
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -35,14 +39,14 @@ echo | wgcf register
 wgcf generate
 sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
 sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
 rm -f warp6* wgcf*
 yellow " 检测是否成功启动Warp！\n 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
-green " 如上方显示IPV6地址：2a09:…………，则说明成功啦！\n 如上方无IP显示,（说明申请WGCF账户失败），请“无限”重复运行该脚本吧，直到成功为止！！！ "
+green " 如上方显示IPV6地址：2a09:…………，则说明成功啦！\n 如上方无IP显示,（说明申请WGCF账户失败），请继续运行该脚本吧，直到成功为止！！！ "
 }
 
 function warp64(){
@@ -56,7 +60,11 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-
+echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
+systemctl restart systemd-resolved
+systemctl enable systemd-resolved
+mv /etc/resolv.conf  /etc/resolv.conf.bak
+ln -s /run/systemd/resolve/resolv.conf /etc/
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -69,14 +77,14 @@ sed -i '6 s/^/PostDown = ip -4 rule delete from eu6 table main\n/' wgcf-profile.
 read -p "粘贴（VPS专用IP地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
 rm -f warp64* wgcf*
 yellow " 检测是否成功启动（IPV4+IPV6）双栈Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
-green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:…………，则说明成功啦！\n 如上方IPV4无IP显示,IPV6显示本地IP（说明申请WGCF账户失败），请“无限”重复运行该脚本吧，直到成功为止！！！ "
+green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:…………，则说明成功啦！\n 如上方IPV4无IP显示,IPV6显示本地IP（说明申请WGCF账户失败），请继续运行该脚本吧，直到成功为止！！！ "
 }
 
 function warp4(){
@@ -90,7 +98,11 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-
+echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
+systemctl restart systemd-resolved
+systemctl enable systemd-resolved
+mv /etc/resolv.conf  /etc/resolv.conf.bak
+ln -s /run/systemd/resolve/resolv.conf /etc/
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -104,14 +116,14 @@ read -p "粘贴（VPS专用IP地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
 rm -f warp4* wgcf*
 yellow " 检测是否成功启动Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) "
-green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如上方显示VPS本地IP,（说明申请WGCF账户失败），请“无限”重复运行该脚本吧，直到成功为止！！！ "
+green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如上方显示VPS本地IP,（说明申请WGCF账户失败），请继续运行该脚本吧，直到成功为止！！！ "
 }
 
 function warp466(){
@@ -125,7 +137,11 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-
+echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
+systemctl restart systemd-resolved
+systemctl enable systemd-resolved
+mv /etc/resolv.conf  /etc/resolv.conf.bak
+ln -s /run/systemd/resolve/resolv.conf /etc/
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -138,14 +154,14 @@ sed -i '6 s/^/PostDown = ip -6 rule delete from eu6 table main\n/' wgcf-profile.
 read -p "粘贴（VPS本地IPV6地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
 sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
 rm -f warp466* wgcf*
 yellow " 检测是否成功启动Warp！\n 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
-green " 如上方显示IPV6地址：2a09:…………，则说明成功啦！\n 如上方无IP显示,（说明申请WGCF账户失败），请“无限”重复运行该脚本吧，直到成功为止！！！ "
+green " 如上方显示IPV6地址：2a09:…………，则说明成功啦！\n 如上方无IP显示,（说明申请WGCF账户失败），请继续运行该脚本吧，直到成功为止！！！ "
 }
 
 function warp4646(){
@@ -159,7 +175,11 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-
+echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
+systemctl restart systemd-resolved
+systemctl enable systemd-resolved
+mv /etc/resolv.conf  /etc/resolv.conf.bak
+ln -s /run/systemd/resolve/resolv.conf /etc/
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -175,14 +195,14 @@ sed -i '7 s/^/PostUp = ip -6 rule add from eu6 table main\n/' wgcf-profile.conf
 sed -i '8 s/^/PostDown = ip -6 rule delete from eu6 table main\n/' wgcf-profile.conf
 read -p "粘贴（VPS本地IPV6地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
 rm -f warp4646* wgcf*
 yellow " 检测是否成功启动（IPV4+IPV6）双栈Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
-green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:…………，则说明成功啦！\n 如上方IPV4无IP显示,IPV6显示本地IP（说明申请WGCF账户失败），请“无限”重复运行该脚本吧，直到成功为止！！！ "
+green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:…………，则说明成功啦！\n 如上方IPV4无IP显示,IPV6显示本地IP（说明申请WGCF账户失败），请继续运行该脚本吧，直到成功为止！！！ "
 }
 
 function warp464(){
@@ -196,7 +216,11 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-
+echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
+systemctl restart systemd-resolved
+systemctl enable systemd-resolved
+mv /etc/resolv.conf  /etc/resolv.conf.bak
+ln -s /run/systemd/resolve/resolv.conf /etc/
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -209,14 +233,14 @@ sed -i '6 s/^/PostDown = ip -4 rule delete from eu6 table main\n/' wgcf-profile.
 read -p "粘贴（VPS专用IP地址）:" eu6
 sed -i "s#eu6#$eu6#g" wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8,2001:4860:4860::8888,2001:4860:4860::8844/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
 rm -f warp464* wgcf*
 yellow " 检测是否成功启动Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) "
-green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如上方显示VPS本地IP,（说明申请WGCF账户失败），请“无限”重复运行该脚本吧，直到成功为止！！！ "
+green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如上方显示VPS本地IP,（说明申请WGCF账户失败），请继续运行该脚本吧，直到成功为止！！！ "
 }
 
 function linux5.11(){
