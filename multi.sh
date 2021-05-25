@@ -342,6 +342,7 @@ function start_menu(){
     red " ==================================================================================================" 
     
     red " 0. 退出脚本"
+    red " 进入脚本快捷方式bash ~/multi.sh （如脚本更新，请先执行完整脚本）"
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
