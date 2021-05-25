@@ -295,6 +295,15 @@ function reboot(){
 sudo reboot
 }
 
+function dns(){
+echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
+systemctl restart systemd-resolved
+systemctl enable systemd-resolved
+mv /etc/resolv.conf  /etc/resolv.conf.bak
+ln -s /run/systemd/resolve/resolv.conf /etc/
+sudo reboot
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -308,9 +317,9 @@ function start_menu(){
     
     blue " ==========================一、VPS状态调整选择（更新中）==========================================" 
     
-    blue " 1. 开启甲骨文VPS的ubuntu系统所有端口，自动断连后，请重新连接SSH（甲骨文云用户建议选择！！） "
+    blue " 1. 开启甲骨文VPS的ubuntu系统所有端口。自动断连后，请重新连接SSH（甲骨文云用户建议选择！！） "
     
-    blue " 2. 更新linux系统通用版内核至5.11版，自动断连后，请重新连接SSH "
+    blue " 2. 更新linux系统通用版内核至5.11版。自动断连后，请重新连接SSH "
     
     blue " 3. 启用teddysun通用版BBR加速 按任意键即可安装成功 "
     
@@ -334,25 +343,27 @@ function start_menu(){
     
     green " ------------------------------------------------------------------------------------------------"
     
-    green " 11. 永久关闭WARP功能（1:还原VPS本地IP;2:更换WARP脚本须先执行） "
+    green " 11. 统一DNS设置。自动断连后，请重新连接SSH（使原系统本地DNS与本WARP设置的DNS统一,建议选择） "
     
-    green " 12. 自动开启WARP功能（5-10脚本已默认开启） "
+    green " 12. 永久关闭WARP功能（1:还原VPS本地IP;2:更换WARP脚本须先执行） "
     
-    green " 13. 查看VPS当前正在使用的IPV4地址 "
+    green " 13. 自动开启WARP功能（5-10脚本已默认集成此功能） "
     
-    green " 14. 查看VPS当前正在使用的IPV6地址 "
+    green " 14. 查看VPS当前正在使用的IPV4地址 "
+    
+    green " 15. 查看VPS当前正在使用的IPV6地址 "
     
     yellow " ========================三、代理协议脚本选择（更新中）==========================================="
     
-    yellow " 15.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    yellow " 16.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    yellow " 16.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
+    yellow " 17.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
-    yellow " ================================================================================================"
+    yellow " ==============================================================================================="
     
-    red " 17. 重启VPS实例，请重新连接SSH（提示：可进入实例后台执行“重新引导”类似的重启功能）"
+    red " 18. 重启VPS实例，请重新连接SSH（提示：可进入实例后台执行“重新引导”类似的重启功能）"
     
-    red " ===================================================================================================" 
+    red " ==================================================================================================" 
     
     red " 0. 退出脚本"
     echo
@@ -389,24 +400,27 @@ function start_menu(){
            warp464
 	;;
 	11 )
-           cwarp
+           dns
 	;;
 	12 )
-           owarp
+           cwarp
 	;;
 	13 )
-           ipv4
+           owarp
 	;;
 	14 )
-           ipv6
+           ipv4
 	;;
 	15 )
-           macka
+           ipv6
 	;;
 	16 )
-           phlinhng
+           macka
 	;;
 	17 )
+           phlinhng
+	;;
+	18 )
            reboot
 	;;
         0 )
