@@ -25,11 +25,7 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
-systemctl restart systemd-resolved
-systemctl enable systemd-resolved
-mv /etc/resolv.conf  /etc/resolv.conf.bak
-ln -s /run/systemd/resolve/resolv.conf /etc/
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -60,11 +56,7 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
-systemctl restart systemd-resolved
-systemctl enable systemd-resolved
-mv /etc/resolv.conf  /etc/resolv.conf.bak
-ln -s /run/systemd/resolve/resolv.conf /etc/
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -98,11 +90,7 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
-systemctl restart systemd-resolved
-systemctl enable systemd-resolved
-mv /etc/resolv.conf  /etc/resolv.conf.bak
-ln -s /run/systemd/resolve/resolv.conf /etc/
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -137,11 +125,7 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
-systemctl restart systemd-resolved
-systemctl enable systemd-resolved
-mv /etc/resolv.conf  /etc/resolv.conf.bak
-ln -s /run/systemd/resolve/resolv.conf /etc/
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -175,11 +159,7 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
-systemctl restart systemd-resolved
-systemctl enable systemd-resolved
-mv /etc/resolv.conf  /etc/resolv.conf.bak
-ln -s /run/systemd/resolve/resolv.conf /etc/
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
@@ -216,11 +196,7 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
 	exit 1
 fi
-echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
-systemctl restart systemd-resolved
-systemctl enable systemd-resolved
-mv /etc/resolv.conf  /etc/resolv.conf.bak
-ln -s /run/systemd/resolve/resolv.conf /etc/
+
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
