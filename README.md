@@ -2,7 +2,7 @@
 
 ### 本项目IPV4 only VPS的Youtube视频教程：https://youtu.be/o7e_ikV-m-g
 
-### IPV4+IPV6真双栈VPS视频教程：https://youtu.be/ap_krqWnikE
+### IPV4+IPV6真双栈套WARP,甲骨文添加IPV6，如何选择WARP脚本看奈非视频教程：https://youtu.be/ap_krqWnikE
 
 ### EUserv ipv6的(OpenVZ、LXC架构VPS)WARP项目:https://github.com/YG-tsj/EUserv-warp
 
@@ -92,7 +92,7 @@ bash ~/multi.sh
 #### 脚本7、结果表现为2个IP：VPS本地IPV4+WARP虚拟IPV4       
 
 ---------------------------------------------------------------------------------------------------------------
-### 8-10、WARP脚本（仅支持IPV4+IPV6的真双栈VPS，甲骨文支持开启IPV6，直接支持IPV6跳板机，支持IPV4与IPV6双线SSH同时登录！！）：YouTube视频教程下期更新。
+### 8-10、WARP脚本（仅支持IPV4+IPV6的真双栈VPS，甲骨文支持开启IPV6，支持IPV4与IPV6双线SSH同时登录！！）：YouTube视频教程https://youtu.be/ap_krqWnikE
 
 #### 脚本8、结果表现为3个IP：VPS本地IPV4+VPS本地IPV6+WARP虚拟IPV6
 
