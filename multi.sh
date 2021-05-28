@@ -280,6 +280,17 @@ ln -s /run/systemd/resolve/resolv.conf /etc/
 sudo reboot
 }
 
+function arm5.11(){
+cd /tmp
+wget --no-check-certificate -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11/arm64/linux-headers-5.11.0-051100-generic_5.11.0-051100.202102142330_arm64.deb
+wget --no-check-certificate -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11/arm64/linux-image-unsigned-5.11.0-051100-generic_5.11.0-051100.202102142330_arm64.deb 
+wget --no-check-certificate -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11/arm64/linux-modules-5.11.0-051100-generic_5.11.0-051100.202102142330_arm64.deb
+sudo dpkg -i *.deb
+sudo apt -f install
+sudo reboot
+}
+
+
 #主菜单
 function start_menu(){
     clear
