@@ -1,3 +1,5 @@
+## 目前仅支持X86  正在添加ARM支持。更新中。。。。。。。。。。。。。。。。。。。。
+
 ### Oracle甲骨文脚本集合，针对KVM X86架构 IPV4 only VPS与IPV4+IPV6真双栈VPS。
 
 ### IPV4 only VPS添加WARP Youtube视频教程：https://youtu.be/o7e_ikV-m-g
