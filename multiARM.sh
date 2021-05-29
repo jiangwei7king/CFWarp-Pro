@@ -292,7 +292,7 @@ function start_menu(){
     clear
     red " 详细说明 https://github.com/YG-tsj/Oracle-warp  YouTube频道：甬哥探世界 " 
     
-    red " 围绕WARP功能的脚本，目前仅支持KVM架构/Ubuntu 20.04系统，还在优化添加新功能中…… "  
+    red " 围绕WARP功能的脚本，目前仅支持ARM架构/Ubuntu 20.04系统，还在优化添加新功能中…… "  
     
     red " ==============================================================================================" 
     
@@ -302,7 +302,7 @@ function start_menu(){
     
     blue " 1. 开启甲骨文VPS的ubuntu系统所有端口。自动断连后，请重新连接SSH（甲骨文云用户建议选择！！） "
     
-    blue " 2. 更新linux系统通用版内核至5.11版。自动断连后，请重新连接SSH "
+    blue " 2. 更新linux系统ARM架构通用版内核至5.11版。自动断连后，请重新连接SSH "
     
     blue " 3. 启用通用传统版BBR加速 "
     
@@ -340,11 +340,9 @@ function start_menu(){
     
     yellow " 16.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    yellow " 17.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
-    
     yellow " ==============================================================================================="
     
-    red " 18. 重启VPS实例，请重新连接SSH "
+    red " 17. 重启VPS实例，请重新连接SSH "
     
     red " ==================================================================================================" 
     
@@ -401,9 +399,6 @@ function start_menu(){
            macka
 	;;
 	17 )
-           phlinhng
-	;;
-	18 )
            reboot
 	;;
         0 )
