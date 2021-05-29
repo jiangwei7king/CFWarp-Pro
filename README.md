@@ -1,6 +1,4 @@
-### 2021.5.28更新说明：目前仅支持X86 ，脚本正在添加ARM支持中。更新中。。。。。。。。。。。。。。。。。。。。
-
-### Oracle甲骨文脚本集合，针对KVM X86架构 IPV4 only VPS与IPV4+IPV6真双栈VPS。
+### Oracle甲骨文脚本集合，针对KVM X86架构/ARM架构 IPV4 only VPS与IPV4+IPV6真双栈VPS。
 
 ### IPV4 only VPS添加WARP Youtube视频教程：https://youtu.be/o7e_ikV-m-g
 
@@ -46,25 +44,35 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.
 -----------------------------------------------------------------------------------------------------
 ### 整合WARP及其他功能！全新一键脚本(功能继续添加中……)：
 
- ```
- wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multi.sh && chmod +x multi.sh && ./multi.sh
- ```
+## 支持KVM X86架构的VPS脚本
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiX86.sh && chmod +x multiX86.sh && ./multiX86.sh
+```
+#### 进入脚本快捷方式（如脚本更新，请先执行上面的完整脚本）
+```
+bash ~/multiX86.sh
+```
+------------------------------------------------------------------------------------------------------
+## 支持KVM ARM架构的VPS脚本
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiARM.sh && chmod +x multiARM.sh && ./multiARM.sh
+```
 
 #### 进入脚本快捷方式（如脚本更新，请先执行上面的完整脚本）
 ```
-bash ~/multi.sh
+bash ~/multiARM.sh
 ```
 --------------------------------------------------------------------------------------------------
 ### 以下内容将配合多功能脚本做出说明。。。更新中。。
 ![627132ab6488cadc9f53789ffaae946](https://user-images.githubusercontent.com/80431714/118383981-53c6ee00-b635-11eb-8896-f16697642fc0.png)
 
 -------------------------------------------------------------------------------------------------
-### 1、开启甲骨文VPS端口（甲骨文专用）：
+### 1、开启甲骨文VPS所有端口（甲骨文专用，务必选择）：
 
-解决代理协议申请证书发生Nginx等相关报错问题，采用的是简单暴力的删除iptable，完成后将自动断开VPS连接！
+解决代理协议申请证书发生Nginx等相关报错问题，完成后将自动断开VPS连接！
 
 --------------------------------------------------------------------------------------------------
-### 2、更新甲骨文Ubuntu系统内核（KVM架构X86 VPS通用）：
+### 2、更新甲骨文Ubuntu系统内核：
 
 目前甲骨文Ubuntu20.04系统内核为5.4版本，5.6版本以上内核才集成Wireguard，内核集成方案在理论上网络效率最高！（网络性能：内核集成>内核模块>Wireguard-Go）
 
@@ -73,7 +81,7 @@ bash ~/multi.sh
 更新完成后将自动断开VPS连接！
 
 ----------------------------------------------------------------------------------------------------------------
-### 3、开启BBR加速（秋水逸冰版，KVM架构VPS通用）：
+### 3、开启BBR加速（秋水逸冰版）：
 
 按任意键即可安装成功，检测BBR是否生效(显示有BBR，说明成功)：```lsmod | grep bbr```
 
