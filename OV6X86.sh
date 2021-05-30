@@ -55,7 +55,7 @@ sudo reboot
 }
 
 function dns(){
-echo 'DNS=2a00:1098:2c::1 2a00:1098:2b::1 2a01:4f8:c2c:123f::1'>> /etc/systemd/resolved.conf
+echo 'DNS=2a00:1098:2c::1'>> /etc/systemd/resolved.conf
 systemctl restart systemd-resolved
 systemctl enable systemd-resolved
 mv /etc/resolv.conf  /etc/resolv.conf.bak
