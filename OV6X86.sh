@@ -143,7 +143,7 @@ function start_menu(){
     clear
     red " 详细说明 https://github.com/YG-tsj/Oracle-warp  YouTube频道：甬哥探世界 " 
     
-    red " 围绕WARP功能的脚本，目前仅支持KVM ARM架构/Ubuntu 20.04系统，还在优化添加新功能中…… "  
+    red " 围绕WARP功能的脚本，目前仅支持KVM X86架构的纯IPV6 /Ubuntu 20.04系统，还在优化添加新功能中…… "  
     
     red " ==============================================================================================" 
     
