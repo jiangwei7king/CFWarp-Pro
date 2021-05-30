@@ -286,70 +286,6 @@ sudo apt -f install -y
 sudo reboot
 }
 
-function v646(){
-yellow " 检测当前内核版本 "
-uname -r
-
-main=`uname  -r | awk -F . '{print $1 }'`
-minor=`uname -r | awk -F . '{print $2}'`
-
-if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
-	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
-	exit 1
-fi
-
-apt update
-apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N -6 https://cdn.jsdelivr.net/gh/YG-tsj/Oracle-warp/wgcf
-cp wgcf /usr/local/bin/wgcf
-chmod +x /usr/local/bin/wgcf
-echo | wgcf register
-wgcf generate
-sed -i "5 s/^/PostUp = ip -6 rule add from $(wget -qO- ipv6.ip.sb) table main\n/" wgcf-profile.conf
-sed -i "6 s/^/PostDown = ip -6 rule delete from $(wget -qO- ipv6.ip.sb) table main\n/" wgcf-profile.conf
-sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
-cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
-cp wgcf-profile.conf /etc/wireguard/wgcf.conf
-systemctl enable wg-quick@wgcf
-systemctl start wg-quick@wgcf
-rm -f wgcf*
-grep -qE '^[ ]*precedence[ ]*::ffff:0:0/96[ ]*100' /etc/gai.conf || echo 'precedence ::ffff:0:0/96  100' | sudo tee -a /etc/gai.conf
-yellow " 检测是否成功启动（IPV4+IPV6）双栈Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
-green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:…………，则说明成功啦！\n 如上方IPV4无IP显示,IPV6显示本地IP（说明申请WGCF账户失败），请继续运行该脚本吧，直到成功为止！！！ "
-}
-
-function v64(){
-yellow " 检测当前内核版本 "
-uname -r
-
-main=`uname  -r | awk -F . '{print $1 }'`
-minor=`uname -r | awk -F . '{print $2}'`
-
-if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
-	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
-	exit 1
-fi
-apt update
-apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N -6 https://cdn.jsdelivr.net/gh/YG-tsj/Oracle-warp/wgcf
-cp wgcf /usr/local/bin/wgcf
-chmod +x /usr/local/bin/wgcf
-echo | wgcf register
-wgcf generate
-sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
-sed -i '/\:\:\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
-cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
-cp wgcf-profile.conf /etc/wireguard/wgcf.conf
-systemctl enable wg-quick@wgcf
-systemctl start wg-quick@wgcf
-rm -f wgcf*
-grep -qE '^[ ]*precedence[ ]*::ffff:0:0/96[ ]*100' /etc/gai.conf || echo 'precedence ::ffff:0:0/96  100' | sudo tee -a /etc/gai.conf
-yellow " 检测是否成功启动Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) "
-green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如上方显示VPS本地IP,（说明申请WGCF账户失败），请继续运行该脚本吧，直到成功为止！！！ "
-}
-
 
 #主菜单
 function start_menu(){
@@ -388,29 +324,25 @@ function start_menu(){
     
     green " 10. 双栈IPV4+IPV6的VPS。     添加WARP虚拟IPV4               (须输入VPS专用IP地址)"
     
-    green " 11. 纯IPV6的VPS。            添加WARP虚拟IPV4+虚拟IPV6      (无须输入IP地址！)"
-    
-    green " 12. 纯IPV6的VPS。            添加WARP虚拟IPV4               (无须输入IP地址！)"
-    
     green " ------------------------------------------------------------------------------------------------"
     
-    green " 13. 统一DNS设置。自动断连后，请重新连接SSH（建议选择） "
+    green " 11. 统一DNS设置。自动断连后，请重新连接SSH（建议选择） "
     
-    green " 14. 永久关闭WARP功能 "
+    green " 12. 永久关闭WARP功能 "
     
-    green " 15. 自动开启WARP功能 "
+    green " 13. 自动开启WARP功能 "
     
-    green " 16. 查看VPS当前正在使用的IPV4地址 "
+    green " 14. 查看VPS当前正在使用的IPV4地址 "
     
-    green " 17. 查看VPS当前正在使用的IPV6地址 "
+    green " 15. 查看VPS当前正在使用的IPV6地址 "
     
     yellow " ========================三、代理协议脚本选择（更新中）==========================================="
     
-    yellow " 18.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    yellow " 16.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
     
     yellow " ==============================================================================================="
     
-    red " 19. 重启VPS实例，请重新连接SSH "
+    red " 17. 重启VPS实例，请重新连接SSH "
     
     red " ==================================================================================================" 
     
@@ -449,30 +381,24 @@ function start_menu(){
            warp464
 	;;
 	11 )
-           v646
-	;;
-	12 )
-           v64
-	;;
-	13 )
            dns
 	;;
-	14 )
+	12 )
            cwarp
 	;;
-	15 )
+	13 )
            owarp
 	;;
-	16 )
+	14 )
            ipv4
 	;;
-	17 )
+	15 )
            ipv6
 	;;
-	18 )
+	16 )
            macka
 	;;
-	19 )
+	17 )
            reboot
 	;;
         0 )
