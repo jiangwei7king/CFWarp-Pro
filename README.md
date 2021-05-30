@@ -44,7 +44,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.
 -----------------------------------------------------------------------------------------------------
 ### 整合WARP及其他功能！全新一键脚本(功能继续添加中……)：
 
-## 支持KVM X86架构的WARP脚本
+## 支持KVM X86架构的WARP多功能脚本
 ```
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiX86.sh && chmod +x multiX86.sh && ./multiX86.sh
 ```
@@ -53,7 +53,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-w
 bash ~/multiX86.sh
 ```
 ------------------------------------------------------------------------------------------------------
-## 支持KVM ARM架构的WARP脚本
+## 支持KVM ARM架构的WARP多功能脚本
 ```
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiARM.sh && chmod +x multiARM.sh && ./multiARM.sh
 ```
