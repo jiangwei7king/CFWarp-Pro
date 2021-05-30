@@ -81,7 +81,7 @@ main=`uname  -r | awk -F . '{print $1 }'`
 minor=`uname -r | awk -F . '{print $2}'`
 
 if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
-	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
+	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择1，更新内核吧"
 	exit 1
 fi
 
@@ -114,7 +114,7 @@ main=`uname  -r | awk -F . '{print $1 }'`
 minor=`uname -r | awk -F . '{print $2}'`
 
 if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
-	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择2，更新内核吧"
+	red " 检测到内核版本小于5.6，为实现WARP网络效能最高的内核集成Wireguard方案，回到菜单，选择1，更新内核吧"
 	exit 1
 fi
 apt update
@@ -147,57 +147,43 @@ function start_menu(){
     
     red " ==============================================================================================" 
     
-    yellow " 请选择（共1~17选项）！！！进入脚本快捷方式bash ~/multi.sh （如脚本更新，请先执行完整脚本）"
+    yellow " 请选择（共1~10选项）！！！进入脚本快捷方式bash ~/multi.sh （如脚本更新，请先执行完整脚本）"
     
-    blue " ==========================一、VPS状态调整选择（更新中）==========================================" 
+    blue " ==========================一、甲骨文纯IPV6 VPS状态调整选择及说明（更新中）==========================================" 
     
-    blue " 1. 开启甲骨文VPS的ubuntu系统所有端口。自动断连后，请重新连接SSH（甲骨文云用户建议选择！！） "
+    blue " 端口默认已开启。
     
-    blue " 2. 更新linux系统ARM架构通用版内核至5.11版。自动断连后，请重新连接SSH "
+    blue " 代理协议选择9：不支持TCP协议，只能选择CDN 与德鸡一样"
     
-    blue " 3. 启用通用传统版BBR加速 "
+    blue " 1. 更新linux系统ARM架构通用版内核至5.11版。自动断连后，请重新连接SSH "
     
-    blue " 4. 检测奈飞Netflix是否解锁 "
+    blue " 2. DNS64设置。自动断连后，请重新连接SSH（必须选择） "
     
     green " =========================二、WARP功能选择（更新中）=============================================="
     
     green " ----VPS原生IP数--------------添加WARP虚拟IP的位置-----------是否需要输入相关IP--------------"
     
-    green " 5. 纯IPV4的VPS。             添加WARP虚拟IPV6               (无须输入IP地址！其他vps无脑推荐）" 
+    green " 3. 纯IPV6的VPS。            添加WARP虚拟IPV4+虚拟IPV6      (无须输入IP地址！)"
     
-    green " 6. 纯IPV4的VPS。             添加WARP虚拟IPV4+虚拟IPV6      (须输入VPS专用IP地址）"
-    
-    green " 7. 纯IPV4的VPS。             添加WARP虚拟IPV4               (须输入VPS专用IP地址）"
-    
-    green " 8. 双栈IPV4+IPV6的VPS。      添加WARP虚拟IPV6               (须输入VPS本地IPV6地址)" 
-    
-    green " 9. 双栈IPV4+IPV6的VPS。      添加WARP虚拟IPV4+虚拟IPV6      (须输入VPS专用IP地址+VPS本地IPV6地址)"
-    
-    green " 10. 双栈IPV4+IPV6的VPS。     添加WARP虚拟IPV4               (须输入VPS专用IP地址)"
-    
-    green " 11. 纯IPV6的VPS。            添加WARP虚拟IPV4+虚拟IPV6      (无须输入IP地址！)"
-    
-    green " 12. 纯IPV6的VPS。            添加WARP虚拟IPV4               (无须输入IP地址！)"
+    green " 4. 纯IPV6的VPS。            添加WARP虚拟IPV4               (无须输入IP地址！)"
     
     green " ------------------------------------------------------------------------------------------------"
     
-    green " 13. 统一DNS设置。自动断连后，请重新连接SSH（建议选择） "
+    green " 5. 永久关闭WARP功能 "
     
-    green " 14. 永久关闭WARP功能 "
+    green " 6. 自动开启WARP功能 "
     
-    green " 15. 自动开启WARP功能 "
+    green " 7. 查看VPS当前正在使用的IPV4地址 "
     
-    green " 16. 查看VPS当前正在使用的IPV4地址 "
-    
-    green " 17. 查看VPS当前正在使用的IPV6地址 "
+    green " 8. 查看VPS当前正在使用的IPV6地址 "
     
     yellow " ========================三、代理协议脚本选择（更新中）==========================================="
     
-    yellow " 18.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    yellow " 9.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
     
     yellow " ==============================================================================================="
     
-    red " 19. 重启VPS实例，请重新连接SSH "
+    red " 10. 重启VPS实例，请重新连接SSH "
     
     red " ==================================================================================================" 
     
@@ -205,61 +191,36 @@ function start_menu(){
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
-        1 )
-           iptables
-	;;
-	2 )
+	1 )
            arm5.11
 	;;
-        3 )
-           BBR
-	;;
-	4 )
-           Netflix
-	;;    
-        5 )
-           warp6
-	;;
-        6 )
-           warp64
-	;;
-        7 )
-           warp4
-	;;
-        8 )
-           warp466
-	;;
-        9 )
-           warp4646
-	;;
-	10 )
-           warp464
-	;;
-	11 )
-           v646
-	;;
-	12 )
-           v64
-	;;
-	13 )
+	2 )
            dns
 	;;
-	14 )
+       
+	3 )
+           v646
+	;;
+	4 )
+           v64
+	;;
+	
+	5 )
            cwarp
 	;;
-	15 )
+	6 )
            owarp
 	;;
-	16 )
+	7 )
            ipv4
 	;;
-	17 )
+	8 )
            ipv6
 	;;
-	18 )
+	9 )
            macka
 	;;
-	19 )
+	10 )
            reboot
 	;;
         0 )
