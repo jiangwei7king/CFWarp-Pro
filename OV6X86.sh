@@ -190,7 +190,7 @@ function start_menu(){
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in
 	1 )
-           arm5.11
+           linux5.11
 	;;
 	2 )
            dns
