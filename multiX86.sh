@@ -28,7 +28,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
+wget -N https://github.com/YG-tsj/EUserv-warp/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -59,7 +59,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
+wget -N https://github.com/YG-tsj/EUserv-warp/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -93,7 +93,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
+wget -N https://github.com/YG-tsj/EUserv-warp/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -128,7 +128,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
+wget -N https://github.com/YG-tsj/EUserv-warp/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -162,7 +162,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
+wget -N https://github.com/YG-tsj/EUserv-warp/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -199,7 +199,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N -4 https://cdn.jsdelivr.net/gh/YG-tsj/EUserv-warp/wgcf
+wget -N https://github.com/YG-tsj/EUserv-warp/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -285,6 +285,10 @@ ln -s /run/systemd/resolve/resolv.conf /etc/
 sudo reboot
 }
 
+function status(){
+systemctl status wg-quick@wgcf
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -330,19 +334,21 @@ function start_menu(){
     
     green " 13. 自动开启WARP功能 "
     
-    green " 14. 查看VPS当前正在使用的IPV4地址 "
+    green " 14. 查看当前WARP运行状态 "
     
-    green " 15. 查看VPS当前正在使用的IPV6地址 "
+    green " 15. 查看VPS当前正在使用的IPV4地址 "
+    
+    green " 16. 查看VPS当前正在使用的IPV6地址 "
     
     yellow " ========================三、代理协议脚本选择（更新中）==========================================="
     
-    yellow " 16.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    yellow " 17.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    yellow " 17.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
+    yellow " 18.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
     yellow " ==============================================================================================="
     
-    red " 18. 重启VPS实例，请重新连接SSH "
+    red " 19. 重启VPS实例，请重新连接SSH "
     
     red " ==================================================================================================" 
     
@@ -390,18 +396,21 @@ function start_menu(){
            owarp
 	;;
 	14 )
-           ipv4
+           status
 	;;
 	15 )
-           ipv6
+           ipv4
 	;;
 	16 )
-           macka
+           ipv6
 	;;
 	17 )
-           phlinhng
+           macka
 	;;
 	18 )
+           phlinhng
+	;;
+	19 )
            reboot
 	;;
         0 )
