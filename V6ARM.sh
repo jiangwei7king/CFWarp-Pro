@@ -137,6 +137,9 @@ yellow " 检测是否成功启动Warp！\n 显示IPV4地址：$(wget -qO- ipv4.i
 green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如上方显示VPS本地IP,（说明申请WGCF账户失败），请继续运行该脚本吧，直到成功为止！！！ "
 }
 
+function status(){
+systemctl status wg-quick@wgcf
+}
 
 #主菜单
 function start_menu(){
@@ -171,17 +174,19 @@ function start_menu(){
     
     green " 6. 自动开启WARP功能 "
     
-    green " 7. 查看VPS当前正在使用的IPV4地址 "
+    green " 7. 查看当前WARP运行状态 "
     
-    green " 8. 查看VPS当前正在使用的IPV6地址 "
+    green " 8. 查看VPS当前正在使用的IPV4地址 "
+    
+    green " 9. 查看VPS当前正在使用的IPV6地址 "
     
     yellow " ========================三、代理协议脚本选择（更新中）==========================================="
     
-    yellow " 9.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    yellow " 10.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
     
     yellow " ==============================================================================================="
     
-    red " 10. 重启VPS实例，请重新连接SSH "
+    red " 11. 重启VPS实例，请重新连接SSH "
     
     red " ==================================================================================================" 
     
@@ -195,14 +200,12 @@ function start_menu(){
 	2 )
            dns
 	;;
-       
 	3 )
            v646
 	;;
 	4 )
            v64
-	;;
-	
+	;;	
 	5 )
            cwarp
 	;;
@@ -210,15 +213,18 @@ function start_menu(){
            owarp
 	;;
 	7 )
-           ipv4
+           status
 	;;
 	8 )
-           ipv6
+           ipv4
 	;;
 	9 )
-           macka
+           ipv6
 	;;
 	10 )
+           macka
+	;;
+	11 )
            reboot
 	;;
         0 )
