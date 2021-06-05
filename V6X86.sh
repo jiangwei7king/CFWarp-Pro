@@ -23,6 +23,7 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 function cwarp(){
 systemctl stop wg-quick@wgcf
 systemctl disable wg-quick@wgcf
+reboot
 }
 
 function owarp(){
@@ -141,6 +142,14 @@ function status(){
 systemctl status wg-quick@wgcf
 }
 
+function 6x86(){
+wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh
+}
+
+function 4x86(){
+wget -4 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -150,43 +159,51 @@ function start_menu(){
     
     red " ==============================================================================================" 
     
-    yellow " 请选择（共1~10选项）！！！进入脚本快捷方式bash ~/OV6X86.sh （如脚本更新，请先执行完整脚本）"
+    yellow " 切记：进入脚本快捷方式 bash ~/V6X86.sh "
     
-    blue " ==========================一、甲骨文纯IPV6 VPS状态调整选择及说明（更新中）==========================================" 
+    blue " ==========================一、VPS状态调整选择及说明（更新中）==========================================" 
     
-    blue " 代理协议选择9：甲骨文纯V6不支持TCP协议，只能选择CDN ！其他VPS自行检验"
+    blue " 代理协议选择12：甲骨文纯V6不支持TCP协议，只能选择CDN ！其他VPS自行检验"
     
     blue " 1. 更新linux系统ARM架构通用版内核至5.11版。自动断连后，请重新连接SSH "
     
     blue " 2. DNS64设置。自动断连后，请重新连接SSH（必须选择） "
     
+    blue " 3. 开启原生BBR加速（启用WARP后可执行） "
+    
+    blue " 4. 检测奈飞Netflix是否解锁（启用WARP后可执行） " 
+    
     green " =========================二、WARP功能选择（更新中）=============================================="
     
     green " ----VPS原生IP数--------------添加WARP虚拟IP的位置-----------是否需要输入相关IP--------------"
     
-    green " 3. 纯IPV6的VPS。            添加WARP虚拟IPV4+虚拟IPV6      (无须输入IP地址！)"
+    green " 5. 纯IPV6的VPS。            添加WARP虚拟IPV4+虚拟IPV6      (无须输入IP地址！)"
     
-    green " 4. 纯IPV6的VPS。            添加WARP虚拟IPV4               (无须输入IP地址！)"
+    green " 6. 纯IPV6的VPS。            添加WARP虚拟IPV4               (无须输入IP地址！)"
     
     green " ------------------------------------------------------------------------------------------------"
     
-    green " 5. 永久关闭WARP功能 "
+    green " 7. 永久关闭WARP功能。自动断连后，请重新连接SSH "
     
-    green " 6. 自动开启WARP功能 "
+    green " 8. 自动开启WARP功能 "
     
-    green " 7. 查看当前WARP运行状态 "
+    green " 9. 在WARP开启状态下更新脚本 "
     
-    green " 8. 查看VPS当前正在使用的IPV4地址 "
+    green " 10. 在WARP关闭状态下更新脚本 "
     
-    green " 9. 查看VPS当前正在使用的IPV6地址 "
+    green " 11. 查看当前WARP运行状态 "
     
-    yellow " ========================三、代理协议脚本选择（更新中）==========================================="
+    green " 12. 查看VPS当前正在使用的IPV4地址 "
     
-    yellow " 10. 使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    green " 13. 查看VPS当前正在使用的IPV6地址 "
+    
+    yellow " ========================三、支持ARM架构的代理协议脚本选择（更新中）==========================================="
+    
+    yellow " 14. 使用mack-a脚本（支持协议：Xray, V2ray, Trojan-go） "
     
     yellow " ==============================================================================================="
     
-    red " 11. 重启VPS实例，请重新连接SSH "
+    red " 15. 重启VPS实例，请重新连接SSH "
     
     red " ==================================================================================================" 
     
@@ -200,33 +217,44 @@ function start_menu(){
 	2 )
            dns
 	;;
-       
-	3 )
-           v646
+       3 )
+           BBR
 	;;
 	4 )
+           Netflix
+	;;
+	5 )
+           v646
+	;;
+	6 )
            v64
 	;;
 	
-	5 )
+	7 )
            cwarp
 	;;
-	6 )
+	8 )
            owarp
 	;;
-	7 )
-           status
-	;;
-	8 )
-           ipv4
-	;;
 	9 )
-           ipv6
+           4x86
 	;;
 	10 )
-           macka
+           6x86
 	;;
 	11 )
+           status
+	;;
+	12 )
+           ipv4
+	;;
+	13 )
+           ipv6
+	;;
+	14 )
+           macka
+	;;
+	15 )
            reboot
 	;;
         0 )
