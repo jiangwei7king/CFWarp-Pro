@@ -310,7 +310,7 @@ function start_menu(){
     
     blue " 2. 更新linux系统通用版内核至5.11版。自动断连后，请重新连接SSH "
     
-    blue " 3. 启用通用传统版BBR加速 "
+    blue " 3. 开启原生BBR加速 "
     
     blue " 4. 检测奈飞Netflix是否解锁 "
     
