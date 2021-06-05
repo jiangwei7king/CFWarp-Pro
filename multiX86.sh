@@ -289,16 +289,20 @@ function status(){
 systemctl status wg-quick@wgcf
 }
 
+function up(){
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiX86.sh && chmod +x multiX86.sh && ./multiX86.sh
+}
+
 #主菜单
 function start_menu(){
     clear
     red " 详细说明 https://github.com/YG-tsj/Oracle-warp  YouTube频道：甬哥探世界 " 
     
-    red " 围绕WARP功能的脚本，目前仅支持KVM架构/Ubuntu 20.04系统，还在优化添加新功能中…… "  
+    red " 围绕WARP功能的脚本，目前仅支持KVM X86架构/Ubuntu 20.04系统，还在优化添加新功能中…… "  
     
     red " ==============================================================================================" 
     
-    yellow " 请选择（共1~18选项）！！！进入脚本快捷方式bash ~/multiX86.sh （如脚本更新，请先执行完整脚本）"
+    yellow " 切记：进入脚本快捷方式 bash ~/multiX86.sh "
     
     blue " ==========================一、VPS状态调整选择（更新中）==========================================" 
     
@@ -340,15 +344,17 @@ function start_menu(){
     
     green " 16. 查看VPS当前正在使用的IPV6地址 "
     
+    green " 17. 更新脚本 "
+    
     yellow " ========================三、代理协议脚本选择（更新中）==========================================="
     
-    yellow " 17.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    yellow " 18.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    yellow " 18.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
+    yellow " 19.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
     yellow " ==============================================================================================="
     
-    red " 19. 重启VPS实例，请重新连接SSH "
+    red " 20. 重启VPS实例，请重新连接SSH "
     
     red " ==================================================================================================" 
     
@@ -405,12 +411,15 @@ function start_menu(){
            ipv6
 	;;
 	17 )
-           macka
+           up
 	;;
 	18 )
-           phlinhng
+           macka
 	;;
 	19 )
+           phlinhng
+	;;
+	20 )
            reboot
 	;;
         0 )
