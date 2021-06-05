@@ -1,10 +1,16 @@
-#### Oracle甲骨文脚本集合，针对KVM X86架构/ARM架构 IPV4 only VPS与IPV4+IPV6真双栈VPS。
+#### Oracle甲骨文脚本集合，针对KVM X86架构/ARM架构 (6.5更新：加入纯IPV6支持，版本更新中。。。。)
+
+IPV4 only VPS
+
+IPV4+IPV6真双栈VPS
+
+IPV6 only vps
 
 #### IPV4 only VPS添加WARP Youtube视频教程：https://youtu.be/o7e_ikV-m-g
 
-#### IPV4+IPV6真双栈套WARP,甲骨文添加IPV6，如何选择WARP脚本看奈非 Youtube视频教程：https://youtu.be/ap_krqWnikE
+#### IPV4+IPV6真双栈套WARP,甲骨文添加真IPV6，选择WARP脚本看奈非 Youtube视频教程：https://youtu.be/ap_krqWnikE
 
-#### EUserv ipv6的(OpenVZ、LXC架构VPS)WARP项目:https://github.com/YG-tsj/EUserv-warp
+#### EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目:https://github.com/YG-tsj/EUserv-warp
 
 ---------------------------------------------------------------------------------------------------------------
 ### 给ipv4 only VPS添加WARP的好处：
@@ -48,20 +54,14 @@ bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.
 ```
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiX86.sh && chmod +x multiX86.sh && ./multiX86.sh
 ```
-#### 进入脚本快捷方式（如脚本更新，请先执行上面的完整脚本）
-```
-bash ~/multiX86.sh
-```
+#### 进入脚本快捷方式（如脚本更新，请先执行上面的完整脚本）```bash ~/multiX86.sh```
 ------------------------------------------------------------------------------------------------------
 ## 二、支持KVM ARM架构的WARP多功能脚本
 ```
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiARM.sh && chmod +x multiARM.sh && ./multiARM.sh
 ```
 
-#### 进入脚本快捷方式（如脚本更新，请先执行上面的完整脚本）
-```
-bash ~/multiARM.sh
-```
+#### 进入脚本快捷方式（如脚本更新，请先执行上面的完整脚本）```bash ~/multiARM.sh```
 --------------------------------------------------------------------------------------------------
 ### 以下内容将配合多功能脚本做出说明。。。更新中。。
 ![627132ab6488cadc9f53789ffaae946](https://user-images.githubusercontent.com/80431714/118383981-53c6ee00-b635-11eb-8896-f16697642fc0.png)
@@ -131,14 +131,9 @@ bash ~/multiARM.sh
 因WARP脚本默认集成该功能，所以脚本安装成功后不必再选择执行该项。
 
 ---------------------------------------------------------------------------------------------------------
-### 14、查看当前VPS的IPV4地址：
+### 14-15、查看当前VPS的IPV4/IPV6地址：
 
 当前IPV4的相关信息：AS号码/ 国家地区/ 所属ISP
-
------------------------------------------------------------------------------------------------
-### 15、查看当前VPS的IPV6地址
-
-当前IPV6的相关信息：AS号码/ 国家地区/ 所属ISP
 
 ----------------------------------------------------------------------------------------------------
 ### 16、mack-a脚本地址：https://github.com/mack-a/v2ray-agent
@@ -153,6 +148,30 @@ bash ~/multiARM.sh
 ### 18、重启VPS实例（俗话说：重启解决99%的问题）
 
 甲骨文云也可以登录网页，进入实例后台，执行“重新引导”，在后台重启。
+
+------------------------------------------------------------------------------------------------------
+### 甲骨文纯IPV6下，X86/ARM脚本更新：
+
+1：登录SSH（确保本地支持IPV6，可参考德鸡EUserv教程）
+
+-----------------------------------------------------------------------
+2：可选：设置Root密码一键脚本
+```
+echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
+```
+----------------------------------------------------------------------------
+3：一、X86架构的WARP多功能脚本
+```
+wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6X86.sh && chmod +x V6X86.sh && ./V6X86.sh
+```
+
+进入脚本快捷方式```bash ~/V6X86.sh```
+
+4：二、ARM架构的WARP多功能脚本
+```
+wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh
+```
+进入脚本快捷方式```bash ~/V6ARM.sh```
 
 ------------------------------------------------------------------------------------------------------
 ### 其他KVM架构VPS查看专用ip方式（待更新）
