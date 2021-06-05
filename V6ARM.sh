@@ -169,37 +169,41 @@ function start_menu(){
     
     blue " 2. DNS64设置。自动断连后，请重新连接SSH（建议选择） "
     
+    blue " 3. 开启原生BBR加速（启用WARP后可执行） "
+    
+    blue " 4. 检测奈飞Netflix是否解锁（启用WARP后可执行） " 
+    
     green " =========================二、WARP功能选择（更新中）=============================================="
     
     green " ----VPS原生IP数--------------添加WARP虚拟IP的位置-----------是否需要输入相关IP--------------"
     
-    green " 3. 纯IPV6的VPS。            添加WARP虚拟IPV4+虚拟IPV6      (无须输入IP地址！)"
+    green " 5. 纯IPV6的VPS。            添加WARP虚拟IPV4+虚拟IPV6      (无须输入IP地址！)"
     
-    green " 4. 纯IPV6的VPS。            添加WARP虚拟IPV4               (无须输入IP地址！)"
+    green " 6. 纯IPV6的VPS。            添加WARP虚拟IPV4               (无须输入IP地址！)"
     
     green " ------------------------------------------------------------------------------------------------"
     
-    green " 5. 永久关闭WARP功能。自动断连后，请重新连接SSH "
+    green " 7. 永久关闭WARP功能。自动断连后，请重新连接SSH "
     
-    green " 6. 自动开启WARP功能 "
+    green " 8. 自动开启WARP功能 "
     
-    green " 7. 在WARP开启状态下更新脚本 "
+    green " 9. 在WARP开启状态下更新脚本 "
     
-    green " 8. 在WARP关闭状态下更新脚本 "
+    green " 10. 在WARP关闭状态下更新脚本 "
     
-    green " 9. 查看当前WARP运行状态 "
+    green " 11. 查看当前WARP运行状态 "
     
-    green " 10. 查看VPS当前正在使用的IPV4地址 "
+    green " 12. 查看VPS当前正在使用的IPV4地址 "
     
-    green " 11. 查看VPS当前正在使用的IPV6地址 "
+    green " 13. 查看VPS当前正在使用的IPV6地址 "
     
     yellow " =====================三、支持ARM架构VPS代理协议脚本选择（更新中）==========================================="
     
-    yellow " 12.使用mack-a脚本（支持协议：Xray, V2ray, Trojan-go） "
+    yellow " 14.使用mack-a脚本（支持协议：Xray, V2ray, Trojan-go） "
     
     yellow " ==============================================================================================="
     
-    red " 13. 重启VPS实例，请重新连接SSH "
+    red " 15. 重启VPS实例，请重新连接SSH "
     
     red " ==================================================================================================" 
     
@@ -214,36 +218,42 @@ function start_menu(){
            dns
 	;;
 	3 )
-           v646
+           BBR
 	;;
 	4 )
-           v64
-	;;	
+           Netflix
+	;;
 	5 )
-           cwarp
+           v646
 	;;
 	6 )
-           owarp
-	;;
+           v64
+	;;	
 	7 )
-           4arm
+           cwarp
 	;;
 	8 )
-           6arm
+           owarp
 	;;
 	9 )
-           status
+           4arm
 	;;
 	10 )
-           ipv4
+           6arm
 	;;
 	11 )
-           ipv6
+           status
 	;;
 	12 )
-           macka
+           ipv4
 	;;
 	13 )
+           ipv6
+	;;
+	14 )
+           macka
+	;;
+	15 )
            reboot
 	;;
         0 )
