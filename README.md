@@ -156,6 +156,8 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-w
 
 -----------------------------------------------------------------------
 2：可选：设置Root密码一键脚本
+
+先执行```sudo -i```进入root模式后再输入以下脚本
 ```
 echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
