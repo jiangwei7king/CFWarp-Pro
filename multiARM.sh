@@ -290,17 +290,20 @@ function status(){
 systemctl status wg-quick@wgcf
 }
 
+function up(){
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiARM.sh && chmod +x multiARM.sh && ./multiARM.sh
+}
 
 #主菜单
 function start_menu(){
     clear
     red " 详细说明 https://github.com/YG-tsj/Oracle-warp  YouTube频道：甬哥探世界 " 
     
-    red " 围绕WARP功能的脚本，目前仅支持ARM架构/Ubuntu 20.04系统，还在优化添加新功能中…… "  
+    red " 围绕WARP功能的脚本，目前仅支持KVM ARM架构/Ubuntu 20.04系统，还在优化添加新功能中…… "  
     
     red " ==============================================================================================" 
     
-    yellow " 请选择（共1~18选项）！！！进入脚本快捷方式bash ~/multiARM.sh （如脚本更新，请先执行完整脚本）"
+    yellow " 切记：进入脚本快捷方式bash ~/multiARM.sh "
     
     blue " ==========================一、VPS状态调整选择（更新中）==========================================" 
     
@@ -308,7 +311,7 @@ function start_menu(){
     
     blue " 2. 更新linux系统ARM架构通用版内核至5.11版。自动断连后，请重新连接SSH "
     
-    blue " 3. 启用通用传统版BBR加速 "
+    blue " 3. 开启原生BBR加速 "
     
     blue " 4. 检测奈飞Netflix是否解锁 "
     
@@ -342,13 +345,15 @@ function start_menu(){
     
     green " 16. 查看VPS当前正在使用的IPV6地址 "
     
+    green " 17. 更新脚本 "
+    
     yellow " ========================三、代理协议脚本选择（更新中）==========================================="
     
-    yellow " 17.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    yellow " 18.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
     
     yellow " ==============================================================================================="
     
-    red " 18. 重启VPS实例，请重新连接SSH "
+    red " 19. 重启VPS实例，请重新连接SSH "
     
     red " ==================================================================================================" 
     
@@ -405,9 +410,12 @@ function start_menu(){
            ipv6
 	;;
 	17 )
-           macka
+           up
 	;;
 	18 )
+           macka
+	;;
+	19 )
            reboot
 	;;
         0 )
