@@ -41,6 +41,7 @@ curl -fsSL https://raw.staticdn.net/phlinhng/v2ray-tcp-tls-web/main/src/xwall.sh
 
 function ipv4(){
 curl -4 ip.p3terx.com
+if ! command; then echo "command failed"; exit 1; fi
 }
 
 function ipv6(){
