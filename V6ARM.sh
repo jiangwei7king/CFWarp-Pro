@@ -40,15 +40,7 @@ curl -fsSL https://raw.staticdn.net/phlinhng/v2ray-tcp-tls-web/main/src/xwall.sh
 }
 
 function ipv4(){
-fi
-
-echo " ** 正在测试IPv6解锁情况";
-check6=`ping6 240c::6666 -c 1 2>&1`;
-if [[ "$check6" != *"unreachable"* ]] && [[ "$check6" != *"Unreachable"* ]];then
-    MediaUnlockTest 6;
-else
-    echo -e "${Font_SkyBlue}当前主机不支持IPv6,跳过...${Font_Suffix}";
-fi
+curl -4 ip.p3terx.com
 }
 
 function ipv6(){
