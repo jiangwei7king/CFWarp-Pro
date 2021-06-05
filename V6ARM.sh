@@ -23,6 +23,7 @@ wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
 function cwarp(){
 systemctl stop wg-quick@wgcf
 systemctl disable wg-quick@wgcf
+reboot
 }
 
 function owarp(){
@@ -141,6 +142,14 @@ function status(){
 systemctl status wg-quick@wgcf
 }
 
+function 6arm(){
+wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh
+}
+
+function 4arm(){
+wget -4 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -150,7 +159,7 @@ function start_menu(){
     
     red " ==============================================================================================" 
     
-    yellow " 请选择（共1~10选项）！！！进入脚本快捷方式bash ~/OV6ARM.sh （如脚本更新，请先执行完整脚本）"
+    yellow " 请选择（共1~10选项）！！！进入脚本快捷方式 bash ~/V6ARM.sh "
     
     blue " ==========================一、甲骨文纯IPV6 VPS状态调整选择及说明（更新中）==========================================" 
     
@@ -158,7 +167,7 @@ function start_menu(){
     
     blue " 1. 更新linux系统ARM架构通用版内核至5.11版。自动断连后，请重新连接SSH "
     
-    blue " 2. DNS64设置。自动断连后，请重新连接SSH（必须选择） "
+    blue " 2. DNS64设置。自动断连后，请重新连接SSH（建议选择） "
     
     green " =========================二、WARP功能选择（更新中）=============================================="
     
@@ -170,19 +179,25 @@ function start_menu(){
     
     green " ------------------------------------------------------------------------------------------------"
     
-    green " 5. 永久关闭WARP功能 "
+    green " 5. 永久关闭WARP功能。自动断连后，请重新连接SSH "
     
     green " 6. 自动开启WARP功能 "
     
-    green " 7. 查看当前WARP运行状态 "
+    green " 7. 在WARP开启状态下更新脚本 "
     
-    green " 8. 查看VPS当前正在使用的IPV4地址 "
+    green " 8. 在WARP关闭状态下更新脚本 "
     
-    green " 9. 查看VPS当前正在使用的IPV6地址 "
+    green " 9. 查看当前WARP运行状态 "
     
-    yellow " ========================三、代理协议脚本选择（更新中）==========================================="
+    green " 10. 查看VPS当前正在使用的IPV4地址 "
     
-    yellow " 10.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    green " 11. 查看VPS当前正在使用的IPV6地址 "
+    
+    
+    
+    yellow " =====================三、支持ARM架构VPS代理协议脚本选择（更新中）==========================================="
+    
+    yellow " 10.使用mack-a脚本（支持协议：Xray, V2ray, Trojan-go） "
     
     yellow " ==============================================================================================="
     
@@ -213,18 +228,24 @@ function start_menu(){
            owarp
 	;;
 	7 )
-           status
+           4arm
 	;;
 	8 )
-           ipv4
+           6arm
 	;;
 	9 )
-           ipv6
+           status
 	;;
 	10 )
-           macka
+           ipv4
 	;;
 	11 )
+           ipv6
+	;;
+	12 )
+           macka
+	;;
+	13 )
            reboot
 	;;
         0 )
