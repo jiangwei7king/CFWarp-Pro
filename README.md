@@ -32,11 +32,11 @@
 
 提示：密码不要设置得过于简单，容易被破解。密钥文件要保存好，以防万一！
 
-- 脚本一：适合纯IPV4 VPS与IPV4+IPV6双栈VPS，非ROOT下直接输入以下脚本
+- **脚本一：适用于纯IPV4 VPS与IPV4+IPV6双栈VPS，非root下直接输入以下脚本**
 
 ```bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)```
 
-- 脚本一：适合纯IPV6  VPS，先执行sudo -i进入root模式后再输入以下脚本
+- **脚本一：适用于纯IPV6 VPS，先执行```sudo -i```进入root模式后再输入以下脚本**
 
 ```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)```
 
