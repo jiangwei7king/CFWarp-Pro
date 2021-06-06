@@ -113,6 +113,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-w
 进入脚本快捷方式 ```bash ~/multiARM.sh```
 
 - **脚本三：X86架构，纯IPV6 VPS**
+- 如未执行上面的root脚本，请先执行```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf```
 
 ```
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6X86.sh && chmod +x V6X86.sh && ./V6X86.sh
@@ -121,7 +122,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-w
 进入脚本快捷方式 ```bash ~/V6X86.sh```
 
 - **脚本四：ARM架构，纯IPV6 VPS**
-
+- 如未执行上面的root脚本，请先执行```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf```
 ```
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh
 ```
