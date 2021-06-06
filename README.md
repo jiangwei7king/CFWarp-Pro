@@ -40,7 +40,7 @@
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
 ```
 
-- **脚本一：适用于纯IPV6 VPS，先执行```sudo -i```进入root模式后再输入以下脚本**
+- **脚本一：适用于纯IPV6 VPS，先执行```sudo -i```进入root模式后再输入以下脚本（已集成永久DNS64）**
 
 ```
 echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/v6root.sh)
