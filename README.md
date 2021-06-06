@@ -115,7 +115,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-w
 - **脚本三：X86架构，纯IPV6 VPS**
 
 ```
-wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6X86.sh && chmod +x V6X86.sh && ./V6X86.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6X86.sh && chmod +x V6X86.sh && ./V6X86.sh
 ```
 
 进入脚本快捷方式 ```bash ~/V6X86.sh```
@@ -123,7 +123,7 @@ wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracl
 - **脚本四：ARM架构，纯IPV6 VPS**
 
 ```
-wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh
 ```
 
 进入脚本快捷方式 ```bash ~/V6ARM.sh```
