@@ -43,8 +43,10 @@
 -----------------------------------------------------------------------------------------
 ### vps的ip套上warp功能的优势及不足
 
-给IPV4/IPV6 only VPS添加WARP的好处：
+<details>
+<summary>给IPV4/IPV6 only VPS添加WARP的好处</summary>
 
+```bash
 1：使只有IPV4/IPV6的VPS获取访问IPV6/IPV4的能力，套上WARP的ip，变成双栈VPS！
 
 2：基本能隐藏VPS的真实IP！
@@ -56,8 +58,12 @@
 5：避开原VPS的IP需要谷歌验证码问题！
 
 6：原IPV4下，WARP的IPV6替代HE tunnelbroker IPV6的隧道代理方案，做IPV6 VPS跳板机代理更加稳定！
+```
+</details>
 
-给IPV4+IPV6双栈VPS添加WARP的好处：
+<details>
+<summary>给IPV4+IPV6双栈VPS添加WARP的好处</summary>
+
 1：基本能隐藏VPS的真实IP！
 
 2：WARP分配的IPV4或者IPV6的IP段，都支持奈非Netflix流媒体，无视VPS原IP限制！
@@ -65,8 +71,17 @@
 3：加速VPS到CloudFlare CDN节点访问速度！
 
 4：避开原VPS的IP需要谷歌验证码问题！
+```
+</details>
 
-统一的不足：由于是虚拟的IP，类似宝塔面板等相关工具可能需要另外的设置，这里不作展开。
+<details>
+<summary>不稳定或者不足点</summary>
+
+1：与原生IP的油管速度相比，不一定有优势
+
+2：由于是虚拟的IP，类似宝塔面板等相关工具可能需要另外的设置，请自行谷歌。
+```
+</details>
 
 
 ### warp多功能一键脚本
