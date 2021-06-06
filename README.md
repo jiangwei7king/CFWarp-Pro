@@ -34,11 +34,15 @@
 
 - **脚本一：适用于纯IPV4 VPS与IPV4+IPV6双栈VPS，非root下直接输入以下脚本**
 
-```bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)```
+```
+bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
+```
 
 - **脚本一：适用于纯IPV6 VPS，先执行```sudo -i```进入root模式后再输入以下脚本**
 
-```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)```
+```
+echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
+```
 
 -----------------------------------------------------------------------------------------
 ### vps的ip套上warp功能的优势及不足
@@ -88,29 +92,37 @@
 -------------------------------------------------------------------------------------------------------
 ### warp多功能一键脚本
 
-- 注意选择适合你VPS的WARP多功能脚本，主要分为以下四类：
+- **注意选择适合你VPS的WARP多功能脚本，主要分为以下四类：**
 
 - **脚本一：X86架构，纯IPV4 VPS，IPV4+IPV6双栈VPS**
 
-```wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiX86.sh && chmod +x multiX86.sh && ./multiX86.sh```
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiX86.sh && chmod +x multiX86.sh && ./multiX86.sh
+```
 
 进入脚本快捷方式 ```bash ~/multiX86.sh```
 
 - **脚本二：ARM架构，纯IPV4 VPS，IPV4+IPV6双栈VPS**
 
-```wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiARM.sh && chmod +x multiARM.sh && ./multiARM.sh```
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiARM.sh && chmod +x multiARM.sh && ./multiARM.sh
+```
 
 进入脚本快捷方式 ```bash ~/multiARM.sh```
 
 - **脚本三：X86架构，纯IPV6 VPS**
 
-```wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6X86.sh && chmod +x V6X86.sh && ./V6X86.sh```
+```
+wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6X86.sh && chmod +x V6X86.sh && ./V6X86.sh
+```
 
 进入脚本快捷方式 ```bash ~/V6X86.sh```
 
 - **脚本四：ARM架构，纯IPV6 VPS**
 
-```wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh```
+```
+wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh
+```
 
 进入脚本快捷方式 ```bash ~/V6ARM.sh```
 
