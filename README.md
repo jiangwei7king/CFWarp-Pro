@@ -94,40 +94,25 @@ echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https:
 -------------------------------------------------------------------------------------------------------
 ### warp多功能一键脚本
 
-- **注意选择适合你VPS的WARP多功能脚本，主要分为以下四类：**
+- **注意选择适合你VPS的WARP多功能脚本
 
-- **脚本一：X86架构，纯IPV4 VPS，IPV4+IPV6双栈VPS**
-
-```
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiX86.sh && chmod +x multiX86.sh && ./multiX86.sh
-```
-
-进入脚本快捷方式 ```bash ~/multiX86.sh```
-
-- **脚本二：ARM架构，纯IPV4 VPS，IPV4+IPV6双栈VPS**
+- **脚本一：支持X86/ARM架构的纯IPV4 VPS与IPV4+IPV6双栈VPS**
 
 ```
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiARM.sh && chmod +x multiARM.sh && ./multiARM.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiV464.sh && chmod +x multiV464.sh && ./multiV464.sh
 ```
 
-进入脚本快捷方式 ```bash ~/multiARM.sh```
+进入脚本快捷方式 ```bash ~/multiV464.sh```
 
-- **脚本三：X86架构，纯IPV6 VPS**
-- 如未执行上面的root脚本，请先执行```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf```
+---------------------------------------------------------------------------------------------------
+- **脚本二：支持X86/ARM架构的纯IPV6 VPS**
 
-```
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6X86.sh && chmod +x V6X86.sh && ./V6X86.sh
-```
-
-后续建议只用快捷方式进入脚本 ```bash ~/V6X86.sh```
-
-- **脚本四：ARM架构，纯IPV6 VPS**
 - 如未执行上面的root脚本，请先执行```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf```
 ```
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/V6ARM.sh && chmod +x V6ARM.sh && ./V6ARM.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiOV6.sh && chmod +x multiOV6.sh && ./multiOV6.sh
 ```
 
-后续建议只用快捷方式进入脚本 ```bash ~/V6ARM.sh```
+后续建议只用快捷方式进入脚本 ```bash ~/multiOV6.sh```
 
 ----------------------------------------------------------------------------------------
 
