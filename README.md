@@ -85,9 +85,11 @@ echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https:
 <summary>不稳定或者不足点</summary>
     
 ```bash
-1：与原生IP的油管速度相比，不一定有优势
+1：warp的IP与原生IP在Youtube上速度对比，并不一定有优势，具体看网络环境！
+    
+2：warp的IP归属国家一般与原生IP一致，但可能会自动改变！
 
-2：由于是虚拟的IP，类似宝塔面板等相关工具可能需要另外的设置，请自行谷歌。
+3：由于warp是虚拟的IP，类似宝塔面板等相关工具可能需要另外的设置，请自行谷歌。
 ```
 </details>
 
