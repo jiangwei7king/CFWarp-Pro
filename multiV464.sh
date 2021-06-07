@@ -310,7 +310,7 @@ function start_menu(){
     
     blue " 1. 开启甲骨文VPS的ubuntu系统所有端口。自动断连后，请重新连接SSH（甲骨文云用户建议选择！！） "
     
-    blue " 2. 更新linux系统通用版内核至5.11版。自动断连后，请重新连接SSH "
+    blue " 2. 更新linux系统X86架构通用版内核至5.11版。自动断连后，请重新连接SSH "
     
     blue " 3. 开启原生BBR加速 "
     
