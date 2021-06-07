@@ -187,17 +187,17 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-w
 当前IPV4/IPV6的相关信息：AS号码/ 国家地区/ 所属ISP
 
 - **十、代理协议脚本选择**
-- 支持IPV4/IPV6/X86/ARM的全面脚本 ，推荐！
+支持IPV4/IPV6/X86/ARM的全面脚本 ，推荐！
 mack-a脚本地址：https://github.com/mack-a/v2ray-agent
 
-- 支持IPV4/IPV6/X86的脚本
+支持IPV4/IPV6/X86的脚本
 phlinhng脚本地址：https://github.com/phlinhng/v2ray-tcp-tls-web
 
-- 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
+注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
 - **十一、重启VPS实例（俗话说：重启解决99%的问题）**
  
-- 甲骨文云也可以登录网页，进入实例后台，执行“重新引导”，在后台重启。
+甲骨文云也可以登录网页，进入实例后台，执行“重新引导”，在后台重启。
 
 ------------------------------------------------------------------------------------------------------
 ### 自定义ip分流配置模板说明
