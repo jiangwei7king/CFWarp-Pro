@@ -34,7 +34,7 @@
 
 提示：密码不要设置得过于简单，容易被破解。密钥文件要保存好，以防万一！
 
-- **脚本一：适用于纯IPV4 VPS与IPV4+IPV6双栈VPS，非root下直接输入以下脚本**
+- **脚本一：适用于纯IPV4 VPS与IPV4+IPV6双栈VPS，非root状态下直接输入以下脚本**
 
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/root.sh)
@@ -107,7 +107,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-w
 ---------------------------------------------------------------------------------------------------
 - **脚本二：支持X86/ARM架构的纯IPV6 VPS**
 
-- 如未执行上面的root脚本，请先进入root后，执行```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf```
+- 如未执行上面的root一键脚本，先执行```sudo -i```进入root模式，后执行```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf```
 ```
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/multiOV6.sh && chmod +x multiOV6.sh && ./multiOV6.sh
 ```
@@ -139,7 +139,8 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-w
 支持IPV4/IPV6检测，结果非常详细。
 
 - **五、安装WARP脚本**
-- （仅支持 纯IPV4 VPS）
+
+- **（仅支持 纯IPV4 VPS）**
 
 脚本5、结果表现为2个IP：VPS本地IPV4+WARP虚拟IPV6
 
@@ -147,7 +148,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-w
 
 脚本7、结果表现为2个IP：VPS本地IPV4+WARP虚拟IPV4
 
-- （仅支持IPV4+IPV6双栈VPS）
+- **（仅支持IPV4+IPV6双栈VPS）**
 
 脚本8、结果表现为3个IP：VPS本地IPV4+VPS本地IPV6+WARP虚拟IPV6
 
@@ -155,13 +156,13 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-w
 
 脚本10、结果表现为3个IP：VPS本地IPV4+VPS本地IPV6+WARP虚拟IPV4
 
-- （仅支持 纯IPV6 VPS）
+- **（仅支持 纯IPV6 VPS）**
 
 脚本5、结果表现为3个IP：VPS本地IPV6+WARP虚拟IPV6+WARP虚拟IPV4
 
 脚本6、结果表现为2个IP：VPS本地IPV6+WARP虚拟IPV4
 
-目前（VPS本地IPV6+WARP虚拟IPV6）这种形式的应用应该不多吧，日后考虑加上。
+目前（VPS本地IPV6+WARP虚拟IPV6，无IPV4）这种形式的应用应该不多吧，日后考虑加上。
 
 - **六、统一DNS功能：（建议启用）**
 
@@ -192,7 +193,7 @@ mack-a脚本地址：https://github.com/mack-a/v2ray-agent
 - 支持IPV4/IPV6/X86的脚本
 phlinhng脚本地址：https://github.com/phlinhng/v2ray-tcp-tls-web
 
-注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
+- 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
 - **十一、重启VPS实例（俗话说：重启解决99%的问题）**
  
