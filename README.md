@@ -1,7 +1,7 @@
 ## 编辑未完成，图片文字排版更新中。。。。。
 
 ## 针对KVM架构VPS的WARP一键综合脚本
-- [x] 支持 X86与ARM架构
+- [x] 支持 X86与ARM的CPU架构
 - [x] 支持 纯IPV4  VPS
 - [x] 支持 IPV4+IPV6双栈VPS
 - [x] 支持 纯IPV6  VPS
