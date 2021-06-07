@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 bit=`uname -m`
 if [[ ${bit} == "x86_64" ]]; then
 #彩色
