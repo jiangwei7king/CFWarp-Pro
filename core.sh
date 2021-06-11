@@ -15,7 +15,7 @@ blue(){
 }
 
 yellow " 安装相关依赖："
-yum install apt && apt-get update
+yum install apt -y && apt-get update -y
 apt install sudo -y && apt install curl wget -y
 apt install virt-what
 
