@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+#彩色
+red(){
+    echo -e "\033[31m\033[01m$1\033[0m"
+}
+green(){
+    echo -e "\033[32m\033[01m$1\033[0m"
+}
+yellow(){
+    echo -e "\033[33m\033[01m$1\033[0m"
+}
+blue(){
+    echo -e "\033[36m\033[01m$1\033[0m"
+}
+
 yellow " 安装相关依赖："
 apt update
 apt install sudo -y && apt install curl wget -y
