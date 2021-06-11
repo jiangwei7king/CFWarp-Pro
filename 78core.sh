@@ -14,10 +14,7 @@ blue(){
     echo -e "\033[36m\033[01m$1\033[0m"
 }
 
-yellow " 安装相关依赖："
-yum install apt -y && apt-get update -y
-apt install sudo -y && apt install curl wget -y
-apt install virt-what
+yum install virt-what
 
 bit=`uname -m`
 version=`uname -r | awk -F "-" '{print $1}'`
@@ -27,7 +24,7 @@ yellow " VPS小鸡内脏检测结果如下："
 
 yellow " 系统内核版本 - $version " 
 yellow " CPU架构名称 - $bit "
-yellow " 虚拟架构类型 - $virt-what "
+yellow " 虚拟架构类型 - $virt "
 
 function c8(){
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
