@@ -26,6 +26,8 @@ yellow " 系统内核版本 - $version "
 yellow " CPU架构名称 - $bit "
 yellow " 虚拟架构类型 - $virt "
 
+sleep 3s
+
 function c8(){
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 yum install https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm
