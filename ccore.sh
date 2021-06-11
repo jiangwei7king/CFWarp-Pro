@@ -56,10 +56,10 @@ function start_menu(){
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in   
      1 )
-        7
+        c7
 	   ;;
 	   2 )
-        8
+        c8
 	   ;;
      0 )
        exit 1
