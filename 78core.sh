@@ -15,7 +15,7 @@ blue(){
 }
 
 yellow " 安装相关依赖："
-apt update
+yum update
 apt install sudo -y && apt install curl wget -y
 apt install virt-what
 
@@ -29,7 +29,7 @@ yellow " 系统内核版本 - $version "
 yellow " CPU架构名称 - $bit "
 yellow " 虚拟架构类型 - $virt-what "
 
-function 8(){
+function c8(){
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 yum install https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm
 yum --enablerepo=elrepo-kernel install kernel-ml
@@ -38,7 +38,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 reboot
 }
 
-function 7(){
+function c7(){
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 yum install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
 yum --enablerepo=elrepo-kernel install kernel-ml
