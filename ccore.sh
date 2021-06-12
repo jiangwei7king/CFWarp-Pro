@@ -49,7 +49,7 @@ reboot
 
 function start_menu(){
     clear
-    red " 更新Centos系统内核到官方源最新版本 " 
+    green " 更新Centos系统内核到官方源最新版本 " 
     blue " 1. Centos7 "    
     blue " 2. Centos8 "
     blue " 3. Ubuntu "
