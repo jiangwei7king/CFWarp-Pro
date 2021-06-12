@@ -14,20 +14,6 @@ blue(){
     echo -e "\033[36m\033[01m$1\033[0m"
 }
 
-yum install virt-what
-
-bit=`uname -m`
-version=`uname -r | awk -F "-" '{print $1}'`
-virt=`virt-what`
-
-yellow " VPS小鸡内脏检测结果如下："
-
-yellow " 系统内核版本 - $version " 
-yellow " CPU架构名称 - $bit "
-yellow " 虚拟架构类型 - $virt "
-
-sleep 3s
-
 function c8(){
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 yum install https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm -y
@@ -46,24 +32,47 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 reboot
 }
 
+function ub(){
+wget https://raw.githubusercontent.com/pimlie/ubuntu-mainline-kernel.sh/master/ubuntu-mainline-kernel.sh
+chmod +x ubuntu-mainline-kernel.sh
+sudo mv ubuntu-mainline-kernel.sh /tmp
+sudo -y ubuntu-mainline-kernel.sh -i 
+reboot
+}
+
+function de(){
+apt -t buster-backports install linux-image-amd64 -y
+apt -t buster-backports install linux-headers-amd64 -y
+update-grub
+reboot
+}
+
 function start_menu(){
     clear
-    red " 更新Centos系统内核到最新版本 " 
+    red " 更新Centos系统内核到官方源最新版本 " 
     blue " 1. Centos7 "    
     blue " 2. Centos8 "
+    blue " 3. Ubuntu "
+    blue " 4. Debain "
     red " 0. 退出脚本 "
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in   
      1 )
         c7
-	   ;;
-	   2 )
+     ;;
+     2 )
         c8
-	   ;;
+     ;;
+     3 )
+        ub
+     ;;
+     4 )
+        de
+     ;;
      0 )
        exit 1
-	   ;;
+     ;;
       esac
 }
 
