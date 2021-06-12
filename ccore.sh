@@ -37,6 +37,7 @@ wget https://raw.githubusercontent.com/pimlie/ubuntu-mainline-kernel.sh/master/u
 chmod +x ubuntu-mainline-kernel.sh
 sudo mv ubuntu-mainline-kernel.sh /usr/local/bin/
 sudo ubuntu-mainline-kernel.sh -i
+sudo apt -f install -y
 reboot
 }
 
