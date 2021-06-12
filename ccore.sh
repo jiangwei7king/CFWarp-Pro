@@ -56,7 +56,7 @@ function start_menu(){
     blue " 4. Debain "
     red " 0. 退出脚本 "
     echo
-    read -p "请输入数字:" menuNumberInput
+    read -p "注意，别手滑哦！请输入数字:" menuNumberInput
     case "$menuNumberInput" in   
      1 )
         c7
