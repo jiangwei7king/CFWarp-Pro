@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 export PATH=$PATH:/usr/local/bin
 
-#彩色
 red(){
     echo -e "\033[31m\033[01m$1\033[0m"
 }
