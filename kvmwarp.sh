@@ -46,6 +46,10 @@ bit=`uname -m`
 version=`uname -r | awk -F "-" '{print $1}'`
 main=`uname  -r | awk -F . '{print $1 }'`
 minor=`uname -r | awk -F . '{print $2}'`
+v4=`wget -qO- ipv4.ip.sb`
+v6=`wget -qO- ipv6.ip.sb`
+rv4=`ip -4 a | grep inet | grep -v 127.0.0 | awk '{print $2}' | cut -d'/' -f1`
+rv6=`ip a | grep inet6 | awk 'NR==2 {print $2}' | cut -d'/' -f1`
 
 
 yellow " 安装相关依赖："
@@ -441,8 +445,18 @@ curl -fsSL https://raw.staticdn.net/phlinhng/v2ray-tcp-tls-web/main/src/xwall.sh
 }
 
 function ipv4(){
-curl -4 ip.p3terx.com
-}
+        yellow "开始检测IPV4地址"
+	if [ ! -n $v4 ]; then
+		red " VPS当前检测不到IPV4地址 "
+	else
+		green " VPS当前正使用的IPV4地址: $v4 "
+	fi
+	yellow "开始检测IPV6地址"
+	if [ ! -n $v6 ]; then
+		red " VPS当前检测不到IPV6地址 "
+	else
+		green " VPS当前正使用的IPV6地址: $v6 "
+	fi
 
 function ipv6(){
 curl -6 ip.p3terx.com
