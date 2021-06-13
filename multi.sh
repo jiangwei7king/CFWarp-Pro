@@ -407,7 +407,7 @@ green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如
 }
 
 function upcore(){
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Oracle-warp/main/upcore.sh&& chmod +x upcore.sh && ./upcore.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/upcore.sh&& chmod +x upcore.sh && ./upcore.sh
 }
 
 function iptables(){
@@ -480,7 +480,7 @@ systemctl status wg-quick@wgcf
 }
 
 function up(){
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/ceshi/main/123.sh && chmod +x 123.sh && ./123.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 #主菜单
@@ -492,7 +492,7 @@ function start_menu(){
     
     red " ==============================================================================================" 
     
-    yellow " 切记：进入脚本快捷方式 bash ~/multiV464.sh "
+    yellow " 切记：进入脚本快捷方式 bash ~/multi.sh "
     
     blue " ==========================一、VPS状态调整选择（更新中）==========================================" 
     
@@ -851,7 +851,7 @@ systemctl status wg-quick@wgcf
 }
 
 function up(){
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/ceshi/main/123.sh && chmod +x 123.sh && ./123.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 #主菜单
@@ -863,7 +863,7 @@ function start_menu(){
     
     red " ==============================================================================================" 
     
-    yellow " 切记：进入脚本快捷方式bash ~/multiV464.sh "
+    yellow " 切记：进入脚本快捷方式bash ~/multi.sh "
     
     blue " ==========================一、VPS状态调整选择（更新中）==========================================" 
     
