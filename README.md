@@ -23,7 +23,7 @@
 ![21cf70a6bd155b549b7839bddd0280e](https://user-images.githubusercontent.com/80431714/121798598-d4d7cc00-cc59-11eb-8add-1ccc6756ad13.png)
 
 
-更新已测试通过的VPS名单：oracle，buyvm，gpc………………,欢迎大家补充反馈，相关视频教程下期发布………
+### 更新已测试通过的VPS名单：oracle，buyvm，gpc………………,欢迎大家补充反馈，相关视频教程下期发布………
 
 --------------------------------------------------------------------------------------------
 ## 针对KVM架构VPS的WARP一键综合脚本
@@ -151,9 +151,9 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp
 
 解决代理协议申请证书发生Nginx等相关报错问题，完成后将自动断开VPS连接！
 
-- **二、更新甲骨文Ubuntu系统内核：**
+- **二、更新系统内核：**
 
-目前甲骨文Ubuntu20.04系统内核为5.4版本，5.6版本以上内核才集成Wireguard，内核集成方案在理论上网络效率最高！（网络性能：内核集成>内核模块>Wireguard-Go）
+因为5.6版本以上内核才集成Wireguard，内核集成方案在理论上网络效率最高！（网络性能：内核集成>内核模块>Wireguard-Go）
 
 自动检测内核版本功能已集成于5-10脚本中，5.6以下内核将自动终止脚本运行并提示升级内核！
 
@@ -166,6 +166,9 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp
 - **四、奈非Netflix检测(sjlleo版)：**
 
 支持IPV4/IPV6检测，结果非常详细。
+
+![4f396307256bfefd7c92d6f667fea45](https://user-images.githubusercontent.com/80431714/121798699-62b3b700-cc5a-11eb-81f0-49a0d2fcdaf7.png)
+
 
 - **五、安装WARP脚本**
 
