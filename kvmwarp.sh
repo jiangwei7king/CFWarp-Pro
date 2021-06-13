@@ -46,8 +46,6 @@ bit=`uname -m`
 version=`uname -r | awk -F "-" '{print $1}'`
 main=`uname  -r | awk -F . '{print $1 }'`
 minor=`uname -r | awk -F . '{print $2}'`
-v4=`wget -qO- ipv4.ip.sb`
-v6=`wget -qO- ipv6.ip.sb`
 rv4=`ip -4 a | grep inet | grep -v 127.0.0 | awk '{print $2}' | cut -d'/' -f1`
 rv6=`ip a | grep inet6 | awk 'NR==2 {print $2}' | cut -d'/' -f1`
 
