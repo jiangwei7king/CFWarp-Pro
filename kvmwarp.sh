@@ -444,15 +444,15 @@ curl -fsSL https://raw.staticdn.net/phlinhng/v2ray-tcp-tls-web/main/src/xwall.sh
 
 function ipv4(){
         yellow "开始检测IPV4地址"
-	v4=`curl -s ipv4.ip.sb`
-	if [ ! -n $v4 ]; then
+	v4=`wget -qO- ipv4.ip.sb`
+	if [[ -z $v4 ]]; then
 		red " VPS当前检测不到IPV4地址 "
 	else
 		green " VPS当前正使用的IPV4地址: $v4 "
 	fi
 	yellow "开始检测IPV6地址"
-	v6=`curl -s ipv6.ip.sb`
-	if [ ! -n $v6 ]; then
+	v6=`wget -qO- ipv6.ip.sb`
+	if [[ -z $v6 ]]; then
 		red " VPS当前检测不到IPV6地址 "
 	else
 		green " VPS当前正使用的IPV6地址: $v6 "
