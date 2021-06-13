@@ -457,6 +457,7 @@ function ipv4(){
 	else
 		green " VPS当前正使用的IPV6地址: $v6 "
 	fi
+}
 
 function ipv6(){
 curl -6 ip.p3terx.com
