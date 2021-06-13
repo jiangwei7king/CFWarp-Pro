@@ -1,13 +1,13 @@
-## 编辑未完成，图片文字排版更新中。。后续将支持centos与debain系统，并不再让大家输入ip地址！
+## 编辑未完成，图片文字排版更新中。
 
-# 21.6.13：更新中。。。，目前脚本不可用！！buyvm/ vps测试通过………
+# 21.6.13：更新中。。。！！已测试通过:buyvm\gpc vps测试通过,欢迎大家反馈，相关视频教程下期发布………
 
 ## 针对KVM架构VPS的WARP一键综合脚本
 - [x] 支持自动识别X86与ARM的CPU架构
 - [x] 支持 纯IPV4  VPS
 - [x] 支持 IPV4+IPV6双栈VPS
-- [x] 支持 纯IPV6  VPS
-- [x] 目前仅支持 Ubuntu20.04系统！！！
+- [x] 支持 纯IPV6  VPS（目前仅Ubuntu）
+- [x] 支持 Ubuntu/Centos/Debain系统！！！
 -----------------------------------------------------------------------------------------
 # 目录
 
@@ -35,7 +35,7 @@
 
 提示：密码不要设置得过于简单，容易被破解。密钥文件要保存好，以防万一！
 
-- **脚本一：适用于纯IPV4 VPS与IPV4+IPV6双栈VPS，非root状态下直接输入以下脚本**
+- **脚本一：适用于纯IPV4 VPS与IPV4+IPV6双栈VPS，非root状态下直接输入以下脚本（支持甲骨文与谷歌云）**
 
 ```
 bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/root.sh)
