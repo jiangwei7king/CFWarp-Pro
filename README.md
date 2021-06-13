@@ -15,7 +15,7 @@
 更新已测试通过的VPS名单：oracle，buyvm，gpc………………,欢迎大家补充反馈，相关视频教程下期发布………
 
 --------------------------------------------------------------------------------------------
-## 针对KVM架构VPS的WARP一键综合脚本
+## 针对KVM架构VPS的WARP一键综合脚本（OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将更新。）
 - [x] 支持自动识别X86与ARM的CPU架构
 - [x] 支持 纯IPV4  VPS
 - [x] 支持 IPV4+IPV6双栈VPS
