@@ -47,73 +47,29 @@ main=`uname  -r | awk -F . '{print $1 }'`
 minor=`uname -r | awk -F . '{print $2}'`
 rv4=`ip -4 a | grep inet | grep -v 127.0.0 | awk '{print $2}' | cut -d'/' -f1`
 rv6=`ip a | grep inet6 | awk 'NR==2 {print $2}' | cut -d'/' -f1`
+op=`hostnamectl | grep -i op | awk -F ':' '{print $2}'`
+vi=`hostnamectl | grep -i vi | awk -F ':' '{print $2}'`
 
-
-yellow " 安装相关依赖："
-if [ $release = "Centos" ]
- then
-yum update -y
-yum install curl wget -y && yum install sudo -y
-yum install virt-what
-
-virt=`virt-what`
-if [[ ${virt} == "kvm" ]]; then
-echo "ok"
+if [[ ${vi} == " kvm" ]]; then
+echo "kvm"
 else
-yellow " 虚拟架构类型 - $virt "
+yellow " 虚拟架构类型 - $vi "
 yellow " 此vps并非kvm架构，脚本安装自动退出！"
- exit 1
+exit 1
 fi
-
- elif [ $release = "Debian" ]
- then
-apt-get update -y
-apt-get install curl wget -y && apt install sudo -y
-apt-get install virt-what
-
-virt=`virt-what`
-if [[ ${virt} == "kvm" ]]; then
-echo "ok"
-else
-yellow " 虚拟架构类型 - $virt "
-yellow " 此vps并非kvm架构，脚本安装自动退出！"
- exit 1
-fi
-
- elif [ $release = "Ubuntu" ]
- then
-apt-get update -y
-apt-get install curl wget -y &&  apt install sudo -y
-apt-get install virt-what
-
-virt=`virt-what`
-if [[ ${virt} == "kvm" ]]; then
-echo "ok"
-else
-yellow " 虚拟架构类型 - $virt "
-yellow " 此vps并非kvm架构，脚本安装自动退出！"
- exit 1
-fi
-
- else
-  yellow " 不支持当前系统 "
-  exit 1
- fi
-
 
 yellow " VPS小鸡内脏检测结果如下！："
 yellow "------------------------------------------"
-green " 操作系统名称 - $release "
+green " 操作系统名称 -$op "
 green " 系统内核版本 - $version " 
 green " CPU架构名称  - $bit "
-green " 虚拟架构类型 - $virt "
+green " 虚拟架构类型 -$vi "
 green " -----------------------------------------------"
-blue " 本warp多功能脚本仅支持网络效能最高的-内-核-集-成-模式 "
-blue " 要求系统内核必须在5.6以上（脚本包含更新内核功能） "
+blue " 本warp脚本仅支持网络效能最高的内核集成模式 "
+blue " 要求系统内核必须在5.6以上（已带更新内核功能） "
 
 red " 对此无压力的请按：任意键继续。对此没兴趣的请按：Ctrl+C退出。 "
 char=$(get_char)
-
 
 if [[ ${bit} == "x86_64" ]]; then
 
@@ -126,6 +82,8 @@ fi
 
 if [ $release = "Centos" ]
 	then
+	        yum update -y
+                yum install curl wget -y && yum install sudo -y
 		yum install epel-release -y		
 		yum install -y \
                 https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -134,7 +92,8 @@ if [ $release = "Centos" ]
                 yum install wireguard-tools -y
 	elif [ $release = "Debian" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y && apt install sudo -y
 		apt-get install openresolv -y
 		echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list
 		printf 'Package: *\nPin: release a=unstable\nPin-Priority: 150\n' > /etc/apt/preferences.d/limit-unstable
@@ -142,7 +101,8 @@ if [ $release = "Centos" ]
 		apt-get install wireguard-tools -y
 	elif [ $release = "Ubuntu" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y &&  apt install sudo -y
 		apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 	else
 		yellow " 不支持当前系统 "
@@ -173,6 +133,8 @@ fi
 
 if [ $release = "Centos" ]
 	then
+	        yum update -y
+                yum install curl wget -y && yum install sudo -y
 		yum install epel-release -y		
 		yum install -y \
                 https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -181,7 +143,8 @@ if [ $release = "Centos" ]
                 yum install wireguard-tools -y
 	elif [ $release = "Debian" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y && apt install sudo -y
 		apt-get install openresolv -y
 		echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list
 		printf 'Package: *\nPin: release a=unstable\nPin-Priority: 150\n' > /etc/apt/preferences.d/limit-unstable
@@ -189,7 +152,8 @@ if [ $release = "Centos" ]
 		apt-get install wireguard-tools -y
 	elif [ $release = "Ubuntu" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y &&  apt install sudo -y
 		apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 	else
 		yellow " 不支持当前系统 "
@@ -221,6 +185,8 @@ fi
 
 if [ $release = "Centos" ]
 	then
+	        yum update -y
+                yum install curl wget -y && yum install sudo -y
 		yum install epel-release -y		
 		yum install -y \
                 https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -229,7 +195,8 @@ if [ $release = "Centos" ]
                 yum install wireguard-tools -y
 	elif [ $release = "Debian" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y && apt install sudo -y
 		apt-get install openresolv -y
 		echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list
 		printf 'Package: *\nPin: release a=unstable\nPin-Priority: 150\n' > /etc/apt/preferences.d/limit-unstable
@@ -237,7 +204,8 @@ if [ $release = "Centos" ]
 		apt-get install wireguard-tools -y
 	elif [ $release = "Ubuntu" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y &&  apt install sudo -y
 		apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 	else
 		yellow " 不支持当前系统 "
@@ -270,6 +238,8 @@ fi
 
 if [ $release = "Centos" ]
 	then
+	        yum update -y
+                yum install curl wget -y && yum install sudo -y
 		yum install epel-release -y		
 		yum install -y \
                 https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -278,7 +248,8 @@ if [ $release = "Centos" ]
                 yum install wireguard-tools -y
 	elif [ $release = "Debian" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y && apt install sudo -y
 		apt-get install openresolv -y
 		echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list
 		printf 'Package: *\nPin: release a=unstable\nPin-Priority: 150\n' > /etc/apt/preferences.d/limit-unstable
@@ -286,7 +257,8 @@ if [ $release = "Centos" ]
 		apt-get install wireguard-tools -y
 	elif [ $release = "Ubuntu" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y &&  apt install sudo -y
 		apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 	else
 		yellow " 不支持当前系统 "
@@ -318,6 +290,8 @@ fi
 
 if [ $release = "Centos" ]
 	then
+	        yum update -y
+                yum install curl wget -y && yum install sudo -y
 		yum install epel-release -y		
 		yum install -y \
                 https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -326,7 +300,8 @@ if [ $release = "Centos" ]
                 yum install wireguard-tools -y
 	elif [ $release = "Debian" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y && apt install sudo -y
 		apt-get install openresolv -y
 		echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list
 		printf 'Package: *\nPin: release a=unstable\nPin-Priority: 150\n' > /etc/apt/preferences.d/limit-unstable
@@ -334,7 +309,8 @@ if [ $release = "Centos" ]
 		apt-get install wireguard-tools -y
 	elif [ $release = "Ubuntu" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y &&  apt install sudo -y
 		apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 	else
 		yellow " 不支持当前系统 "
@@ -367,6 +343,8 @@ fi
 
 if [ $release = "Centos" ]
 	then
+	        yum update -y
+                yum install curl wget -y && yum install sudo -y
 		yum install epel-release -y		
 		yum install -y \
                 https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -375,7 +353,8 @@ if [ $release = "Centos" ]
                 yum install wireguard-tools -y
 	elif [ $release = "Debian" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y && apt install sudo -y
 		apt-get install openresolv -y
 		echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list
 		printf 'Package: *\nPin: release a=unstable\nPin-Priority: 150\n' > /etc/apt/preferences.d/limit-unstable
@@ -383,7 +362,8 @@ if [ $release = "Centos" ]
 		apt-get install wireguard-tools -y
 	elif [ $release = "Ubuntu" ]
 	then
-		apt-get update
+		apt-get update -y
+		apt-get install curl wget -y &&  apt install sudo -y
 		apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 	else
 		yellow " 不支持当前系统 "
