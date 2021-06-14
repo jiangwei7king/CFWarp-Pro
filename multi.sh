@@ -51,7 +51,7 @@ op=`hostnamectl | grep -i op | awk -F ':' '{print $2}'`
 vi=`hostnamectl | grep -i vi | awk -F ':' '{print $2}'`
 
 if [[ ${vi} == " kvm" ]]; then
-echo "kvm"
+green "检测通过"
 else
 yellow " 虚拟架构类型 - $vi "
 yellow " 此vps并非kvm架构，脚本安装自动退出！"
