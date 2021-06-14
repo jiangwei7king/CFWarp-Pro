@@ -70,13 +70,13 @@
 - **脚本一：适用于纯IPV4 VPS与IPV4+IPV6双栈VPS，非root状态下直接输入以下脚本（支持甲骨文与谷歌云）**
 
 ```
-bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/root.sh)
+bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/root.sh)
 ```
 
 - **脚本二：适用于纯IPV6 VPS，先执行```sudo -i```进入root模式后再输入以下脚本（已集成永久DNS64）**
 
 ```
-echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/v6root.sh)
+echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/v6root.sh)
 ```
 
 -----------------------------------------------------------------------------------------
@@ -132,7 +132,7 @@ echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https:
 - **脚本一：支持X86/ARM架构的纯IPV4 VPS与IPV4+IPV6双栈VPS**
 
 ```
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/multi.sh && chmod +x multi.sh && ./multi.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
 ```
 
 进入脚本快捷方式 ```bash ~/multi.sh```
@@ -142,7 +142,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp
 
 - 如未执行上面的root一键脚本，先执行```sudo -i```进入root模式，后执行```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf```
 ```
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/multiOV6.sh && chmod +x multiOV6.sh && ./multiOV6.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multiOV6.sh && chmod +x multiOV6.sh && ./multiOV6.sh
 ```
 
 纯IPV6建议后续只用快捷方式进入脚本 ```bash ~/multiOV6.sh```
