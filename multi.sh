@@ -59,7 +59,7 @@ exit 1
 fi
 
 sleep 1s
-yellow " VPS检测结果如下！"
+yellow " 检测结果如下："
 yellow "------------------------------------------"
 green " 操作系统名称 -$op "
 green " 系统内核版本 - $version " 
