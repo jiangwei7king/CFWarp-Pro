@@ -1,6 +1,6 @@
 ## 编辑未完成，图片文字排版更新中。
 
-# 21.6.14即将更新：优化安装逻辑(每次进脚本都要检验依赖问题），简化并优化文本说明！此次为正试版！
+# 21.6.14更新要点：优化安装逻辑(每次进脚本都要检验依赖问题），简化并优化文本说明！此次为正试版！
 
 # 21.6.13更新要点：
 
@@ -8,22 +8,11 @@
 
 1、加入Centos/Debain系统的支持
 
-![712b6861802a55597e161caa59adc0a](https://user-images.githubusercontent.com/80431714/121798581-c4275600-cc59-11eb-97f5-fe7f8be7a9fd.png)
-
-![f9b35ccf3fd333c83e95ae6b660ddcb](https://user-images.githubusercontent.com/80431714/121798610-e7ea9c00-cc59-11eb-8774-e3d36aabd978.png)
-
-
 2、自动识别系统，无须手动输入专用IP与IPV6
 
 3、内核更新独立选择
 
-![644a40002abdabac007fb10fc3a8c6e](https://user-images.githubusercontent.com/80431714/121798587-cc7f9100-cc59-11eb-981d-3e0e31f3b4b3.png)
-
-
 4、更智能得检测当前正使用哪个V4或V6地址
-
-![21cf70a6bd155b549b7839bddd0280e](https://user-images.githubusercontent.com/80431714/121798598-d4d7cc00-cc59-11eb-8add-1ccc6756ad13.png)
-
 
 ### 更新已测试通过的VPS名单
 
