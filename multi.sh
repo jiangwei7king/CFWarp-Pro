@@ -51,14 +51,15 @@ op=`hostnamectl | grep -i op | awk -F ':' '{print $2}'`
 vi=`hostnamectl | grep -i vi | awk -F ':' '{print $2}'`
 
 if [[ ${vi} == " kvm" ]]; then
-green " 检测通过 "
+green " ---VPS扫描中---> "
 else
 yellow " 虚拟架构类型 - $vi "
 yellow " 此vps并非kvm架构，脚本安装自动退出！"
 exit 1
 fi
 
-yellow " VPS小鸡内脏检测结果如下！："
+sleep 1s
+yellow " VPS检测结果如下！"
 yellow "------------------------------------------"
 green " 操作系统名称 -$op "
 green " 系统内核版本 - $version " 
@@ -66,7 +67,7 @@ green " CPU架构名称  - $bit "
 green " 虚拟架构类型 -$vi "
 green " -----------------------------------------------"
 blue " 本warp脚本仅支持网络效能最高的--内核集成--模式 "
-blue " 要求系统内核必须在5.6以上（脚本集成多系统稳定版内核更新功能） "
+blue " 要求系统内核必须在5.6以上（脚本已集成稳定版内核更新功能） "
 
 red " 对此无压力的请按：任意键继续。对此没兴趣的请按：Ctrl+C退出。 "
 char=$(get_char)
