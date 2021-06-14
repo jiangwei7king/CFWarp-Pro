@@ -144,6 +144,8 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 
 因为5.6版本以上内核才集成Wireguard，内核集成方案在理论上网络效率最高！（网络性能：内核集成>内核模块>Wireguard-Go）
 
+而网络上很多项目大多都为“内核模块”方案。所以本项目就来pro版的，后续随着VPS厂商对系统的升级，内核集成必定是主流。
+
 自动检测内核版本功能已集成于5-10脚本中，5.6以下内核将自动终止脚本运行并提示升级内核！
 
 更新完成后将自动断开VPS连接！
