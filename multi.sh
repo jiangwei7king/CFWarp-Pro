@@ -387,7 +387,7 @@ green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如
 }
 
 function upcore(){
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/upcore.sh&& chmod +x upcore.sh && ./upcore.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/upcore.sh&& chmod +x upcore.sh && ./upcore.sh
 }
 
 function iptables(){
@@ -460,15 +460,15 @@ systemctl status wg-quick@wgcf
 }
 
 function up(){
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/multi.sh && chmod +x multi.sh && ./multi.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 #主菜单
 function start_menu(){
     clear
-    red " 详细说明 https://github.com/YG-tsj/Oracle-warp  YouTube频道：甬哥探世界 " 
+    red " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥探世界 " 
     
-    red " 围绕WARP功能的脚本，支持KVM X86架构的Ubuntu/Centos/Debain最新系统 "  
+    red " 支持KVM X86架构的Ubuntu/Centos/Debain最新系统 "  
     
     red " ==============================================================================================" 
     
@@ -601,7 +601,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N https://github.com/YG-tsj/Oracle-warp/raw/main/wgcf
+wget -N https://github.com/YG-tsj/CFWarp-Pro/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -626,7 +626,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N https://github.com/YG-tsj/Oracle-warp/raw/main/wgcf
+wget -N https://github.com/YG-tsj/CFWarp-Pro/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -652,7 +652,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N https://github.com/YG-tsj/Oracle-warp/raw/main/wgcf
+wget -N https://github.com/YG-tsj/CFWarp-Pro/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -679,7 +679,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N https://github.com/YG-tsj/Oracle-warp/raw/main/wgcf
+wget -N https://github.com/YG-tsj/CFWarp-Pro/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -705,7 +705,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N https://github.com/YG-tsj/Oracle-warp/raw/main/wgcf
+wget -N https://github.com/YG-tsj/CFWarp-Pro/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -732,7 +732,7 @@ fi
 
 apt update
 apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
-wget -N https://github.com/YG-tsj/Oracle-warp/raw/main/wgcf
+wget -N https://github.com/YG-tsj/CFWarp-Pro/raw/main/wgcf
 cp wgcf /usr/local/bin/wgcf
 chmod +x /usr/local/bin/wgcf
 echo | wgcf register
@@ -831,15 +831,15 @@ systemctl status wg-quick@wgcf
 }
 
 function up(){
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/Pro-warp/main/multi.sh && chmod +x multi.sh && ./multi.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 #主菜单
 function start_menu(){
     clear
-    red " 详细说明 https://github.com/YG-tsj/Oracle-warp  YouTube频道：甬哥探世界 " 
+    red " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥探世界 " 
     
-    red " 围绕WARP功能的脚本，目前仅支持甲骨文KVM ARM架构/Ubuntu 20.04系统，还在优化添加新功能中…… "  
+    red " 目前仅支持甲骨文KVM ARM架构/Ubuntu 20.04系统，还在优化添加新功能中…… "  
     
     red " ==============================================================================================" 
     
