@@ -476,7 +476,7 @@ function start_menu(){
     clear
     red " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥探世界 " 
     
-    red " 支持KVM X86架构的Ubuntu/Centos/Debain最新系统 "  
+    red " 支持X86架构的Ubuntu/Centos/Debain最新系统 "  
     
     red " ==============================================================================================" 
     
