@@ -61,7 +61,7 @@ green " ---VPS扫描中---> "
 
 else
 yellow " 虚拟架构类型 - $vi "
-yellow " 此vps架构不支持，脚本安装自动退出！"
+yellow " 对此vps架构不支持，脚本安装自动退出！"
 exit 1
 fi
 
