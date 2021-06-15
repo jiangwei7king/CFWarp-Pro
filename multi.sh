@@ -52,6 +52,10 @@ vi=`hostnamectl | grep -i vi | awk -F ':' '{print $2}'`
 
 if [[ ${vi} == " kvm" ]]; then
 green " ---VPS扫描中---> "
+
+elif [[ ${vi} == " xen" ]]; then
+green " ---VPS扫描中---> "
+
 else
 yellow " 虚拟架构类型 - $vi "
 yellow " 此vps并非kvm架构，脚本安装自动退出！"
