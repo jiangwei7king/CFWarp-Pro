@@ -460,18 +460,6 @@ function cv46(){
 	fi
 }
 
-pingv4=$(ping -c 1 www.google.com) 
- if [[ -z "${pingv4}" ]]; then 
- red " ---> 不支持ipv4" 
- fi 
-
-pingIPv6=$(ping6 -c 1 www.google.com | sed '2{s/[^(]*(//;s/).*//;q;}' | tail -n +2) 
- if [[ -z "${pingIPv6}" ]]; then 
- echoContent red " ---> 不支持ipv6" 
- exit 0 
- fi 
- 
-
 function Netflix(){
 wget -O nf https://cdn.jsdelivr.net/gh/sjlleo/netflix-verify/CDNRelease/nf_2.60_linux_amd64 && chmod +x nf && clear && ./nf -method full
 }
