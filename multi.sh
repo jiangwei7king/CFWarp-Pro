@@ -442,19 +442,35 @@ curl -fsSL https://raw.staticdn.net/phlinhng/v2ray-tcp-tls-web/main/src/xwall.sh
 function cv46(){
         yellow "开始检测IPV4地址"
 	v4=`wget -qO- ipv4.ip.sb`
-	if [[ -z $v4 ]]; then
-		red " VPS当前检测不到IPV4地址 "
+	pingv4=$(ping -c 1 www.google.com) 
+        if [[ -z "${pingv4}" ]]; then 
+        red " ---> VPS当前检测不到IPV4地址 " 
 	else
-		green " VPS当前正使用的IPV4地址: $v4 "
+	green " VPS当前正使用的IPV4地址: $v4 "
 	fi
+	
+	
 	yellow "开始检测IPV6地址"
 	v6=`wget -qO- ipv6.ip.sb`
-	if [[ -z $v6 ]]; then
-		red " VPS当前检测不到IPV6地址 "
+	pingv6=$(ping6 -c 1 www.google.com) 
+	if [[ -z "${pingv6}" ]]; then 
+        red " ---> VPS当前检测不到IPV6地址 " 
 	else
-		green " VPS当前正使用的IPV6地址: $v6 "
+	green " VPS当前正使用的IPV6地址: $v6 "
 	fi
 }
+
+pingv4=$(ping -c 1 www.google.com) 
+ if [[ -z "${pingv4}" ]]; then 
+ red " ---> 不支持ipv4" 
+ fi 
+
+pingIPv6=$(ping6 -c 1 www.google.com | sed '2{s/[^(]*(//;s/).*//;q;}' | tail -n +2) 
+ if [[ -z "${pingIPv6}" ]]; then 
+ echoContent red " ---> 不支持ipv6" 
+ exit 0 
+ fi 
+ 
 
 function Netflix(){
 wget -O nf https://cdn.jsdelivr.net/gh/sjlleo/netflix-verify/CDNRelease/nf_2.60_linux_amd64 && chmod +x nf && clear && ./nf -method full
