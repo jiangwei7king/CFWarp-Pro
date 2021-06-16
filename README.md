@@ -127,7 +127,7 @@ echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https:
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
 ```
 
-进入脚本快捷方式 ```bash ~/multi.sh```
+进入脚本快捷方式 ```bash multi.sh```
 
 ---------------------------------------------------------------------------------------------------
 - **脚本二：支持X86/ARM架构的纯IPV6 VPS**
@@ -137,7 +137,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multiOV6.sh && chmod +x multiOV6.sh && ./multiOV6.sh
 ```
 
-纯IPV6建议后续只用快捷方式进入脚本 ```bash ~/multiOV6.sh```
+纯IPV6建议后续只用快捷方式进入脚本 ```bash multiOV6.sh```
 
 ----------------------------------------------------------------------------------------
 
