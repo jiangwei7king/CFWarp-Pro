@@ -56,15 +56,6 @@ yellow " 对此vps架构不支持，脚本安装自动退出！"
 exit 1
 fi
 
-sleep 1s
-yellow " 检测结果如下："
-yellow "------------------------------------------"
-green " 操作系统名称 -$op "
-green " 系统内核版本 - $version " 
-green " CPU架构名称  - $bit "
-green " 虚拟架构类型 -$vi "
-green " -----------------------------------------------"
-
 if [[ ${bit} == "x86_64" ]]; then
 
 function warp6(){
@@ -466,12 +457,15 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 function start_menu(){
     clear
     red " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥探世界 " 
+    yellow " 检测结果如下："
+    yellow "------------------------------------------"
+    green " 操作系统名称 -$op "
+    green " 系统内核版本 - $version " 
+    green " CPU架构名称  - $bit "
+    green " 虚拟架构类型 -$vi "
+    green " -----------------------------------------------" 
     
-    red " 支持X86架构的Ubuntu/Centos/Debain最新系统 "  
-    
-    red " ==============================================================================================" 
-    
-    yellow " 切记：进入脚本快捷方式 bash ~/multi.sh "
+    yellow " 切记：进入脚本快捷方式 bash multi.sh "
     
     blue " ==========================一、VPS状态调整选择（更新中）==========================================" 
     
