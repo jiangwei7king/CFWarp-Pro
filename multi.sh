@@ -120,13 +120,24 @@ wget -N https://github.com/ViRb3/wgcf/releases/download/v2.2.3/wgcf_2.2.3_linux_
 sudo chmod +x /usr/local/bin/wgcf
 echo | wgcf register
 until [ $? -eq 0 ]
+do
 sleep 1s
+echo | wgcf register
+done
 wgcf generate
 sudo sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
 sudo sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
 sudo sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
 sudo cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+wg-quick up wgcf
+wget -qO- ipv6.ip.sb
+until [ $? -eq 0 ]  
+do
+wg-quick down wgcf
+wg-quick up wgcf
+wget -qO- ipv6.ip.sb
+done
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
 rm -f wgcf*
