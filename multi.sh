@@ -442,7 +442,7 @@ curl -fsSL https://raw.staticdn.net/phlinhng/v2ray-tcp-tls-web/main/src/xwall.sh
 function cv46(){
         yellow "开始检测IPV4地址"
 	v4=`wget -qO- ipv4.ip.sb`
-	pingv4=$(ping -c 1 www.google.com) 
+	pingv4=$(ping -c 1 www.google.com| sed '2{s/[^(]*(//;s/).*//;q;}' | tail -n +2) 
         if [[ -z "${pingv4}" ]]; then 
         red " ---> VPS当前检测不到IPV4地址 " 
 	else
@@ -452,7 +452,7 @@ function cv46(){
 	
 	yellow "开始检测IPV6地址"
 	v6=`wget -qO- ipv6.ip.sb`
-	pingv6=$(ping6 -c 1 www.google.com) 
+	pingv6=$(ping6 -c 1 www.google.com| sed '2{s/[^(]*(//;s/).*//;q;}' | tail -n +2) 
 	if [[ -z "${pingv6}" ]]; then 
         red " ---> VPS当前检测不到IPV6地址 " 
 	else
