@@ -119,6 +119,8 @@ if [ $release = "Centos" ]
 wget -N https://github.com/ViRb3/wgcf/releases/download/v2.2.3/wgcf_2.2.3_linux_amd64 -O /usr/local/bin/wgcf
 sudo chmod +x /usr/local/bin/wgcf
 echo | wgcf register
+until [ $? -eq 0 ]
+sleep 1s
 wgcf generate
 sudo sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
 sudo sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
