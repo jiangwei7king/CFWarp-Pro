@@ -468,7 +468,7 @@ function start_menu(){
     white " -----------------------------------------------" 
     yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥探世界 " 
     
-    yellow " 切记：进入脚本快捷方式 bash multi.sh "
+    red " 切记：进入脚本快捷方式 bash multi.sh "
     
     white " ==========================一、VPS状态调整选择（更新中）==========================================" 
     
