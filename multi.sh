@@ -14,15 +14,6 @@ blue(){
     echo -e "\033[36m\033[01m$1\033[0m"
 }
 
-get_char(){
-	SAVEDSTTY=`stty -g`
-	stty -echo
-	stty cbreak
-	dd if=/dev/tty bs=1 count=1 2> /dev/null
-	stty -raw
-	stty echo
-	stty $SAVEDSTTY
-}
 
 	if [[ -f /etc/redhat-release ]]; then
 		release="Centos"
@@ -73,11 +64,6 @@ green " 系统内核版本 - $version "
 green " CPU架构名称  - $bit "
 green " 虚拟架构类型 -$vi "
 green " -----------------------------------------------"
-blue " 本warp脚本仅支持网络效能最高的--内核集成--模式 "
-blue " 要求系统内核必须在5.6以上（脚本已集成稳定版内核更新功能） "
-
-red " 对此无压力的请按：任意键继续。对此没兴趣的请按：Ctrl+C退出。 "
-char=$(get_char)
 
 if [[ ${bit} == "x86_64" ]]; then
 
@@ -130,14 +116,6 @@ sudo sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
 sudo sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
 sudo cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
-wg-quick up wgcf
-wget -qO- ipv6.ip.sb
-until [ $? -eq 0 ]  
-do
-wg-quick down wgcf
-wg-quick up wgcf
-wget -qO- ipv6.ip.sb
-done
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
 rm -f wgcf*
