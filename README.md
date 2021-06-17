@@ -216,6 +216,14 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 
 因WARP脚本默认集成该功能，所以脚本安装成功后不必再执行该项。
 
+- **八、查看warp当前的运行状态
+
+显示Active: active (exited)绿色：开启
+
+显示Active: inactive (dead)黑色：关闭
+
+显示Active红色：安装失败
+
 - **八、查看当前VPS的IPV4/IPV6地址：**
 
 顾名思义，当前正在运行的IP地址。
