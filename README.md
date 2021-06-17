@@ -222,13 +222,13 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 
 显示Active: inactive (dead)黑色：关闭
 
-显示Active红色：安装失败
+显示Active：failed 红色：安装失败
 
 - **九、查看当前VPS的IPV4/IPV6地址：**
 
 顾名思义，当前正在运行的IP地址。
 
-- **十、代理协议脚本选择**
+- **十、代理协议脚本选择（为甲骨文云优化）**
 
 支持IPV4/IPV6/X86/ARM的全面脚本 ，推荐！
 mack-a脚本地址：https://github.com/mack-a/v2ray-agent
