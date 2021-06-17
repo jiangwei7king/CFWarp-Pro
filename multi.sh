@@ -440,6 +440,10 @@ wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-
 }
 
 function phlinhng(){
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -F
 curl -fsSL https://raw.staticdn.net/phlinhng/v2ray-tcp-tls-web/main/src/xwall.sh -o ~/xwall.sh && bash ~/xwall.sh
 }
 
@@ -842,6 +846,10 @@ wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-
 }
 
 function phlinhng(){
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -F
 curl -fsSL https://raw.staticdn.net/phlinhng/v2ray-tcp-tls-web/main/src/xwall.sh -o ~/xwall.sh && bash ~/xwall.sh
 }
 
