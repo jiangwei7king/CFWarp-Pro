@@ -20,7 +20,7 @@
 
 ### 更新已测试通过的VPS名单
 
- - [x] 已支持：oracle，gpc，buyvm，racknerd，aws，azure，bandwagonhost（搬瓦工）………………欢迎大家补充反馈………
+ - [x] 已支持：oracle（甲骨文云），gpc（谷歌云），buyvm，racknerd，aws（亚马逊云），azure（微软云），bandwagonhost（搬瓦工）………………欢迎大家补充反馈………
  
 #### 提醒：OpenVZ、LXC架构并不集成在此脚本中。内核必须5.6以上，脚本自带稳定版内核升级功能。
 
