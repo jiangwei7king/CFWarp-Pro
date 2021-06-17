@@ -17,11 +17,13 @@
 ### 更新已测试通过的VPS名单
 
  - [x] 支持：oracle，gpc，buyvm，aws，azure………………欢迎大家补充反馈………
+ 
+### 提醒：OpenVZ、LXC架构并不集成在此脚本中。内核必须5.6以上，脚本自带稳定版内核升级功能。
+
+### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将更新IPV4的相关支持。
 
 --------------------------------------------------------------------------------------------
 ## 针对KVM架构VPS的WARP一键综合脚本
-
-### 内核必须5.6以上。脚本自带稳定版内核升级功能。
 
 - [x] 支持自动识别X86与ARM的CPU架构
 - [x] 支持 纯IPV4  VPS
@@ -31,7 +33,7 @@
 
 ![d89ed915a4e612e87946206873184a8](https://user-images.githubusercontent.com/80431714/121798546-9b9f5c00-cc59-11eb-8b6e-e3462ce7c6ec.png)
 
-### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将更新。
+
 -----------------------------------------------------------------------------------------
 # 目录
 
