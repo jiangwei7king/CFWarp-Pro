@@ -280,9 +280,9 @@ phlinhng脚本地址：https://github.com/phlinhng/v2ray-tcp-tls-web
 }
 ```
 
-outbounds：以上是代理脚本默认为IPV4优先设置。如果IPV6优先，则把4改成6，6改成4。
+outbounds：只改三处（三个数字）！！！以上是代理脚本默认为IPV4优先设置。如果IPV6优先，则把4改成6，6改成4。
 
-routing：设置自由度很高，可参考IP、域名自定义德鸡IPV6教程：https://youtu.be/fY9HDLJ7mnM)
+routing：设置自由度太高啦！可参考IP、域名自定义德鸡IPV6教程：https://youtu.be/fY9HDLJ7mnM)
 
 ----------------------------------------------------------------------------------------------
 
