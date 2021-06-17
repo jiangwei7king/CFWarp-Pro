@@ -224,11 +224,11 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 
 显示Active红色：安装失败
 
-- **八、查看当前VPS的IPV4/IPV6地址：**
+- **九、查看当前VPS的IPV4/IPV6地址：**
 
 顾名思义，当前正在运行的IP地址。
 
-- **九、代理协议脚本选择**
+- **十、代理协议脚本选择**
 
 支持IPV4/IPV6/X86/ARM的全面脚本 ，推荐！
 mack-a脚本地址：https://github.com/mack-a/v2ray-agent
@@ -238,14 +238,15 @@ phlinhng脚本地址：https://github.com/phlinhng/v2ray-tcp-tls-web
 
 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
-- **十、重启VPS实例（俗话说：重启解决99%的问题）**
+- **十一、重启VPS实例（俗话说：重启解决99%的问题）**
  
 甲骨文云也可以登录网页，进入实例后台，执行“重新引导”，在后台重启。
 
 ------------------------------------------------------------------------------------------------------
 ### 自定义ip分流配置模板说明
 
-IPV4 VPS WARP专用分流配置文件(以下默认全局IPV4优先，IP、域名自定义教程，参考https://youtu.be/fY9HDLJ7mnM)
+分流配置文件：outbounds配置文件或者routing配置文件，让IP、域名自定义。大家可根据代理脚本作者说明来查找文件路径！
+
 ```
 { 
 "outbounds": [
@@ -278,6 +279,11 @@ IPV4 VPS WARP专用分流配置文件(以下默认全局IPV4优先，IP、域名
   }
 }
 ```
+
+outbounds：以上是代理脚本默认为IPV4优先设置。如果IPV6优先，则把4改成6，6改成4。
+
+routing：设置自由度很高，可参考IP、域名自定义德鸡IPV6教程：https://youtu.be/fY9HDLJ7mnM)
+
 ----------------------------------------------------------------------------------------------
 
 ### 相关附加说明
