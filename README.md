@@ -22,7 +22,11 @@
 
  - [x] 已支持：oracle（甲骨文云），gpc（谷歌云），buyvm，racknerd，aws（亚马逊云），azure（微软云），bandwagonhost（搬瓦工）………………欢迎大家补充反馈………
  
-#### 提醒：OpenVZ、LXC架构并不集成在此脚本中。内核必须5.6以上，脚本自带稳定版内核升级功能。
+#### 提醒：
+
+1、OpenVZ、LXC架构的VPS并不集成在此脚本中。
+
+2、内核必须5.6以上，脚本自带稳定版内核升级功能。
 
 #### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将更新IPV4的相关支持。
 
