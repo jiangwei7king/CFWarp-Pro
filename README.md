@@ -167,9 +167,9 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 
 更新完成后将自动断开VPS连接！
 
-- **三、开启原生BBR加速（秋水逸冰版）：**
+- **三、开启原生BBR加速：**
 
-按任意键即可安装成功，检测BBR是否生效(显示有BBR，说明成功)：lsmod | grep bbr
+检测原生BBR是否生效，最后显示有tcp_bbr字样，说明成功。
 
 - **四、奈非Netflix检测(sjlleo版)：**
 
