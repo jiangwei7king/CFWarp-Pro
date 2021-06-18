@@ -47,8 +47,8 @@ bit=`uname -m`
 version=`uname -r | awk -F "-" '{print $1}'`
 main=`uname  -r | awk -F . '{print $1 }'`
 minor=`uname -r | awk -F . '{print $2}'`
-rv4=`ip addr | grep -E 'ens|eth0|enp' | awk 'END {print $2}' | cut -d'/' -f1`
-rv6=`ip addr | grep inet6 | awk 'NR==2 {print $2}' | cut -d'/' -f1`
+rv4=`ip a | grep 'brd' | awk 'NR==3 {print $2}' | cut -d'/' -f1`
+rv6=`ip a | grep inet6 | awk 'NR==2 {print $2}' | cut -d'/' -f1`
 op=`hostnamectl | grep -i Operating | awk -F ':' '{print $2}'`
 vi=`hostnamectl | grep -i Virtualization | awk -F ':' '{print $2}'`
 
