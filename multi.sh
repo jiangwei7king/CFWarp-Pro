@@ -676,9 +676,13 @@ function status(){
 systemctl status wg-quick@wgcf
 }
 
-function up(){
+function up6(){
 echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf
 wget -6 -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
+}
+
+function up4(){
+wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 #主菜单
@@ -737,7 +741,9 @@ function start_menu(){
     
     green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
-    green " 18. 更新脚本 "
+    green " 18. 纯V6下更新脚本 "
+    
+    green " 19. 纯V4/V4+V6下更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
@@ -809,15 +815,18 @@ function start_menu(){
            cv46
 	;;
 	18 )
-           up
+           up6
 	;;
 	19 )
-           macka
+           up4
 	;;
 	20 )
-           phlinhng
+           macka
 	;;
 	21 )
+           phlinhng
+	;;
+	22 )
            reboot
 	;;
         0 )
