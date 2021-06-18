@@ -69,6 +69,179 @@ fi
 
 if [[ ${bit} == "x86_64" ]]; then
 
+function wo646(){
+yellow " 检测系统内核版本是否大于5.6版本 "
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，回到菜单，选择2，自动更新内核吧"
+	exit 1
+fi
+
+if [ $release = "Centos" ]
+	then
+	        yum update -y
+                yum install curl wget -y && yum install sudo -y
+		yum install epel-release -y		
+		yum install -y \
+                https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+                curl -o /etc/yum.repos.d/jdoss-wireguard-epel-7.repo \
+                https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
+                yum install wireguard-tools -y
+	elif [ $release = "Debian" ]
+	then
+		apt-get update -y
+		apt-get install curl wget -y && apt install sudo -y
+		apt-get install openresolv -y
+		echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list
+		printf 'Package: *\nPin: release a=unstable\nPin-Priority: 150\n' > /etc/apt/preferences.d/limit-unstable
+		apt-get install linux-headers-`uname -r` -y
+		apt-get install wireguard-tools -y
+	elif [ $release = "Ubuntu" ]
+	then
+		apt-get update -y
+		apt-get install curl wget -y &&  apt install sudo -y
+		apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
+	else
+		yellow " 不支持当前系统 "
+		exit 1
+	fi
+wget -N https://github.com/ViRb3/wgcf/releases/download/v2.2.3/wgcf_2.2.3_linux_amd64 -O /usr/local/bin/wgcf
+sudo chmod +x /usr/local/bin/wgcf
+echo | wgcf register
+until [ $? -eq 0 ]
+do
+sleep 1s
+echo | wgcf register
+done
+wgcf generate
+sed -i "5 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
+sed -i "6 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
+sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
+cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+systemctl enable wg-quick@wgcf
+systemctl start wg-quick@wgcf
+rm -f wgcf*
+grep -qE '^[ ]*precedence[ ]*::ffff:0:0/96[ ]*100' /etc/gai.conf || echo 'precedence ::ffff:0:0/96  100' | sudo tee -a /etc/gai.conf
+yellow " 检测是否成功启动（IPV4+IPV6）双栈Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
+green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:…………，则说明成功啦！\n 如上方IPV4无IP显示,IPV6显示本地IP,则说明失败喽！！ "
+}
+
+function wo66(){
+yellow " 检测系统内核版本是否大于5.6版本 "
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，回到菜单，选择2，自动更新内核吧"
+	exit 1
+fi
+
+if [ $release = "Centos" ]
+	then
+	        yum update -y
+                yum install curl wget -y && yum install sudo -y
+		yum install epel-release -y		
+		yum install -y \
+                https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+                curl -o /etc/yum.repos.d/jdoss-wireguard-epel-7.repo \
+                https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
+                yum install wireguard-tools -y
+	elif [ $release = "Debian" ]
+	then
+		apt-get update -y
+		apt-get install curl wget -y && apt install sudo -y
+		apt-get install openresolv -y
+		echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list
+		printf 'Package: *\nPin: release a=unstable\nPin-Priority: 150\n' > /etc/apt/preferences.d/limit-unstable
+		apt-get install linux-headers-`uname -r` -y
+		apt-get install wireguard-tools -y
+	elif [ $release = "Ubuntu" ]
+	then
+		apt-get update -y
+		apt-get install curl wget -y &&  apt install sudo -y
+		apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
+	else
+		yellow " 不支持当前系统 "
+		exit 1
+	fi
+wget -N https://github.com/ViRb3/wgcf/releases/download/v2.2.3/wgcf_2.2.3_linux_amd64 -O /usr/local/bin/wgcf
+sudo chmod +x /usr/local/bin/wgcf
+echo | wgcf register
+until [ $? -eq 0 ]
+do
+sleep 1s
+echo | wgcf register
+done
+wgcf generate
+sed -i "5 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
+sed -i "6 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
+sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
+sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
+cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+systemctl enable wg-quick@wgcf
+systemctl start wg-quick@wgcf
+rm -f wgcf*
+yellow " 检测是否成功启动Warp！\n 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
+green " 如上方显示IPV6地址：2a09:…………，则说明成功！\n 如上方无IP显示，则说明失败喽！ "
+}
+
+function wo64(){
+yellow " 检测系统内核版本是否大于5.6版本 "
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，回到菜单，选择2，自动更新内核吧"
+	exit 1
+fi
+
+if [ $release = "Centos" ]
+	then
+	        yum update -y
+                yum install curl wget -y && yum install sudo -y
+		yum install epel-release -y		
+		yum install -y \
+                https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+                curl -o /etc/yum.repos.d/jdoss-wireguard-epel-7.repo \
+                https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
+                yum install wireguard-tools -y
+	elif [ $release = "Debian" ]
+	then
+		apt-get update -y
+		apt-get install curl wget -y && apt install sudo -y
+		apt-get install openresolv -y
+		echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable-wireguard.list
+		printf 'Package: *\nPin: release a=unstable\nPin-Priority: 150\n' > /etc/apt/preferences.d/limit-unstable
+		apt-get install linux-headers-`uname -r` -y
+		apt-get install wireguard-tools -y
+	elif [ $release = "Ubuntu" ]
+	then
+		apt-get update -y
+		apt-get install curl wget -y &&  apt install sudo -y
+		apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
+	else
+		yellow " 不支持当前系统 "
+		exit 1
+	fi
+wget -N https://github.com/ViRb3/wgcf/releases/download/v2.2.3/wgcf_2.2.3_linux_amd64 -O /usr/local/bin/wgcf
+sudo chmod +x /usr/local/bin/wgcf
+echo | wgcf register
+until [ $? -eq 0 ]
+do
+sleep 1s
+echo | wgcf register
+done
+wgcf generate
+sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
+sed -i '/\:\:\/0/d' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
+cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+systemctl enable wg-quick@wgcf
+systemctl start wg-quick@wgcf
+rm -f wgcf*
+grep -qE '^[ ]*precedence[ ]*::ffff:0:0/96[ ]*100' /etc/gai.conf || echo 'precedence ::ffff:0:0/96  100' | sudo tee -a /etc/gai.conf
+yellow " 检测是否成功启动Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) "
+green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如上方显示VPS本地IP,则说明失败喽！ "
+}
+
 function warp6(){
 yellow " 检测系统内核版本是否大于5.6版本 "
 if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
@@ -501,7 +674,7 @@ systemctl status wg-quick@wgcf
 }
 
 function up(){
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
+wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 #主菜单
@@ -532,11 +705,11 @@ function start_menu(){
     
     yellow " ----VPS原生IP数------------------------------------添加WARP虚拟IP的位置--------------"
     
-    green " 5. 单IPV4的VPS。                                   添加WARP虚拟IPV6               "
+    green " 5. 纯IPV4的VPS。                                   添加WARP虚拟IPV6               "
     
-    green " 6. 单IPV4的VPS。                                   添加WARP虚拟IPV4+虚拟IPV6      "
+    green " 6. 纯IPV4的VPS。                                   添加WARP虚拟IPV4+虚拟IPV6      "
     
-    green " 7. 单IPV4的VPS。                                   添加WARP虚拟IPV4              "
+    green " 7. 纯IPV4的VPS。                                   添加WARP虚拟IPV4              "
     
     green " 8. 双栈IPV4+IPV6的VPS。                            添加WARP虚拟IPV6               "
     
@@ -544,29 +717,35 @@ function start_menu(){
     
     green " 10. 双栈IPV4+IPV6的VPS。                           添加WARP虚拟IPV4               "
     
+    green " 11. 纯IPV6的VPS。                                  添加WARP虚拟IPV6               "
+    
+    green " 12. 纯IPV6的VPS。                                  添加WARP虚拟IPV4+虚拟IPV6       "
+    
+    green " 13. 纯IPV6的VPS。                                  添加WARP虚拟IPV4               "
+    
     white " ------------------------------------------------------------------------------------------------"
     
-    green " 11. 永久关闭WARP功能 "
+    green " 14. 永久关闭WARP功能 "
     
-    green " 12. 自动开启WARP功能 "
+    green " 15. 自动开启WARP功能 "
     
-    green " 13. 查看当前WARP运行状态 "
+    green " 16. 查看当前WARP运行状态 "
     
-    green " 14. 查看VPS当前正在使用的IPV4/IPV6地址 "
+    green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
-    green " 15. 更新脚本 "
+    green " 18. 更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
     yellow " 以下脚本已添加全端口临时开启功能，重启VPS实例可自动还原初始设置 "
     
-    green " 16.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    green " 19.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    green " 17.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
+    green " 20.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
     white " ==============================================================================================="
     
-    green " 18. 重启VPS实例，请重新连接SSH "
+    green " 21. 重启VPS实例，请重新连接SSH "
     
     white " ==================================================================================================" 
     
@@ -605,27 +784,36 @@ function start_menu(){
            warp464
 	;;
 	11 )
-           cwarp
+           wo66
 	;;
 	12 )
-           owarp
+           wo646
 	;;
 	13 )
-           status
+           wo64
 	;;
 	14 )
-           cv46
+           cwarp
 	;;
 	15 )
-           up
+           owarp
 	;;
 	16 )
-           macka
+           status
 	;;
 	17 )
-           phlinhng
+           cv46
 	;;
 	18 )
+           up
+	;;
+	19 )
+           macka
+	;;
+	20 )
+           phlinhng
+	;;
+	21 )
            reboot
 	;;
         0 )
