@@ -677,6 +677,7 @@ systemctl status wg-quick@wgcf
 }
 
 function up(){
+echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf
 wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
