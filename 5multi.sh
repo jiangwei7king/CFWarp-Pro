@@ -589,7 +589,7 @@ green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如
 }
 
 function upcore(){
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/upcore.sh&& chmod +x upcore.sh && ./upcore.sh
+wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/upcore.sh&& chmod +x upcore.sh && ./upcore.sh
 }
 
 function iptables(){
