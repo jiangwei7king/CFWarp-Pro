@@ -67,6 +67,15 @@ yellow " 对此vps架构不支持，脚本安装自动退出！"
 exit 1
 fi
 
+yellow " VPS相关信息如下："
+    white "------------------------------------------"
+    blue " 操作系统名称 -$op "
+    blue " 系统内核版本 - $version " 
+    blue " CPU架构名称  - $bit "
+    blue " 虚拟架构类型 -$vi "
+    white " -----------------------------------------------" 
+sleep 3s
+
 if [[ ${bit} == "x86_64" ]]; then
 
 function wo646(){
@@ -688,13 +697,6 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 #主菜单
 function start_menu(){
     clear
-    yellow " VPS相关信息如下："
-    white "------------------------------------------"
-    blue " 操作系统名称 -$op "
-    blue " 系统内核版本 - $version " 
-    blue " CPU架构名称  - $bit "
-    blue " 虚拟架构类型 -$vi "
-    white " -----------------------------------------------" 
     yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥探世界 " 
     
     red " 切记：进入脚本快捷方式 bash multi.sh "
