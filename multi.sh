@@ -677,7 +677,7 @@ systemctl status wg-quick@wgcf
 }
 
 function up(){
-wget -4 -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
+wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 #主菜单
