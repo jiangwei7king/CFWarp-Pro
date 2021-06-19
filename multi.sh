@@ -620,6 +620,7 @@ lsmod | grep bbr
 function cwarp(){
 systemctl stop wg-quick@wgcf
 systemctl disable wg-quick@wgcf
+sudo reboot
 }
 
 function owarp(){
@@ -1048,6 +1049,7 @@ lsmod | grep bbr
 function cwarp(){
 systemctl stop wg-quick@wgcf
 systemctl disable wg-quick@wgcf
+sudo reboot
 }
 
 function owarp(){
