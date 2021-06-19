@@ -689,6 +689,10 @@ function up4(){
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
+function up6(){
+wget -6 -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
+}
+
 #主菜单
 function start_menu(){
     clear
@@ -738,19 +742,21 @@ function start_menu(){
     
     green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
-    green " 18. 具备有访问IPV4的情况下更新脚本 "
+    green " 18. 更新脚本 "
+    
+    green " 19. 纯V6下更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
     yellow " 以下脚本已添加全端口临时开启功能，重启VPS实例可自动还原初始设置 "
     
-    green " 19.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    green " 20.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    green " 20.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
+    green " 21.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
     white " ==============================================================================================="
     
-    green " 21. 重启VPS实例，请重新连接SSH "
+    green " 22. 重启VPS实例，请重新连接SSH "
     
     white " ==================================================================================================" 
     
@@ -813,12 +819,15 @@ function start_menu(){
            up4
 	;;
 	19 )
-           macka
+           up6
 	;;
 	20 )
-           phlinhng
+           macka
 	;;
 	21 )
+           phlinhng
+	;;
+	22 )
            reboot
 	;;
         0 )
@@ -1147,8 +1156,12 @@ function status(){
 systemctl status wg-quick@wgcf
 }
 
-function up(){
+function up4(){
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
+}
+
+function up6(){
+wget -6 -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 function wro646(){
@@ -1291,17 +1304,19 @@ function start_menu(){
     
     green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
-    green " 18. 具备有访问IPV4情况下更新脚本 "
+    green " 18. 更新脚本 "
+    
+    green " 19. 纯V6下更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
     yellow " 以下脚本已添加全端口临时开启功能，重启VPS实例可还原初始设置 "
     
-    green " 19.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    green " 20.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
     
     white " ==============================================================================================="
     
-    green " 20. 重启VPS实例，请重新连接SSH "
+    green " 21. 重启VPS实例，请重新连接SSH "
     
     white " ==================================================================================================" 
     
@@ -1361,12 +1376,15 @@ function start_menu(){
            cv46
 	;;
 	18 )
-           up
+           up4
 	;;
 	19 )
-           macka
+           up6
 	;;
 	20 )
+           macka
+	;;
+	21 )
            reboot
 	;;
         0 )
