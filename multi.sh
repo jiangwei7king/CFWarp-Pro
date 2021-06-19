@@ -685,13 +685,8 @@ function status(){
 systemctl status wg-quick@wgcf
 }
 
-function up6(){
-echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf
-wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
-}
-
 function up4(){
-wget -4 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
+wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 #主菜单
@@ -743,21 +738,19 @@ function start_menu(){
     
     green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
-    green " 18. 纯V6下更新脚本 "
-    
-    green " 19. 纯V4/双栈V4+V6下更新脚本 "
+    green " 18. IPV4环境下更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
     yellow " 以下脚本已添加全端口临时开启功能，重启VPS实例可自动还原初始设置 "
     
-    green " 20.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    green " 19.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    green " 21.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
+    green " 20.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
     white " ==============================================================================================="
     
-    green " 22. 重启VPS实例，请重新连接SSH "
+    green " 21. 重启VPS实例，请重新连接SSH "
     
     white " ==================================================================================================" 
     
@@ -817,18 +810,15 @@ function start_menu(){
            cv46
 	;;
 	18 )
-           up6
-	;;
-	19 )
            up4
 	;;
-	20 )
+	19 )
            macka
 	;;
-	21 )
+	20 )
            phlinhng
 	;;
-	22 )
+	21 )
            reboot
 	;;
         0 )
