@@ -1,32 +1,22 @@
 ## 编辑未完成，图片文字排版更新中。
 
-### 21.6.19更新要点：
+## 针对KVM架构VPS的WARP一键综合脚本
 
-整合纯V6脚本，现9合一脚本已完成。
+- [x] 支持自动识别系统类型，CPU架构(X86/ARM)，内核版本，虚拟化架构类型！
+- [x] 支持纯IPV4，纯IPV6，双栈IPV4+IPV6 三大类VPS
+- [x] 支持Ubuntu/Centos/Debain最新系统！！
+- [x] 支持共9种形态的WARP形式，安装过程无需手动干预
 
-### 21.6.17更新要点：
+![d89ed915a4e612e87946206873184a8](https://user-images.githubusercontent.com/80431714/121798546-9b9f5c00-cc59-11eb-8b6e-e3462ce7c6ec.png)
 
-针对甲骨文云ubuntu系统，对代理脚本（例：mack-a脚本）加入全端口的临时开启，重启VPS实例自动还原初始设置！
-
-### 21.6.15更新要点：
-
-加入对Xen(亚马逊云Aws)与Microsoft(微软云Azure)架构的支持！
-
-### 21.6.14更新要点：
-
-优化安装逻辑（解决每次进脚本都要检验依赖问题），优化WGCF账户申请成功率！
-
-### 21.6.13更新要点：
-
-1、加入Centos/Debain系统的支持
-
-2、自动识别系统，且无须手动输入IP地址
 
 ### 更新已测试通过的VPS名单
 
- - [x] 已支持：oracle（甲骨文云），gpc（谷歌云），buyvm，racknerd，aws（亚马逊云），azure（微软云），bandwagonhost（搬瓦工）………………欢迎大家补充反馈………
+ - [x] 已支持：oracle（甲骨文云），gpc（谷歌云），buyvm，racknerd，aws（亚马逊云），virmach，azure（微软云），bandwagonhost（搬瓦工）………………欢迎大家补充反馈………
  
 ### 提醒：
+
+1、有些KVM VPS的仅提供较低的系统版本，建议DD到最新系统。
 
 1、OpenVZ、LXC架构的VPS并不集成在此脚本中。
 
@@ -35,17 +25,7 @@
 #### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将更新IPV4的相关支持。
 
 --------------------------------------------------------------------------------------------
-## 针对KVM架构VPS的WARP一键综合脚本
 
-- [x] 支持自动识别CPU架构(X86/ARM)，内核版本，虚拟化架构类型！
-- [x] 支持纯IPV4，纯IPV6，双栈IPV4+IPV6 三大类VPS
-- [x] 支持Ubuntu/Centos/Debain最新系统！！
-- [x] 支持共9种形态的WARP形式，安装过程无需手动干预
-
-![d89ed915a4e612e87946206873184a8](https://user-images.githubusercontent.com/80431714/121798546-9b9f5c00-cc59-11eb-8b6e-e3462ce7c6ec.png)
-
-
------------------------------------------------------------------------------------------
 # 目录
 
 * [root一键脚本](#root一键脚本)
