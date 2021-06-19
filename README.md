@@ -133,7 +133,7 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 进入脚本快捷方式 ```bash multi.sh```
 
 ---------------------------------------------------------------------------------------------------
-- **脚本二：支持X86/ARM架构的纯IPV6 VPS**
+- **脚本二：支持X86/ARM架构的纯IPV6 VPS（即将合并到脚本一）**
 
 - 如未执行上面的root一键脚本，先执行```sudo -i```进入root模式，后执行```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf```
 ```
