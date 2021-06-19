@@ -35,9 +35,9 @@
 
 - [x] 支持自动识别X86与ARM的CPU架构
 - [x] 支持 纯IPV4  VPS
-- [x] 支持 IPV4+IPV6双栈VPS
-- [x] 支持 纯IPV6  VPS（目前仅Ubuntu后续会更新）
-- [x] 支持 Ubuntu/Centos/Debain系统！！！
+- [x] 支持 双栈IPV4+IPV6 VPS
+- [x] 支持 纯IPV6  VPS
+- [x] 支持 Ubuntu/Centos/Debain最新系统！！！
 
 ![d89ed915a4e612e87946206873184a8](https://user-images.githubusercontent.com/80431714/121798546-9b9f5c00-cc59-11eb-8b6e-e3462ce7c6ec.png)
 
@@ -67,7 +67,7 @@
 
 用户名：root，密码自定义。方便登录与编辑文件！！后续再次执行脚本意味着更改root密码！！
 
-提示：密码不要设置得过于简单，容易被破解。密钥文件要保存好，以防万一！
+提示：密码不要设置得过于简单，容易被破解。如有密钥文件要保存好，以防万一！
 
 统一适用于纯IPV4、纯IPV6、双栈IPV4+IPV6，非root状态下直接输入以下脚本（支持甲骨文与谷歌云）**
 
