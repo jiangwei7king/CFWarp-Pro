@@ -738,7 +738,7 @@ function start_menu(){
     
     green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
-    green " 18. IPV4环境下更新脚本 "
+    green " 18. 具备有访问IPV4的情况下更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
@@ -1097,6 +1097,8 @@ sudo reboot
 }
 
 function arm5.11(){
+
+function v46(){
 cd /tmp
 wget --no-check-certificate -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11/arm64/linux-headers-5.11.0-051100-generic_5.11.0-051100.202102142330_arm64.deb
 wget --no-check-certificate -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11/arm64/linux-image-unsigned-5.11.0-051100-generic_5.11.0-051100.202102142330_arm64.deb 
@@ -1104,6 +1106,41 @@ wget --no-check-certificate -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5
 sudo dpkg -i *.deb
 sudo apt -f install -y
 sudo reboot
+}
+
+function v6(){
+echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf
+cd /tmp
+wget --no-check-certificate -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11/arm64/linux-headers-5.11.0-051100-generic_5.11.0-051100.202102142330_arm64.deb
+wget --no-check-certificate -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11/arm64/linux-image-unsigned-5.11.0-051100-generic_5.11.0-051100.202102142330_arm64.deb 
+wget --no-check-certificate -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.11/arm64/linux-modules-5.11.0-051100-generic_5.11.0-051100.202102142330_arm64.deb
+sudo dpkg -i *.deb
+sudo apt -f install -y
+sudo reboot
+}
+
+function menu(){
+    clear
+    green " 请确认当前的VPS属于以下哪种IP表现形式！" 
+    blue " 1. 纯IPV4/双栈IPV4+IPV6 "    
+    blue " 2. 纯IPV6 "
+    red " 0. 返回上一层 "
+    echo
+    read -p "请输入数字:" menuNumberInput
+    case "$menuNumberInput" in   
+     1 )
+        v46
+     ;;
+     2 )
+        v6
+     ;;
+     0 )
+       start_menu
+     ;;
+      esac
+}
+
+menu  
 }
 
 function status(){
@@ -1117,15 +1154,6 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 #主菜单
 function start_menu(){
     clear
-    yellow " VPS相关信息如下："
-    white "------------------------------------------"
-    blue " 操作系统名称 -$op "
-    blue " 系统内核版本 - $version " 
-    blue " CPU架构名称  - $bit "
-    blue " 虚拟架构类型 -$vi "
-    white " -----------------------------------------------" 
-    yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥探世界 " 
-    
     red " 切记：进入脚本快捷方式 bash multi.sh "
     
     white " ==========================一、VPS状态调整选择（更新中）==========================================" 
@@ -1164,7 +1192,7 @@ function start_menu(){
     
     green " 14. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
-    green " 15. 更新脚本 "
+    green " 15. 具备有访问IPV4的情况下更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
