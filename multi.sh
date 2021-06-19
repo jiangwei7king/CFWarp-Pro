@@ -691,7 +691,7 @@ wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWar
 }
 
 function up4(){
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
+wget -4 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 #主菜单
@@ -745,7 +745,7 @@ function start_menu(){
     
     green " 18. 纯V6下更新脚本 "
     
-    green " 19. 纯V4/V4+V6下更新脚本 "
+    green " 19. 纯V4/双栈V4+V6下更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
