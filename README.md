@@ -37,11 +37,10 @@
 --------------------------------------------------------------------------------------------
 ## 针对KVM架构VPS的WARP一键综合脚本
 
-- [x] 支持自动识别X86与ARM的CPU架构
-- [x] 支持 纯IPV4  VPS
-- [x] 支持 双栈IPV4+IPV6 VPS
-- [x] 支持 纯IPV6  VPS
-- [x] 支持 Ubuntu/Centos/Debain最新系统！！！
+- [x] 支持自动识别CPU架构(X86/ARM)，内核版本，虚拟化架构类型！
+- [x] 支持纯IPV4，纯IPV6，双栈IPV4+IPV6 三大类VPS
+- [x] 支持Ubuntu/Centos/Debain最新系统！！
+- [x] 支持共9种形态的WARP形式，安装过程无需手动干预
 
 ![d89ed915a4e612e87946206873184a8](https://user-images.githubusercontent.com/80431714/121798546-9b9f5c00-cc59-11eb-8b6e-e3462ce7c6ec.png)
 
@@ -187,11 +186,11 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 
 - **（仅支持 纯IPV6 VPS）**
 
-脚本5、结果表现为3个IP：VPS本地IPV6+WARP虚拟IPV6+WARP虚拟IPV4
+脚本11、结果表现为2个IP：VPS本地IPV6+WARP虚拟IPV6 （注意、无IPV4）
 
-脚本6、结果表现为2个IP：VPS本地IPV6+WARP虚拟IPV4
+脚本12、结果表现为3个IP：VPS本地IPV6+WARP虚拟IPV6+WARP虚拟IPV4
 
-目前（VPS本地IPV6+WARP虚拟IPV6，无IPV4）这种形式的应用应该不多吧，日后会加上。
+脚本13、结果表现为2个IP：VPS本地IPV6+WARP虚拟IPV4
 
 - **六、永久关闭WARP功能：**
 
@@ -283,13 +282,16 @@ routing：设置自由度太高啦！可参考IP、域名自定义德鸡IPV6教�
 
 - 查看WARP当前统计状态：wg
 
-相关WARP进程命令
+- 相关WARP进程命令
+
 手动临时关闭WARP网络接口
 
 wg-quick down wgcf
+
 手动开启WARP网络接口
 
 wg-quick up wgcf
+
 启动systemctl enable wg-quick@wgcf
 
 开始systemctl start wg-quick@wgcf
