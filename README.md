@@ -18,9 +18,9 @@
 
 1、有些KVM VPS的仅提供较低的系统版本，建议DD到最新系统。
 
-1、OpenVZ、LXC架构的VPS并不集成在此脚本中。
+2、OpenVZ、LXC架构的VPS并不集成在此脚本中。
 
-2、内核必须5.6以上，脚本自带稳定版内核升级功能。
+3、内核必须5.6以上，脚本自带稳定版内核升级功能。
 
 #### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将更新IPV4的相关支持。
 
