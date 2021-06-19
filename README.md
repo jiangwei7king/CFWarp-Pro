@@ -1,5 +1,9 @@
 ## 编辑未完成，图片文字排版更新中。
 
+### 21.6.19更新要点：
+
+整合纯V6脚本，现9合一脚本已完成。
+
 ### 21.6.17更新要点：
 
 针对甲骨文云ubuntu系统，对代理脚本（例：mack-a脚本）加入全端口的临时开启，重启VPS实例自动还原初始设置！
@@ -124,7 +128,7 @@ bash <(curl -sSL https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/root.sh)
 -------------------------------------------------------------------------------------------------------
 ### warp多功能一键脚本
 
-- **脚本一：支持X86/ARM架构的纯IPV4 VPS与IPV4+IPV6双栈VPS**
+- **：支持X86/ARM架构的纯IPV4、纯IPV6、双栈IPV4+IPV6 VPS脚本**
 
 ```
 wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
@@ -132,17 +136,9 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 
 进入脚本快捷方式 ```bash multi.sh```
 
+提醒：纯IPV6建议后续只用快捷方式进入脚本
+
 ---------------------------------------------------------------------------------------------------
-- **脚本二：支持X86/ARM架构的纯IPV6 VPS（即将合并到脚本一）**
-
-- 如未执行上面的root一键脚本，先执行```sudo -i```进入root模式，后执行```echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf```
-```
-wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multiOV6.sh && chmod +x multiOV6.sh && ./multiOV6.sh
-```
-
-纯IPV6建议后续只用快捷方式进入脚本 ```bash multiOV6.sh```
-
-----------------------------------------------------------------------------------------
 
 ### warp多功能一键脚本各功能简析
 
