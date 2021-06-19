@@ -69,18 +69,11 @@
 
 提示：密码不要设置得过于简单，容易被破解。密钥文件要保存好，以防万一！
 
-- **脚本一：适用于纯IPV4 VPS与IPV4+IPV6双栈VPS，非root状态下直接输入以下脚本（支持甲骨文与谷歌云）**
+统一适用于纯IPV4、纯IPV6、双栈IPV4+IPV6，非root状态下直接输入以下脚本（支持甲骨文与谷歌云）**
 
 ```
-bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/root.sh)
+bash <(curl -sSL https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/root.sh)
 ```
-
-- **脚本二：适用于纯IPV6 VPS，先执行```sudo -i```进入root模式后再输入以下脚本（已集成永久DNS64）**
-
-```
-echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf && bash <(curl -sSL https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/v6root.sh)
-```
-
 -----------------------------------------------------------------------------------------
 ### vps的ip套上warp功能的优势及不足
 
