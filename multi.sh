@@ -751,13 +751,13 @@ function start_menu(){
     
     yellow " 以下脚本已添加全端口临时开启功能，重启VPS实例可自动还原初始设置 "
     
-    green " 19.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    green " 20.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    green " 20.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
+    green " 21.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
     white " ==============================================================================================="
     
-    green " 21. 重启VPS实例，请重新连接SSH "
+    green " 22. 重启VPS实例，请重新连接SSH "
     
     white " ==================================================================================================" 
     
