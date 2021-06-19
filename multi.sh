@@ -1151,6 +1151,99 @@ function up(){
 wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
+function wro646(){
+yellow " 检测系统内核版本是否大于5.6版本 "
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，回到菜单，选择2，自动更新内核吧"
+	exit 1
+fi
+wget -N -6 https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/wgcf
+cp wgcf /usr/local/bin/wgcf
+sudo chmod +x /usr/local/bin/wgcf
+echo | wgcf register
+until [ $? -eq 0 ]
+do
+sleep 1s
+echo | wgcf register
+done
+wgcf generate
+sed -i "5 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
+sed -i "6 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
+sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
+cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+systemctl enable wg-quick@wgcf
+systemctl start wg-quick@wgcf
+rm -f wgcf*
+grep -qE '^[ ]*precedence[ ]*::ffff:0:0/96[ ]*100' /etc/gai.conf || echo 'precedence ::ffff:0:0/96  100' | sudo tee -a /etc/gai.conf
+yellow " 检测是否成功启动（IPV4+IPV6）双栈Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
+green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:…………，则说明成功啦！\n 如上方IPV4无IP显示,IPV6显示本地IP,则说明失败喽！！ "
+}
+
+
+
+function wro66(){
+yellow " 检测系统内核版本是否大于5.6版本 "
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，回到菜单，选择2，自动更新内核吧"
+	exit 1
+fi
+wget -N -6 https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/wgcf
+cp wgcf /usr/local/bin/wgcf
+sudo chmod +x /usr/local/bin/wgcf
+echo | wgcf register
+until [ $? -eq 0 ]
+do
+sleep 1s
+echo | wgcf register
+done
+wgcf generate
+sed -i "5 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
+sed -i "6 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
+sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
+sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
+cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+systemctl enable wg-quick@wgcf
+systemctl start wg-quick@wgcf
+rm -f wgcf*
+yellow " 检测是否成功启动Warp！\n 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
+green " 如上方显示IPV6地址：2a09:…………，则说明成功！\n 如上方无IP显示，则说明失败喽！ "
+}
+
+
+function wro64(){
+yellow " 检测系统内核版本是否大于5.6版本 "
+if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then 
+	red " 检测到内核版本小于5.6，回到菜单，选择2，自动更新内核吧"
+	exit 1
+fi
+wget -N -6 https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/wgcf
+cp wgcf /usr/local/bin/wgcf
+sudo chmod +x /usr/local/bin/wgcf
+echo | wgcf register
+until [ $? -eq 0 ]
+do
+sleep 1s
+echo | wgcf register
+done
+wgcf generate
+sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
+sed -i '/\:\:\/0/d' wgcf-profile.conf
+sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
+cp wgcf-profile.conf /etc/wireguard/wgcf.conf
+systemctl enable wg-quick@wgcf
+systemctl start wg-quick@wgcf
+rm -f wgcf*
+grep -qE '^[ ]*precedence[ ]*::ffff:0:0/96[ ]*100' /etc/gai.conf || echo 'precedence ::ffff:0:0/96  100' | sudo tee -a /etc/gai.conf
+yellow " 检测是否成功启动Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) "
+green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如上方显示VPS本地IP,则说明失败喽！ "
+}
+
+
 #主菜单
 function start_menu(){
     clear
@@ -1182,27 +1275,33 @@ function start_menu(){
     
     green " 10. 双栈IPV4+IPV6的VPS。                            添加WARP虚拟IPV4               "
     
+    green " 11. 纯IPV6的VPS。                                  添加WARP虚拟IPV6               "
+    
+    green " 12. 纯IPV6的VPS。                                  添加WARP虚拟IPV4+虚拟IPV6       "
+    
+    green " 13. 纯IPV6的VPS。                                  添加WARP虚拟IPV4               "
+    
     white " ------------------------------------------------------------------------------------------------"
     
-    green " 11. 永久关闭WARP功能 "
+    green " 14. 永久关闭WARP功能 "
     
-    green " 12. 自动开启WARP功能 "
+    green " 15. 自动开启WARP功能 "
     
-    green " 13. 查看当前WARP运行状态 "
+    green " 16. 查看当前WARP运行状态 "
     
-    green " 14. 查看VPS当前正在使用的IPV4/IPV6地址 "
+    green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
-    green " 15. 具备有访问IPV4的情况下更新脚本 "
+    green " 18. 具备有访问IPV4的情况下更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
     yellow " 以下脚本已添加全端口临时开启功能，重启VPS实例可还原初始设置 "
     
-    green " 16.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    green " 19.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
     
     white " ==============================================================================================="
     
-    green " 17. 重启VPS实例，请重新连接SSH "
+    green " 20. 重启VPS实例，请重新连接SSH "
     
     white " ==================================================================================================" 
     
@@ -1241,24 +1340,33 @@ function start_menu(){
            warp464
 	;;
 	11 )
-           cwarp
+           wro66
 	;;
 	12 )
-           owarp
+           wro646
 	;;
 	13 )
-           status
+           wro64
 	;;
 	14 )
-           cv46
+           cwarp
 	;;
 	15 )
-           up
+           owarp
 	;;
 	16 )
-           macka
+           status
 	;;
 	17 )
+           cv46
+	;;
+	18 )
+           up
+	;;
+	19 )
+           macka
+	;;
+	20 )
            reboot
 	;;
         0 )
