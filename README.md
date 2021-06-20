@@ -247,9 +247,9 @@ phlinhng脚本地址：https://github.com/phlinhng/v2ray-tcp-tls-web
 }
 ```
 
-outbounds：只改三处（三个数字）！！！以上是代理脚本默认为IPV4优先设置。如果IPV6优先，则把4改成6，6改成4。
+outbounds部分：以上是代理脚本默认为IPV4优先设置模版。如果IPV6优先，则把4改成6，6改成4。只改三处（三个数字）！！
 
-routing：设置自由度太高啦！可参考IP、域名自定义德鸡IPV6教程：https://youtu.be/fY9HDLJ7mnM)
+routing部分：设置自由度太高啦！可参考IP、域名自定义德鸡IPV6教程：https://youtu.be/fY9HDLJ7mnM)
 
 ----------------------------------------------------------------------------------------------
 
@@ -281,7 +281,7 @@ wg-quick up wgcf
 
 关闭systemctl disable wg-quick@wgcf
 
-感谢P3terx大及原创者们，参考来源：
+#### 感谢P3terx大及原创者们，参考来源：
 
 https://p3terx.com/archives/debian-linux-vps-server-wireguard-installation-tutorial.html
 
