@@ -3,11 +3,9 @@
 ## 针对KVM架构VPS的WARP一键综合脚本
 
 - [x] 支持自动识别系统类型，CPU架构(X86/ARM)，内核版本，虚拟化架构类型！
-- [x] 支持纯IPV4，纯IPV6，双栈IPV4+IPV6 三大类VPS
-- [x] 支持Ubuntu/Centos/Debain最新系统！！
-- [x] 支持共9种形态的WARP形式，安装过程无需手动干预
-
-![d89ed915a4e612e87946206873184a8](https://user-images.githubusercontent.com/80431714/121798546-9b9f5c00-cc59-11eb-8b6e-e3462ce7c6ec.png)
+- [x] 支持纯IPV4，纯IPV6，双栈IPV4+IPV6 三大类VPS！
+- [x] 支持Ubuntu/Centos/Debain最新系统！
+- [x] 支持共9种形态的WARP形式，安装过程无需手动干预！
 
 
 ### 更新已测试通过的VPS名单
