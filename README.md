@@ -11,7 +11,7 @@
 
 ### 更新已测试通过的VPS名单
 
- - [x] 已支持：oracle（甲骨文云），gpc（谷歌云），buyvm，racknerd，aws（亚马逊云），virmach，azure（微软云），bandwagonhost（搬瓦工）………………欢迎大家补充反馈………
+ - [x] 已支持：oracle（甲骨文云），gpc（谷歌云），buyvm，racknerd，aws（亚马逊云），virmach，vultr，azure（微软云），bandwagonhost（搬瓦工）………………欢迎大家补充反馈………
  
 ### 提醒：
 
