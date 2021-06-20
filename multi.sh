@@ -751,8 +751,6 @@ function start_menu(){
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
-    yellow " 以下脚本已添加全端口临时开启功能，重启VPS实例可自动还原初始设置 "
-    
     green " 20.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
     green " 21.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
@@ -1314,8 +1312,6 @@ function start_menu(){
     green " 19. 无IPV4：更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
-    
-    yellow " 以下脚本已添加全端口临时开启功能，重启VPS实例可还原初始设置 "
     
     green " 20.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
     
