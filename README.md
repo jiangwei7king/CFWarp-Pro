@@ -153,7 +153,7 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 
 脚本7、结果表现为2个IP：VPS本地IPV4+WARP虚拟IPV4
 
-- **（仅支持IPV4+IPV6双栈VPS）**
+- **（仅支持双栈IPV4+IPV6 VPS）**
 
 脚本8、结果表现为3个IP：VPS本地IPV4+VPS本地IPV6+WARP虚拟IPV6
 
