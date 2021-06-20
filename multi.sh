@@ -692,7 +692,8 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 }
 
 function up6(){
-wget -6 -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
+echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf
+wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
 }
 
 #主菜单
@@ -744,9 +745,9 @@ function start_menu(){
     
     green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
-    green " 18. 更新脚本 "
+    green " 18. 有IPV4：更新脚本 "
     
-    green " 19. 纯V6下更新脚本 "
+    green " 19. 无IPV4：更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
@@ -1164,7 +1165,9 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-P
 }
 
 function up6(){
-wget -6 -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh && chmod +x multi.sh && ./multi.sh
+echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf
+wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
+}
 }
 
 function wro646(){
@@ -1307,9 +1310,9 @@ function start_menu(){
     
     green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
     
-    green " 18. 更新脚本 "
+    green " 18. 有IPV4：更新脚本 "
     
-    green " 19. 纯V6下更新脚本 "
+    green " 19. 无IPV4：更新脚本 "
     
     white " ========================三、代理协议脚本选择（更新中）==========================================="
     
