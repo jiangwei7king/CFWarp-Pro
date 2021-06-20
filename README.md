@@ -1,5 +1,4 @@
 
-
 ## 针对KVM架构VPS的WARP一键综合脚本
 
 - [x] 支持自动识别系统类型，CPU架构(X86/ARM)，内核版本，虚拟化架构类型！
@@ -51,7 +50,7 @@
 
 提示：密码不要设置得过于简单，容易被破解。如有密钥文件要保存好，以防万一！
 
-统一适用于纯IPV4、纯IPV6、双栈IPV4+IPV6，非root状态下直接输入以下脚本（支持甲骨文与谷歌云）**
+统一适用于纯IPV4、纯IPV6、双栈IPV4+IPV6，非root状态下直接输入以下脚本（已测试支持甲骨文与谷歌云）
 
 ```
 bash <(curl -sSL https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/root.sh)
