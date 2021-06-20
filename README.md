@@ -115,8 +115,6 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 
 进入脚本快捷方式 ```bash multi.sh```
 
-提醒：纯IPV6 建议后续只用快捷方式进入脚本
-
 ---------------------------------------------------------------------------------------------------
 
 ### warp多功能一键脚本各功能简析
