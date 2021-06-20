@@ -1263,6 +1263,9 @@ green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如
 #主菜单
 function start_menu(){
     clear
+    
+    yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥探世界 " 
+    
     red " 切记：进入脚本快捷方式 bash multi.sh "
     
     white " ================一、VPS调整选择（更新中）==============================================" 
