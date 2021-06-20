@@ -7,7 +7,7 @@
 - [x] 支持Ubuntu/Centos/Debain最新系统！
 - [x] 支持共9种形态的WARP形式，安装过程无需手动干预！
 
-![59f010ba8ef62b9a2fdf5006cca074d](https://user-images.githubusercontent.com/80431714/122665950-05c97b00-d1dd-11eb-9a62-bb4ea00ede25.png)
+![aa74545932024a675e774d014b07e22](https://user-images.githubusercontent.com/80431714/122666708-92763800-d1e1-11eb-966c-887613dee30b.png)
 
 ### 更新已测试通过的VPS名单
 
