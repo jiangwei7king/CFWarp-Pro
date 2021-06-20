@@ -128,7 +128,7 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 
 而网络上很多项目大多都为“内核模块”方案。所以本项目就来pro版的，后续随着VPS厂商对系统的升级，内核集成必定是主流。
 
-自动检测内核版本功能已集成于5-10脚本中，5.6以下内核将自动终止脚本运行并提示升级内核！
+自动检测内核版本功能已集成于5-13脚本中，5.6以下内核将自动终止脚本运行并提示升级内核！
 
 更新完成后将自动断开VPS连接！
 
@@ -193,13 +193,15 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 
 顾名思义，当前正在运行的IP地址。
 
-- **十、代理协议脚本选择（为甲骨文云优化）**
+- **十、代理协议脚本选择**
 
 支持IPV4/IPV6/X86/ARM的全面脚本 ，推荐！
 mack-a脚本地址：https://github.com/mack-a/v2ray-agent
 
 支持IPV4/IPV6/X86的脚本
 phlinhng脚本地址：https://github.com/phlinhng/v2ray-tcp-tls-web
+
+如有好的脚本会继续添加，欢迎大家推荐哦！！
 
 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
