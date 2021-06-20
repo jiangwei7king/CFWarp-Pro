@@ -1173,6 +1173,8 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，回到菜单，选择2，自动更新内核吧"
 	exit 1
 fi
+apt update
+apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -6 https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/wgcf
 cp wgcf /usr/local/bin/wgcf
 sudo chmod +x /usr/local/bin/wgcf
@@ -1205,6 +1207,8 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，回到菜单，选择2，自动更新内核吧"
 	exit 1
 fi
+apt update
+apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -6 https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/wgcf
 cp wgcf /usr/local/bin/wgcf
 sudo chmod +x /usr/local/bin/wgcf
@@ -1236,6 +1240,8 @@ if [ "$main" -lt 5 ]|| [ "$minor" -lt 6 ]; then
 	red " 检测到内核版本小于5.6，回到菜单，选择2，自动更新内核吧"
 	exit 1
 fi
+apt update
+apt -y --no-install-recommends install openresolv dnsutils wireguard-tools
 wget -N -6 https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/wgcf
 cp wgcf /usr/local/bin/wgcf
 sudo chmod +x /usr/local/bin/wgcf
