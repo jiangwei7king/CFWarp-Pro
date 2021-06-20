@@ -1168,7 +1168,6 @@ function up6(){
 echo -e nameserver 2a00:1098:2c::1 > /etc/resolv.conf
 wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWarp-Pro/main/multi.sh && chmod +x multi.sh && ./multi.sh
 }
-}
 
 function wro646(){
 yellow " 检测系统内核版本是否大于5.6版本 "
