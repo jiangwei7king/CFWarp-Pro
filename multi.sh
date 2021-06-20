@@ -126,7 +126,7 @@ wgcf generate
 sed -i "5 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -186,12 +186,13 @@ sed -i "5 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
 sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/2001:4860:4860::8888,8.8.8.8/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
 rm -f wgcf*
+grep -qE '^[ ]*label[ ]*2002::/16[ ]*2' /etc/gai.conf || echo 'label 2002::/16   2' | sudo tee -a /etc/gai.conf
 yellow " 检测是否成功启动Warp！\n 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
 green " 如上方显示IPV6地址：2a09:…………，则说明成功！\n 如上方无IP显示，则说明失败喽！ "
 }
@@ -243,7 +244,7 @@ done
 wgcf generate
 sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -300,7 +301,7 @@ done
 wgcf generate
 sudo sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
 sudo sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
-sudo sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sudo sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 sudo cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 sudo cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -357,7 +358,7 @@ wgcf generate
 sed -i "5 s/^/PostUp = ip -4 rule add from $rv4 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -4 rule delete from $rv4 table main\n/" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -415,7 +416,7 @@ sed -i "5 s/^/PostUp = ip -4 rule add from $rv4 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -4 rule delete from $rv4 table main\n/" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -472,7 +473,7 @@ wgcf generate
 sed -i "5 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
 sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -530,7 +531,7 @@ sed -i "5 s/^/PostUp = ip -4 rule add from $rv4 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -4 rule delete from $rv4 table main\n/" wgcf-profile.conf
 sed -i "7 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
 sed -i "8 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -587,7 +588,7 @@ wgcf generate
 sed -i "5 s/^/PostUp = ip -4 rule add from $rv4 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -4 rule delete from $rv4 table main\n/" wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -862,7 +863,7 @@ done
 wgcf generate
 sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
 sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -893,7 +894,7 @@ wgcf generate
 sed -i "5 s/^/PostUp = ip -4 rule add from $rv4 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -4 rule delete from $rv4 table main\n/" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -925,7 +926,7 @@ sed -i "5 s/^/PostUp = ip -4 rule add from $rv4 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -4 rule delete from $rv4 table main\n/" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/162.159.192.1/g' wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -956,7 +957,7 @@ wgcf generate
 sed -i "5 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
 sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -988,7 +989,7 @@ sed -i "5 s/^/PostUp = ip -4 rule add from $rv4 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -4 rule delete from $rv4 table main\n/" wgcf-profile.conf
 sed -i "7 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
 sed -i "8 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -1019,7 +1020,7 @@ wgcf generate
 sed -i "5 s/^/PostUp = ip -4 rule add from $rv4 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -4 rule delete from $rv4 table main\n/" wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -1185,7 +1186,7 @@ wgcf generate
 sed -i "5 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -1218,7 +1219,7 @@ sed -i "5 s/^/PostUp = ip -6 rule add from $rv6 table main\n/" wgcf-profile.conf
 sed -i "6 s/^/PostDown = ip -6 rule delete from $rv6 table main\n/" wgcf-profile.conf
 sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
 sed -i '/0\.0\.0\.0\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/2001:4860:4860::8888,8.8.8.8/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
@@ -1247,7 +1248,7 @@ done
 wgcf generate
 sed -i 's/engage.cloudflareclient.com/2606:4700:d0::a29f:c001/g' wgcf-profile.conf
 sed -i '/\:\:\/0/d' wgcf-profile.conf
-sed -i 's/1.1.1.1/9.9.9.9,8.8.8.8/g' wgcf-profile.conf
+sed -i 's/1.1.1.1/8.8.8.8,2001:4860:4860::8888/g' wgcf-profile.conf
 cp wgcf-account.toml /etc/wireguard/wgcf-account.toml
 cp wgcf-profile.conf /etc/wireguard/wgcf.conf
 systemctl enable wg-quick@wgcf
