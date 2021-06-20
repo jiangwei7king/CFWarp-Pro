@@ -23,6 +23,8 @@
 
 #### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将更新IPV4的相关支持。
 
+刷新脚本：https://purge.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh
+
 --------------------------------------------------------------------------------------------
 
 # 目录
