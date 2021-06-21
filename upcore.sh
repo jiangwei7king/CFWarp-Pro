@@ -80,8 +80,9 @@ menu
 }
 
 function de(){
-apt -t buster-backports install linux-image-amd64 -y
-apt -t buster-backports install linux-headers-amd64 -y
+echo -e deb http://deb.debian.org/debian buster-backports main > /etc/apt/sources.list
+apt update 
+apt install -t buster-backports linux-image-cloud-amd64 linux-headers-cloud-amd64 -y
 update-grub
 reboot
 }
@@ -92,7 +93,7 @@ function start_menu(){
     blue " 1. Centos7 "    
     blue " 2. Centos8 "
     blue " 3. Ubuntu "
-    blue " 4. Debain "
+    blue " 4. Debain10 "
     red " 0. 退出脚本 "
     echo
     read -p "请输入数字:" menuNumberInput
