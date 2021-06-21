@@ -80,7 +80,7 @@ menu
 }
 
 function de(){
-echo -e deb http://deb.debian.org/debian buster-backports main > /etc/apt/sources.list
+echo 'deb http://deb.debian.org/debian buster-backports main'>> /etc/apt/sources.list
 apt update 
 apt install -t buster-backports linux-image-amd64 linux-headers-amd64 -y
 update-grub
