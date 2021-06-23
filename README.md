@@ -14,7 +14,7 @@
  
 ### 提醒：
 
-1、有些KVM VPS仅提供较低的系统版本，如不能升级内核版本，建议DD到最新系统，推荐ubuntu20、centos7、debain10以上。
+1、有些KVM VPS仅提供较低的系统内核版本，如不能升级内核版本，建议DD到最新系统，推荐ubuntu20、centos7、debain10以上。
 
 2、OpenVZ、LXC架构的VPS并不集成在此脚本中。
 
