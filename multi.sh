@@ -194,7 +194,7 @@ systemctl start wg-quick@wgcf
 rm -f wgcf*
 grep -qE '^[ ]*label[ ]*2002::/16[ ]*2' /etc/gai.conf || echo 'label 2002::/16   2' | sudo tee -a /etc/gai.conf
 yellow " 检测是否成功启动Warp！\n 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
-green " 如上方显示IPV6地址：2a09:…………，则说明成功！\n 如上方无IP显示，则说明失败喽！ "
+green " 如上方显示IPV6地址：2a09:…………，则说明成功！\n 如上方IPV6显示本地IP，则说明失败喽！ "
 }
 
 function wo64(){
@@ -538,7 +538,7 @@ systemctl enable wg-quick@wgcf
 systemctl start wg-quick@wgcf
 rm -f wgcf*
 yellow " 检测是否成功启动（IPV4+IPV6）双栈Warp！\n 显示IPV4地址：$(wget -qO- ipv4.ip.sb) 显示IPV6地址：$(wget -qO- ipv6.ip.sb) "
-green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:…………，则说明成功啦！\n 如上方IPV4无IP显示,IPV6显示本地IP，则说明失败喽！ "
+green " 如上方显示IPV4地址：8.…………，IPV6地址：2a09:…………，则说明成功啦！\n 如上方IPV4显示本地IP,IPV6显示本地IP，则说明失败喽！ "
 }
 
 function warp464(){
