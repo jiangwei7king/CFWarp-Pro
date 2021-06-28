@@ -118,7 +118,7 @@ blue "WARP运行状态\t: ${WireGuardStatus}"
 blue "IPv4 网络状态\t: ${WARPIPv4Status}"
 blue "IPv6 网络状态\t: ${WARPIPv6Status}"
 blue "-----------------------"
-
+}
 
 if [[ ${bit} == "x86_64" ]]; then
 
