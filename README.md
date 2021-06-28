@@ -5,8 +5,12 @@
 - [x] 支持纯IPV4，纯IPV6，双栈IPV4+IPV6 三大类VPS！
 - [x] 支持Ubuntu/Centos/Debain最新系统！
 - [x] 支持共9种形态的WARP形式，安装过程无需手动干预！
+- [x] 支持即时显示当前WARP状态与IP地址！
 
-![aa74545932024a675e774d014b07e22](https://user-images.githubusercontent.com/80431714/122666708-92763800-d1e1-11eb-966c-887613dee30b.png)
+![cb94fcd50b9bf53a956a3052565e2fd](https://user-images.githubusercontent.com/80431714/123580329-32e4e180-d80c-11eb-9821-f1367cc710ad.png)
+![4a1ef3e2f3a62195a8417cd53003fc9](https://user-images.githubusercontent.com/80431714/123580335-35473b80-d80c-11eb-9e44-1417963a927e.png)
+
+
 
 ### 更新已测试通过的VPS名单
 
@@ -182,19 +186,7 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 
 因WARP脚本默认集成该功能，所以脚本安装成功后不必再执行该项。
 
-- **八、查看warp当前的运行状态
-
-显示Active: active (exited)绿色：开启
-
-显示Active: inactive (dead)黑色：关闭
-
-显示Active：failed 红色：安装失败
-
-- **九、查看当前VPS的IPV4/IPV6地址：**
-
-顾名思义，当前正在运行的IP地址。
-
-- **十、代理协议脚本选择**
+- **八、代理协议脚本选择**
 
 支持IPV4/IPV6/X86/ARM的全面脚本 ，推荐！
 mack-a脚本地址：https://github.com/mack-a/v2ray-agent
@@ -206,7 +198,7 @@ phlinhng脚本地址：https://github.com/phlinhng/v2ray-tcp-tls-web
 
 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
-- **十一、重启VPS实例（俗话说：重启解决99%的问题）**
+- **九、重启VPS实例（俗话说：重启解决99%的问题）**
  
 甲骨文云也可以登录网页，进入实例后台，执行“重新引导”，在后台重启。
 
