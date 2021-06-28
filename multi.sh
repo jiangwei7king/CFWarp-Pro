@@ -114,7 +114,7 @@ WARPIPv6Status=$(curl -s6 https://www.cloudflare.com/cdn-cgi/trace | grep warp |
 
 Print_ALL_Status_menu() {
 blue "-----------------------"
-blue "WARP运行状态\t: ${WireGuardStatus}"
+blue "WARP 运行状态\t: ${WireGuardStatus}"
 blue "IPv4 网络状态\t: ${WARPIPv4Status}"
 blue "IPv6 网络状态\t: ${WARPIPv6Status}"
 blue "-----------------------"
@@ -785,23 +785,19 @@ function start_menu(){
     
     green " 15. 自动开启WARP功能 "
     
-    green " 16. 查看当前WARP运行状态 "
+    green " 16. 有IPV4：更新脚本 "
     
-    green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
-    
-    green " 18. 有IPV4：更新脚本 "
-    
-    green " 19. 无IPV4：更新脚本 "
+    green " 17. 无IPV4：更新脚本 "
     
     white " ==================三、代理协议脚本选择（更新中）==========================================="
     
-    green " 20.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    green " 18.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    green " 21.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
+    green " 19.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
     white " ============================================================================================="
     
-    green " 22. 重启VPS实例，请重新连接SSH "
+    green " 20. 重启VPS实例，请重新连接SSH "
     
     white " ===============================================================================================" 
     
@@ -856,24 +852,18 @@ function start_menu(){
            owarp
 	;;
 	16 )
-           status
-	;;
-	17 )
-           cv46
-	;;
-	18 )
            up4
 	;;
-	19 )
+	17 )
            up6
 	;;
-	20 )
+	18 )
            macka
 	;;
-	21 )
+	19 )
            phlinhng
 	;;
-	22 )
+	20 )
            reboot
 	;;
         0 )
@@ -1357,21 +1347,17 @@ function start_menu(){
     
     green " 15. 自动开启WARP功能 "
     
-    green " 16. 查看当前WARP运行状态 "
+    green " 16. 有IPV4：更新脚本 "
     
-    green " 17. 查看VPS当前正在使用的IPV4/IPV6地址 "
-    
-    green " 18. 有IPV4：更新脚本 "
-    
-    green " 19. 无IPV4：更新脚本 "
+    green " 17. 无IPV4：更新脚本 "
     
     white " ===============三、代理协议脚本选择（更新中）==========================================="
     
-    green " 20.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    green " 18.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
     
     white " ============================================================================================="
     
-    green " 21. 重启VPS实例，请重新连接SSH "
+    green " 19. 重启VPS实例，请重新连接SSH "
     
     white " =============================================================================================" 
     
@@ -1426,21 +1412,15 @@ function start_menu(){
            owarp
 	;;
 	16 )
-           status
-	;;
-	17 )
-           cv46
-	;;
-	18 )
            up4
 	;;
-	19 )
+	17 )
            up6
 	;;
-	20 )
+	18 )
            macka
 	;;
-	21 )
+	19 )
            reboot
 	;;
         0 )
