@@ -1,5 +1,5 @@
 
-## 针对KVM架构VPS的WARP一键综合脚本
+## 支持kvm/xen/microsoft等架构VPS的WARP一键综合脚本
 
 - [x] 支持自动识别系统类型，CPU架构(X86/ARM)，内核版本，虚拟化架构类型！
 - [x] 支持纯IPV4，纯IPV6，双栈IPV4+IPV6 三大类VPS！
@@ -26,7 +26,7 @@
 
 3、内核必须5.6以上，脚本自带稳定版内核升级功能。
 
-#### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将更新IPV4的相关支持。
+#### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将整合。
 
 --------------------------------------------------------------------------------------------
 
