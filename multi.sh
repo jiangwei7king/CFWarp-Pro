@@ -115,7 +115,7 @@ if [[ ${v66} == "1" ]]; then
  WARPIPv6Status=$(red "无IPV6 ") 
  esac 
 elif [[ ${v66} == "0" ]]; then
-echo " Oracle BUG "
+echo 
 
  fi 
  
