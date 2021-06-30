@@ -176,9 +176,9 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 
 脚本13、结果表现为2个IP：VPS本地IPV6+WARP虚拟IPV4
 
-- **六、统一DNS功能（推荐有IPV4的VPS使用）：**
+- **六、统一DNS功能（推荐有IPV4访问能力的VPS使用）：**
 
-VPS自带的DNS可能会强制初始化设置，使WARP设置的DNS失效，导致进入SSH后无法访问外网，虽然说重启VPS能恢复WARP的DNS，但很不方便。
+VPS可能会强制初始化DNS设置，使WARP设置的DNS失效，导致进入SSH后无法访问外网，虽然说重启VPS能恢复WARP的DNS并能正常访问外网，但很不方便。
 
 本功能会强制固定VPS的DNS为WARP设置的DNS，这样就不会出现SHH无法访问外网的问题。
 
