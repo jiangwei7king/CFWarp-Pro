@@ -86,20 +86,24 @@ active)
 esac
 
 
-v4=`wget -qO- ipv4.ip.sb`
-WARPIPv4Status=$(curl -s4 https://www.cloudflare.com/cdn-cgi/trace | grep warp | cut -d= -f2)
-    case ${WARPIPv4Status} in
-    on)
-        WARPIPv4Status=$(green "WARP已开启,当前IPV4地址：$v4 ")
-        ;;
-    off)
-        WARPIPv4Status=$(yellow "WARP未开启，当前IPV4地址：$v4 ")
-        ;;
-    *)
-        WARPIPv4Status=$(red "无IPV4 ")
-    esac
+v44=`ping4 google.com -c 1 | grep received | awk 'NR==1 {print $4}'`
 
-v66=`ping6 240c::6666 -c 1 | grep received | awk 'NR==1 {print $4}'`
+if [[ ${v44} == "1" ]]; then
+ v4=`wget -qO- ipv4.ip.sb` 
+ WARPIPv4Status=$(curl -s4 https://www.cloudflare.com/cdn-cgi/trace | grep warp | cut -d= -f2) 
+ case ${WARPIPv4Status} in 
+ on) 
+ WARPIPv4Status=$(green "WARP已开启,当前IPV4地址：$v4 ") 
+ ;; 
+ off) 
+ WARPIPv4Status=$(yellow "WARP未开启，当前IPV4地址：$v4 ") 
+ esac 
+else
+WARPIPv4Status=$(red "不存在IPV4地址 ")
+
+ fi 
+
+v66=`ping6 google.com -c 1 | grep received | awk 'NR==1 {print $4}'`
 
 if [[ ${v66} == "1" ]]; then
  v6=`wget -qO- ipv6.ip.sb` 
@@ -110,12 +114,9 @@ if [[ ${v66} == "1" ]]; then
  ;; 
  off) 
  WARPIPv6Status=$(yellow "WARP未开启，当前IPV6地址：$v6 ") 
- ;; 
- *) 
- WARPIPv6Status=$(red "无IPV6 ") 
  esac 
-elif [[ ${v66} == "0" ]]; then
-echo 
+else
+WARPIPv6Status=$(red "不存在IPV6地址 ")
 
  fi 
  
@@ -726,7 +727,7 @@ sudo reboot
 }
 
 function dns(){
-echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
+echo 'DNS=8.8.8.8 2001:4860:4860::8888'>> /etc/systemd/resolved.conf
 systemctl restart systemd-resolved
 systemctl enable systemd-resolved
 mv /etc/resolv.conf  /etc/resolv.conf.bak
