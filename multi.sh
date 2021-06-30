@@ -789,23 +789,25 @@ function start_menu(){
     
     white " ------------------------------------------------------------------------------------------------"
     
-    green " 14. 永久关闭WARP功能 "
+    green " 14. 统一DNS功能 "
     
-    green " 15. 自动开启WARP功能 "
+    green " 15. 永久关闭WARP功能 "
     
-    green " 16. 有IPV4：更新脚本 "
+    green " 16. 自动开启WARP功能 "
     
-    green " 17. 无IPV4：更新脚本 "
+    green " 17. 有IPV4：更新脚本 "
+    
+    green " 18. 无IPV4：更新脚本 "
     
     white " ==================三、代理协议脚本选择（更新中）==========================================="
     
-    green " 18.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    green " 19.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
     
-    green " 19.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
+    green " 20.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
     white " ============================================================================================="
     
-    green " 20. 重启VPS实例，请重新连接SSH "
+    green " 21. 重启VPS实例，请重新连接SSH "
     
     white " ===============================================================================================" 
     
@@ -854,24 +856,27 @@ function start_menu(){
            wo64
 	;;
 	14 )
-           cwarp
+           dns
 	;;
 	15 )
-           owarp
+           cwarp
 	;;
 	16 )
-           up4
+           owarp
 	;;
 	17 )
-           up6
+           up4
 	;;
 	18 )
-           macka
+           up6
 	;;
 	19 )
-           phlinhng
+           macka
 	;;
 	20 )
+           phlinhng
+	;;
+	21 )
            reboot
 	;;
         0 )
@@ -1142,7 +1147,7 @@ sudo reboot
 }
 
 function dns(){
-echo 'DNS=9.9.9.9 8.8.8.8'>> /etc/systemd/resolved.conf
+echo 'DNS=8.8.8.8 2001:4860:4860::8888'>> /etc/systemd/resolved.conf
 systemctl restart systemd-resolved
 systemctl enable systemd-resolved
 mv /etc/resolv.conf  /etc/resolv.conf.bak
@@ -1351,21 +1356,23 @@ function start_menu(){
     
     white " ------------------------------------------------------------------------------------------------"
     
-    green " 14. 永久关闭WARP功能 "
+    green " 14. 统一DNS功能 "
     
-    green " 15. 自动开启WARP功能 "
+    green " 15. 永久关闭WARP功能 "
     
-    green " 16. 有IPV4：更新脚本 "
+    green " 16. 自动开启WARP功能 "
     
-    green " 17. 无IPV4：更新脚本 "
+    green " 17. 有IPV4：更新脚本 "
+    
+    green " 18. 无IPV4：更新脚本 "
     
     white " ===============三、代理协议脚本选择（更新中）==========================================="
     
-    green " 18.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    green " 19.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
     
     white " ============================================================================================="
     
-    green " 19. 重启VPS实例，请重新连接SSH "
+    green " 20. 重启VPS实例，请重新连接SSH "
     
     white " =============================================================================================" 
     
@@ -1414,21 +1421,24 @@ function start_menu(){
            wro64
 	;;
 	14 )
-           cwarp
+           dns
 	;;
 	15 )
-           owarp
+           cwarp
 	;;
 	16 )
-           up4
+           owarp
 	;;
 	17 )
-           up6
+           up4
 	;;
 	18 )
-           macka
+           up6
 	;;
 	19 )
+           macka
+	;;
+	20 )
            reboot
 	;;
         0 )
