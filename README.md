@@ -176,19 +176,25 @@ wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/mul
 
 脚本13、结果表现为2个IP：VPS本地IPV6+WARP虚拟IPV4
 
-- **六、永久关闭WARP功能：**
+- **六、统一DNS功能（推荐有IPV4的VPS使用）：**
+
+VPS自带的DNS可能会强制初始化设置，使WARP设置的DNS失效，导致进入SSH后无法访问外网，虽然说重启VPS能恢复WARP的DNS，但很不方便。
+
+本功能会强制固定VPS的DNS为WARP设置的DNS，这样就不会出现SHH无法访问外网的问题。
+
+- **七、永久关闭WARP功能：**
 
 作用1：永久关闭WARP分配的虚拟IP，还原当前VPS的本地IP。
 
 作用2：如之前已安装了一种WARP方案，现更换另一种WARP方案，请先关闭WARP功能，再执行安装WARP脚本。
 
-- **七、启动并开机自启WARP功能：**
+- **八、启动并开机自启WARP功能：**
 
 作用：永久关闭WARP功能后的再次启用。
 
 因WARP脚本默认集成该功能，所以脚本安装成功后不必再执行该项。
 
-- **八、代理协议脚本选择**
+- **九、代理协议脚本选择**
 
 支持IPV4/IPV6/X86/ARM的全面脚本 ，推荐！
 mack-a脚本地址：https://github.com/mack-a/v2ray-agent
@@ -200,7 +206,7 @@ phlinhng脚本地址：https://github.com/phlinhng/v2ray-tcp-tls-web
 
 注意：域名解析所填写的IP必须是VPS本地IP，与WARP分配的IP没关系！
 
-- **九、重启VPS实例（俗话说：重启解决99%的问题）**
+- **十、重启VPS实例（俗话说：重启解决99%的问题）**
  
 甲骨文云也可以登录网页，进入实例后台，执行“重新引导”，在后台重启。
 
