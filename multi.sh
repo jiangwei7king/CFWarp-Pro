@@ -122,7 +122,7 @@ WARPIPv6Status=$(red "不存在IPV6地址 ")
  
 Print_ALL_Status_menu() {
 blue "-----------------------"
-blue "WARP 运行状态\t: ${WireGuardStatus}"
+blue "WireGuard 运行状态\t: ${WireGuardStatus}"
 blue "IPv4 网络状态\t: ${WARPIPv4Status}"
 blue "IPv6 网络状态\t: ${WARPIPv6Status}"
 blue "-----------------------"
@@ -789,7 +789,7 @@ function start_menu(){
     
     white " ------------------------------------------------------------------------------------------------"
     
-    green " 14. 统一DNS功能 "
+    green " 14. 统一DNS功能（建议选择） "
     
     green " 15. 永久关闭WARP功能 "
     
@@ -1356,7 +1356,7 @@ function start_menu(){
     
     white " ------------------------------------------------------------------------------------------------"
     
-    green " 14. 统一DNS功能 "
+    green " 14. 统一DNS功能（建议选择） "
     
     green " 15. 永久关闭WARP功能 "
     
