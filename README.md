@@ -46,8 +46,7 @@
 -----------------------------------------------------------------------------------------
 ### 相关视频教程及项目
 
-- [纯IPV4 VPS添加WARP 如何查看专用IP地址](https://youtu.be/o7e_ikV-m-g)
-- [甲骨文添加真IPV6，如何选择WARP脚本看奈非](https://youtu.be/ap_krqWnikE)
+- [甲骨文云VPS：免费ARM实例大探讨，预留IP与临时公共IP设置，WARP脚本更新支持ARM纯IPV6并安装XRAY流程，如何更改存储引导卷大小](https://youtu.be/ttg7jqFQ3iw)
 - [EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)
 ---------------------------------------------------------------------------------------------
 ### root一键脚本
