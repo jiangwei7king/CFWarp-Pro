@@ -751,7 +751,7 @@ wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWar
 #主菜单
 function start_menu(){
     clear
-    yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥探世界 " 
+    yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥侃侃侃 " 
     
     red " 切记：进入脚本快捷方式 bash multi.sh "
     
@@ -1318,7 +1318,7 @@ green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如
 function start_menu(){
     clear
     
-    yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥探世界 " 
+    yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥侃侃侃 " 
     
     red " 切记：进入脚本快捷方式 bash multi.sh "
     
