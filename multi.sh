@@ -86,7 +86,7 @@ active)
 esac
 
 
-v44=`ping4 google.com -c 1 | grep received | awk 'NR==1 {print $4}'`
+v44=`ping ipv4.google.com -c 1 | grep received | awk 'NR==1 {print $4}'`
 
 if [[ ${v44} == "1" ]]; then
  v4=`wget -qO- ipv4.ip.sb` 
@@ -103,7 +103,7 @@ WARPIPv4Status=$(red "不存在IPV4地址 ")
 
  fi 
 
-v66=`ping6 google.com -c 1 | grep received | awk 'NR==1 {print $4}'`
+v66=`ping ipv6.google.com -c 1 | grep received | awk 'NR==1 {print $4}'`
 
 if [[ ${v66} == "1" ]]; then
  v6=`wget -qO- ipv6.ip.sb` 
