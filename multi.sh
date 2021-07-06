@@ -89,7 +89,7 @@ esac
 v44=`ping ipv4.google.com -c 1 | grep received | awk 'NR==1 {print $4}'`
 
 if [[ ${v44} == "1" ]]; then
- v4=`wget -qO- ipv4.ip.sb` 
+ v4=`wget -qO- -4 ip.gs` 
  WARPIPv4Status=$(curl -s4 https://www.cloudflare.com/cdn-cgi/trace | grep warp | cut -d= -f2) 
  case ${WARPIPv4Status} in 
  on) 
@@ -106,7 +106,7 @@ WARPIPv4Status=$(red "不存在IPV4地址 ")
 v66=`ping ipv6.google.com -c 1 | grep received | awk 'NR==1 {print $4}'`
 
 if [[ ${v66} == "1" ]]; then
- v6=`wget -qO- ipv6.ip.sb` 
+ v6=`wget -qO- -6 ip.gs` 
  WARPIPv6Status=$(curl -s6 https://www.cloudflare.com/cdn-cgi/trace | grep warp | cut -d= -f2) 
  case ${WARPIPv6Status} in 
  on) 
