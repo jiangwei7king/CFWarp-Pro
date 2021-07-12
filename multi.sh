@@ -122,7 +122,7 @@ WARPIPv6Status=$(red "不存在IPV6地址 ")
  
 Print_ALL_Status_menu() {
 blue "-----------------------"
-blue "WireGuard 运行状态\t: ${WireGuardStatus}"
+blue "WGCF 运行状态\t: ${WireGuardStatus}"
 blue "IPv4 网络状态\t: ${WARPIPv4Status}"
 blue "IPv6 网络状态\t: ${WARPIPv6Status}"
 blue "-----------------------"
