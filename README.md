@@ -8,8 +8,7 @@
 - [x] 支持即时显示当前WARP状态与IP地址！
 
 ### 相关视频教程及项目
-- [永久免费甲骨文云VPS：ARM创建说明要点，纯IPV6的ARM实例安装WARP与XRAY教程，预留IP与公共临时IP如何创建如何刷新，存储引导卷的大小设置](https://youtu.be/fod5iKEVfjU)
-- [EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)
+
 ---------------------------------------------------------------------------------------------
 
 ![cb94fcd50b9bf53a956a3052565e2fd](https://user-images.githubusercontent.com/80431714/123580329-32e4e180-d80c-11eb-9821-f1367cc710ad.png)
