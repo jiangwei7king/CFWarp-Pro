@@ -74,7 +74,7 @@ yellow " VPS相关信息如下："
     blue " CPU架构名称  - $bit "
     blue " 虚拟架构类型 -$vi "
     white " -----------------------------------------------" 
-sleep 3s
+sleep 1s
 
 warpwg=$(systemctl is-active wg-quick@wgcf)
 case ${warpwg} in
