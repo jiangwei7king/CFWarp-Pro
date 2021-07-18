@@ -751,7 +751,7 @@ wget -6 -N --no-check-certificate https://raw.githubusercontent.com/YG-tsj/CFWar
 #主菜单
 function start_menu(){
     clear
-    yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  " 
+    yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥侃侃侃" 
     
     red " 切记：进入脚本快捷方式 bash multi.sh "
     
@@ -801,7 +801,7 @@ function start_menu(){
     
     white " ==================三、代理协议脚本选择（更新中）==========================================="
     
-    green " 19.使用mack-a脚本（支持Xray, V2ray, Trojan-go） "
+    green " 19.使用mack-a脚本（支持Xray, V2ray） "
     
     green " 20.使用phlinhng脚本（支持Xray, Trojan-go, SS+v2ray-plugin） "
     
@@ -1318,7 +1318,7 @@ green " 如上方显示IPV4地址：8.…………，则说明成功啦！\n 如
 function start_menu(){
     clear
     
-    yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  " 
+    yellow " 详细说明 https://github.com/YG-tsj/CFWarp-Pro  YouTube频道：甬哥侃侃侃" 
     
     red " 切记：进入脚本快捷方式 bash multi.sh "
     
@@ -1368,7 +1368,7 @@ function start_menu(){
     
     white " ===============三、代理协议脚本选择（更新中）==========================================="
     
-    green " 19.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray, Trojan-go） "
+    green " 19.使用mack-a脚本（支持ARM架构VPS，支持协议：Xray, V2ray） "
     
     white " ============================================================================================="
     
