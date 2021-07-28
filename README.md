@@ -25,9 +25,11 @@
 
 1、有些KVM VPS仅提供较低的系统内核版本，如不能升级内核版本，建议DD到最新系统，可参考本[issues](https://github.com/YG-tsj/CFWarp-Pro/issues/11)，推荐ubuntu20、centos7、debain10以上。
 
-2、OpenVZ、LXC架构的VPS并不集成在此脚本中。
+2、不建议使用Docker，因为目前与WARP模式不兼容。
 
-3、内核必须5.6以上，脚本自带稳定版内核升级功能。
+3、OpenVZ、LXC架构的VPS并不集成在此脚本中。
+
+4、内核必须5.6以上，脚本自带稳定版内核升级功能。
 
 #### OpenVZ、LXC架构VPS脚本:[EUserv 纯ipv6(OpenVZ、LXC架构VPS)WARP项目](https://github.com/YG-tsj/EUserv-warp)后续也将整合。
 
